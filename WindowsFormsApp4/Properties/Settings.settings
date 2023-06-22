@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IMS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="search" Type="System.Windows.Forms.AccessibleRole" Scope="User">
+      <Value Profile="(Default)">MenuPopup</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
