@@ -340,7 +340,7 @@ namespace IMS
             // 
             // NET_AMOUNT
             // 
-            this.NET_AMOUNT.DataPropertyName = "TOTAL";
+            this.NET_AMOUNT.DataPropertyName = "NET_AMOUNT";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.NET_AMOUNT.DefaultCellStyle = dataGridViewCellStyle6;
             this.NET_AMOUNT.HeaderText = "NET AMOUNT";

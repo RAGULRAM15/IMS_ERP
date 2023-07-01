@@ -46,7 +46,7 @@ namespace IMS
         }
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME FROM M_CUSTOMER WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -69,7 +69,7 @@ namespace IMS
             value1 = edit_row.Cells["CUSTOMER_NAME"].Value.ToString();
             txt1.Text = value1;
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = "DELETE FROM M_CUSTOMER WHERE CUSTOMER_NAME = '" + txt1.Text + "'";
             //String sqlquery = "DELETE FROM T_QUOTATION WHERE QUOTATION_NO = '" + txtquotation.Text + "'";
@@ -106,12 +106,12 @@ namespace IMS
 
         private void txtcustomer_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf2 popup = new frmf2();
-                string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, CUSTOMER_TITLE FROM M_CUSTOMER WHERE ACTIVE = 1";
-                popup.ShowF2(_query, "CUSTOMER_NAME", ((TextBox)sender).Text, "CUSTOMER_NAME", sender);
-            }
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf2 popup = new frmf2();
+            //    string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, CUSTOMER_TITLE FROM M_CUSTOMER WHERE ACTIVE = 1";
+            //    popup.ShowF2(_query, "CUSTOMER_NAME", ((TextBox)sender).Text, "CUSTOMER_NAME", sender);
+            //}
         }
 
         private void dtgF4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -141,10 +141,10 @@ namespace IMS
             //dtgF4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtgF4.Width, dtgF4.Height, 20, 20));
             refresh();
         }
-
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         private void txtcustomer_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //
             String str = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME FROM M_CUSTOMER WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);

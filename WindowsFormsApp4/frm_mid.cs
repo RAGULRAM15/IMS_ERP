@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace IMS
 {
@@ -213,7 +215,7 @@ namespace IMS
             //frm_main_graph create = new frm_main_graph();
             //create.MdiParent = this;
             //create.Show();
-
+            loaddata();
         }
         private void btnexit_Click(object sender, EventArgs e)
         {
@@ -256,9 +258,7 @@ namespace IMS
 
         private void btnprofile_Click(object sender, EventArgs e)
         {
-            frm_login login = new frm_login();
-            login.Show();
-            this.Close();
+           
         }
 
         private void tRANSACTIONToolStripMenuItem_Click(object sender, EventArgs e)
@@ -335,9 +335,7 @@ namespace IMS
 
         private void cHANGEPASSWORDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_forgot create = new frm_forgot();
-            create.MdiParent = this;
-            create.Show();
+            
         }
 
         private void hOMEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -346,5 +344,50 @@ namespace IMS
             create.MdiParent = this;
             create.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Frm_arrengment login = new Frm_arrengment();
+            login.MdiParent = this;
+            login.Show();
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        public void loaddata()
+        {
+            String SQLQUERY = "SELECT [IMAGE] FROM M_IMAGE WHERE [USER]='" + User_name + "'";
+            using (SqlConnection conn = new SqlConnection(ConnString))
+            {
+
+                SqlCommand comm = new SqlCommand(SQLQUERY, conn);
+                conn.Open();
+                //SqlDataReader dr1 = comm.ExecuteReader();
+                //SqlDataAdapter dr = new SqlDataAdapter(comm);
+                //dr.Fill(dt);
+                object result = comm.ExecuteScalar();
+                if (result != DBNull.Value && result != null)
+                {
+                    Byte[] imagedata = (byte[])result;
+                    using (MemoryStream ms = new MemoryStream(imagedata))
+                    {
+                        Image image = Image.FromStream(ms);
+                        pic_Box.Image = image;
+                    }
+                }
+                else
+                {
+                    string path = @"C:\Users\admin\Downloads\icons8-test-account-100.png";
+                    pic_Box.ImageLocation = path ;
+                }
+                conn.Close();
+
+            }
+        }
+
     }
 }

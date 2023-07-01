@@ -33,7 +33,7 @@ namespace IMS
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     SqlCommand comm = new SqlCommand(qry, conn);
-
+                    conn.Open();
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter(comm);
 
@@ -42,7 +42,7 @@ namespace IMS
                     da.Fill(ds, "UPDATE");
                     dt = ds.Tables["UPDATE"];
 
-
+                    conn.Close();
                 }
             }
         }
@@ -58,6 +58,7 @@ namespace IMS
             //drop_customer();
             user();
             btn_close.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_close.Width, btn_close.Height, 70, 70));
+            
         }
        // int indexRow;
         //double multi;
@@ -74,7 +75,8 @@ namespace IMS
             {
                 frmf2 popup = new frmf2();
                 popup.MdiParent = frm_mid.ActiveForm;
-                string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, CUSTOMER_TITLE FROM M_CUSTOMER WHERE ACTIVE = 1";
+                popup.mode = "sales order";
+                string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, C.CITY FROM M_CUSTOMER CU INNER JOIN M_CITY C ON C.CITY_ID = CU.CITY_ID WHERE CU.ACTIVE = 1";
                 popup.ShowF2(_query, "CUSTOMER_NAME", ((TextBox)sender).Text, "CUSTOMER_NAME", sender);
             }
 
@@ -129,17 +131,19 @@ namespace IMS
                 "WHERE SALES_ORDER_NO = '" + txtsalesorder.Text + "'";
             //try
             //{
-            SqlDataAdapter da = new SqlDataAdapter(SQLQuery, ConnString);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "SALES_ORDER");
-            dgvitemform.DataSource = ds.Tables["SALES_ORDER"].DefaultView;
-
+           
 
             using (SqlConnection conn = new SqlConnection(ConnString))
             {
 
                 SqlCommand comm = new SqlCommand(sqlquery, conn);
                 conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(SQLQuery, conn);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "SALES_ORDER");
+                dt = ds.Tables["SALES_ORDER"];
+                dgvitemform.DataSource = dt;
+
                 SqlDataReader dr1 = comm.ExecuteReader();
                 SqlDataAdapter dr = new SqlDataAdapter(comm);
                 while (dr1.Read())
@@ -156,6 +160,7 @@ namespace IMS
                 dr1.Close();
                 conn.Close();
             }
+            Address();
             //}
             //catch (Exception ex)
             //{
@@ -237,6 +242,7 @@ namespace IMS
             txtsubtotal.ReadOnly = true;
             txtnet_amountB.ReadOnly = true;
             txtroundoff.ReadOnly = true;
+            Address();
         }
         public void DELETE_form()
         {
@@ -313,6 +319,7 @@ namespace IMS
             txtsubtotal.ReadOnly = true;
             txtnet_amountB.ReadOnly = true;
             txtroundoff.ReadOnly = true;
+            Address();
         }
         public void print_form()
         {
@@ -866,6 +873,12 @@ namespace IMS
 
 
                             }
+                            if (total1.Equals(null) && total2.Equals(null))
+                            {
+                                total1 = 0;
+                                total2 = 0;
+                            }
+
                             txt_total_sum.Text = total1.ToString();
                             txt_quantity_sum.Text = total2.ToString();
                             // Update the total in a label or textbox
@@ -904,6 +917,12 @@ namespace IMS
                                 //{
                                 //    total += Convert.ToInt32(e.FormattedValue);
                                 //}
+                                if (total1.Equals(null) && total2.Equals(null))
+                                {
+                                    total1 = 0;
+                                    total2 = 0;
+                                }
+
                                 txt_total_sum.Text = (total1 + priveous1 - priveous1).ToString();
                                 txt_quantity_sum.Text = (total2 + priveous2 - priveous2).ToString();
                                 if (dgvitemform.Rows.Count == 0)
@@ -943,12 +962,14 @@ namespace IMS
             //}
 
         }
-
+        /// <summary>
+        /// /////////////////
+        /// </summary>
        
-        private void dgvitemform_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            this.dgvitemform.Rows[e.RowIndex].Cells["row_id"].Value = (e.RowIndex + 1).ToString();
-        }
+        //private void dgvitemform_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        //{
+        //    this.dgvitemform.Rows[e.RowIndex].Cells["row_id"].Value = (e.RowIndex + 1).ToString();
+        //}
        
        
         public void last_no()
@@ -1008,7 +1029,7 @@ namespace IMS
 
         public void drop_down()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+          
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = "SELECT SALES_ORDER_ID, SALES_ORDER_NO FROM T_SALES_ORDER WHERE CUSTOMER_NAME  = '" + txtcustomer.Text + "'";
             try
@@ -1401,8 +1422,7 @@ namespace IMS
         {
 
         }
-
-        private void txtcustomer_TextChanged(object sender, EventArgs e)
+        public void Address()
         {
             if (txtcustomer.Tag != null)
             {
@@ -1426,8 +1446,12 @@ namespace IMS
                 }
 
                 conn.Close();
-               
+
             }
+        }
+        private void txtcustomer_TextChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void txt_itemadd_KeyDown(object sender, KeyEventArgs e)
@@ -1671,6 +1695,8 @@ namespace IMS
                 dgvitemform.CurrentCell = dgvitemform.Rows[0].Cells[columnIndex];
                 dgvitemform.CurrentCell.Selected = true;
             }
+            
+          
         }
         private void txt_itemadd_TextChanged(object sender, EventArgs e)
         {
@@ -2044,10 +2070,15 @@ namespace IMS
 
         private void dgvitemform_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewColumn column in dgvitemform.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
+            //foreach (DataGridViewColumn column in dgvitemform.Columns)
+            //{
+            //    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            //}
+        }
+
+        private void dgvitemform_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            this.dgvitemform.Rows[e.RowIndex].Cells["row_id"].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QUOTATIONDataSet7" targetNamespace="http://tempuri.org/QUOTATIONDataSet7.xsd" xmlns:mstns="http://tempuri.org/QUOTATIONDataSet7.xsd" xmlns="http://tempuri.org/QUOTATIONDataSet7.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QUOTATIONConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QUOTATIONConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IMS.Properties.Settings.GlobalReference.Default.QUOTATIONConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="T_INVOICE_REPORTTableAdapter" GeneratorDataComponentClassName="T_INVOICE_REPORTTableAdapter" Name="T_INVOICE_REPORT" UserDataComponentName="T_INVOICE_REPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUOTATIONConnectionString (Settings)" DbObjectName="QUOTATION.dbo.T_INVOICE_REPORT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT INVOICE_NO, INVOICE_DATE, DISCOUNT, QUANTITY, SUB_TOTAL, CUSTOMER_NAME, TRANSPORTS, LOADING, USER_NAME, CGST, SGST, IGST, NET_AMOUNT, CUSTOMER_ID, COMPANY_ID, APPROVAL_CHECK FROM dbo.T_INVOICE_REPORT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="INVOICE_NO" DataSetColumn="INVOICE_NO" />
+              <Mapping SourceColumn="INVOICE_DATE" DataSetColumn="INVOICE_DATE" />
+              <Mapping SourceColumn="DISCOUNT" DataSetColumn="DISCOUNT" />
+              <Mapping SourceColumn="QUANTITY" DataSetColumn="QUANTITY" />
+              <Mapping SourceColumn="SUB_TOTAL" DataSetColumn="SUB_TOTAL" />
+              <Mapping SourceColumn="CUSTOMER_NAME" DataSetColumn="CUSTOMER_NAME" />
+              <Mapping SourceColumn="TRANSPORTS" DataSetColumn="TRANSPORTS" />
+              <Mapping SourceColumn="LOADING" DataSetColumn="LOADING" />
+              <Mapping SourceColumn="USER_NAME" DataSetColumn="USER_NAME" />
+              <Mapping SourceColumn="CGST" DataSetColumn="CGST" />
+              <Mapping SourceColumn="SGST" DataSetColumn="SGST" />
+              <Mapping SourceColumn="IGST" DataSetColumn="IGST" />
+              <Mapping SourceColumn="NET_AMOUNT" DataSetColumn="NET_AMOUNT" />
+              <Mapping SourceColumn="CUSTOMER_ID" DataSetColumn="CUSTOMER_ID" />
+              <Mapping SourceColumn="COMPANY_ID" DataSetColumn="COMPANY_ID" />
+              <Mapping SourceColumn="APPROVAL_CHECK" DataSetColumn="APPROVAL_CHECK" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QUOTATIONDataSet7" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QUOTATIONDataSet7" msprop:Generator_UserDSName="QUOTATIONDataSet7">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T_INVOICE_REPORT" msprop:Generator_TableClassName="T_INVOICE_REPORTDataTable" msprop:Generator_TableVarName="tableT_INVOICE_REPORT" msprop:Generator_TablePropName="T_INVOICE_REPORT" msprop:Generator_RowDeletingName="T_INVOICE_REPORTRowDeleting" msprop:Generator_RowChangingName="T_INVOICE_REPORTRowChanging" msprop:Generator_RowEvHandlerName="T_INVOICE_REPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="T_INVOICE_REPORTRowDeleted" msprop:Generator_UserTableName="T_INVOICE_REPORT" msprop:Generator_RowChangedName="T_INVOICE_REPORTRowChanged" msprop:Generator_RowEvArgName="T_INVOICE_REPORTRowChangeEvent" msprop:Generator_RowClassName="T_INVOICE_REPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="INVOICE_NO" msprop:Generator_ColumnVarNameInTable="columnINVOICE_NO" msprop:Generator_ColumnPropNameInRow="INVOICE_NO" msprop:Generator_ColumnPropNameInTable="INVOICE_NOColumn" msprop:Generator_UserColumnName="INVOICE_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INVOICE_DATE" msprop:Generator_ColumnVarNameInTable="columnINVOICE_DATE" msprop:Generator_ColumnPropNameInRow="INVOICE_DATE" msprop:Generator_ColumnPropNameInTable="INVOICE_DATEColumn" msprop:Generator_UserColumnName="INVOICE_DATE" type="xs:dateTime" />
+              <xs:element name="DISCOUNT" msprop:Generator_ColumnVarNameInTable="columnDISCOUNT" msprop:Generator_ColumnPropNameInRow="DISCOUNT" msprop:Generator_ColumnPropNameInTable="DISCOUNTColumn" msprop:Generator_UserColumnName="DISCOUNT" type="xs:decimal" />
+              <xs:element name="QUANTITY" msprop:Generator_ColumnVarNameInTable="columnQUANTITY" msprop:Generator_ColumnPropNameInRow="QUANTITY" msprop:Generator_ColumnPropNameInTable="QUANTITYColumn" msprop:Generator_UserColumnName="QUANTITY" type="xs:int" />
+              <xs:element name="SUB_TOTAL" msprop:Generator_ColumnVarNameInTable="columnSUB_TOTAL" msprop:Generator_ColumnPropNameInRow="SUB_TOTAL" msprop:Generator_ColumnPropNameInTable="SUB_TOTALColumn" msprop:Generator_UserColumnName="SUB_TOTAL" type="xs:decimal" />
+              <xs:element name="CUSTOMER_NAME" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NAME" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NAME" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NAMEColumn" msprop:Generator_UserColumnName="CUSTOMER_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TRANSPORTS" msprop:Generator_ColumnVarNameInTable="columnTRANSPORTS" msprop:Generator_ColumnPropNameInRow="TRANSPORTS" msprop:Generator_ColumnPropNameInTable="TRANSPORTSColumn" msprop:Generator_UserColumnName="TRANSPORTS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LOADING" msprop:Generator_ColumnVarNameInTable="columnLOADING" msprop:Generator_ColumnPropNameInRow="LOADING" msprop:Generator_ColumnPropNameInTable="LOADINGColumn" msprop:Generator_UserColumnName="LOADING" type="xs:decimal" minOccurs="0" />
+              <xs:element name="USER_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_NAME" msprop:Generator_ColumnPropNameInRow="USER_NAME" msprop:Generator_ColumnPropNameInTable="USER_NAMEColumn" msprop:Generator_UserColumnName="USER_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CGST" msprop:Generator_ColumnVarNameInTable="columnCGST" msprop:Generator_ColumnPropNameInRow="CGST" msprop:Generator_ColumnPropNameInTable="CGSTColumn" msprop:Generator_UserColumnName="CGST" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SGST" msprop:Generator_ColumnVarNameInTable="columnSGST" msprop:Generator_ColumnPropNameInRow="SGST" msprop:Generator_ColumnPropNameInTable="SGSTColumn" msprop:Generator_UserColumnName="SGST" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IGST" msprop:Generator_ColumnVarNameInTable="columnIGST" msprop:Generator_ColumnPropNameInRow="IGST" msprop:Generator_ColumnPropNameInTable="IGSTColumn" msprop:Generator_UserColumnName="IGST" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NET_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnNET_AMOUNT" msprop:Generator_ColumnPropNameInRow="NET_AMOUNT" msprop:Generator_ColumnPropNameInTable="NET_AMOUNTColumn" msprop:Generator_UserColumnName="NET_AMOUNT" type="xs:decimal" />
+              <xs:element name="CUSTOMER_ID" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_ID" msprop:Generator_ColumnPropNameInRow="CUSTOMER_ID" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IDColumn" msprop:Generator_UserColumnName="CUSTOMER_ID" type="xs:int" />
+              <xs:element name="COMPANY_ID" msprop:Generator_ColumnVarNameInTable="columnCOMPANY_ID" msprop:Generator_ColumnPropNameInRow="COMPANY_ID" msprop:Generator_ColumnPropNameInTable="COMPANY_IDColumn" msprop:Generator_UserColumnName="COMPANY_ID" type="xs:int" />
+              <xs:element name="APPROVAL_CHECK" msprop:Generator_ColumnVarNameInTable="columnAPPROVAL_CHECK" msprop:Generator_ColumnPropNameInRow="APPROVAL_CHECK" msprop:Generator_ColumnPropNameInTable="APPROVAL_CHECKColumn" msprop:Generator_UserColumnName="APPROVAL_CHECK" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

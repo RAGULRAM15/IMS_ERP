@@ -103,6 +103,7 @@ namespace IMS
             this.dtg_iapproval.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtg_iapproval.Location = new System.Drawing.Point(0, 129);
             this.dtg_iapproval.Name = "dtg_iapproval";
+            this.dtg_iapproval.ReadOnly = true;
             this.dtg_iapproval.ShowRowErrors = false;
             this.dtg_iapproval.Size = new System.Drawing.Size(800, 321);
             this.dtg_iapproval.TabIndex = 97;
@@ -115,6 +116,7 @@ namespace IMS
             this.INVOICE_NO.DefaultCellStyle = dataGridViewCellStyle2;
             this.INVOICE_NO.HeaderText = "ENTRY NO";
             this.INVOICE_NO.Name = "INVOICE_NO";
+            this.INVOICE_NO.ReadOnly = true;
             // 
             // INVOICE_DATE
             // 
@@ -123,6 +125,7 @@ namespace IMS
             this.INVOICE_DATE.DefaultCellStyle = dataGridViewCellStyle3;
             this.INVOICE_DATE.HeaderText = "ENTRY DATE";
             this.INVOICE_DATE.Name = "INVOICE_DATE";
+            this.INVOICE_DATE.ReadOnly = true;
             // 
             // CUSTOMER_NAME
             // 
@@ -131,6 +134,7 @@ namespace IMS
             this.CUSTOMER_NAME.DefaultCellStyle = dataGridViewCellStyle4;
             this.CUSTOMER_NAME.HeaderText = "CUSTOMER NAME";
             this.CUSTOMER_NAME.Name = "CUSTOMER_NAME";
+            this.CUSTOMER_NAME.ReadOnly = true;
             // 
             // NET_AMOUNT
             // 
@@ -139,6 +143,7 @@ namespace IMS
             this.NET_AMOUNT.DefaultCellStyle = dataGridViewCellStyle5;
             this.NET_AMOUNT.HeaderText = "AMOUNT";
             this.NET_AMOUNT.Name = "NET_AMOUNT";
+            this.NET_AMOUNT.ReadOnly = true;
             // 
             // APPROVAL_CHECK
             // 
@@ -149,6 +154,7 @@ namespace IMS
             this.APPROVAL_CHECK.DefaultCellStyle = dataGridViewCellStyle6;
             this.APPROVAL_CHECK.HeaderText = "SELECT";
             this.APPROVAL_CHECK.Name = "APPROVAL_CHECK";
+            this.APPROVAL_CHECK.ReadOnly = true;
             this.APPROVAL_CHECK.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.APPROVAL_CHECK.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.APPROVAL_CHECK.Visible = false;
@@ -158,6 +164,7 @@ namespace IMS
             this.CUSTOMER_ID.DataPropertyName = "CUSTOMER_ID";
             this.CUSTOMER_ID.HeaderText = "CUSTOMER ID";
             this.CUSTOMER_ID.Name = "CUSTOMER_ID";
+            this.CUSTOMER_ID.ReadOnly = true;
             this.CUSTOMER_ID.Visible = false;
             // 
             // label9

@@ -32,6 +32,9 @@ namespace IMS
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_item));
             this.dgv_item = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSN_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_item = new System.Windows.Forms.TextBox();
             this.txt3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,9 +51,14 @@ namespace IMS
             // dgv_item
             // 
             this.dgv_item.AllowUserToAddRows = false;
-            this.dgv_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.dgv_item.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.dgv_item.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_item.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.ITEM_NAME,
+            this.HSN_CODE});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,11 +69,34 @@ namespace IMS
             this.dgv_item.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_item.Location = new System.Drawing.Point(36, 115);
             this.dgv_item.Name = "dgv_item";
+            this.dgv_item.ReadOnly = true;
             this.dgv_item.Size = new System.Drawing.Size(317, 311);
             this.dgv_item.TabIndex = 3;
             this.dgv_item.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_item_CellContentClick);
             this.dgv_item.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_item_CellDoubleClick);
             this.dgv_item.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_item_DataBindingComplete);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // ITEM_NAME
+            // 
+            this.ITEM_NAME.DataPropertyName = "ITEM_NAME";
+            this.ITEM_NAME.HeaderText = "ITEM NAME";
+            this.ITEM_NAME.Name = "ITEM_NAME";
+            this.ITEM_NAME.ReadOnly = true;
+            // 
+            // HSN_CODE
+            // 
+            this.HSN_CODE.DataPropertyName = "HSN_CODE";
+            this.HSN_CODE.HeaderText = "HSN CODE";
+            this.HSN_CODE.Name = "HSN_CODE";
+            this.HSN_CODE.ReadOnly = true;
             // 
             // txt_item
             // 
@@ -182,7 +213,7 @@ namespace IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(395, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -221,5 +252,8 @@ namespace IMS
         private System.Windows.Forms.Button txt_delete;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button txt_add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HSN_CODE;
     }
 }

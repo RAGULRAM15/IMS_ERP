@@ -33,6 +33,9 @@ namespace IMS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_state));
             this.txt3 = new System.Windows.Forms.TextBox();
             this.dtgF4 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATE_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtstate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,6 +63,10 @@ namespace IMS
             this.dtgF4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
             this.dtgF4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgF4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgF4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.STATE,
+            this.STATE_CODE});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,12 +77,35 @@ namespace IMS
             this.dtgF4.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgF4.Location = new System.Drawing.Point(12, 123);
             this.dtgF4.Name = "dtgF4";
+            this.dtgF4.ReadOnly = true;
             this.dtgF4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgF4.Size = new System.Drawing.Size(368, 315);
             this.dtgF4.TabIndex = 23;
             this.dtgF4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgF4_CellContentClick);
             this.dtgF4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgF4_CellDoubleClick);
             this.dtgF4.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgF4_DataBindingComplete);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // STATE
+            // 
+            this.STATE.DataPropertyName = "STATE";
+            this.STATE.HeaderText = "STATE";
+            this.STATE.Name = "STATE";
+            this.STATE.ReadOnly = true;
+            // 
+            // STATE_CODE
+            // 
+            this.STATE_CODE.DataPropertyName = "STATE_CODE";
+            this.STATE_CODE.HeaderText = "STATE CODE";
+            this.STATE_CODE.Name = "STATE_CODE";
+            this.STATE_CODE.ReadOnly = true;
             // 
             // txtstate
             // 
@@ -222,5 +252,8 @@ namespace IMS
         private System.Windows.Forms.Button txt_delete;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button txt_add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATE_CODE;
     }
 }

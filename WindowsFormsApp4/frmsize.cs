@@ -65,6 +65,7 @@ namespace IMS
       int nWidthEllipse,
       int nHeightEllipse
      );
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         private void txt_delete_Click(object sender, EventArgs e)
         {
             int rowIndex = dgv_item.CurrentCell.RowIndex;
@@ -72,7 +73,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_SIZE WHERE SIZE_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -102,18 +103,18 @@ namespace IMS
         private void txt_item_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf5 popup = new frmf5();
-                string _query = "SELECT SIZE_ID AS [ID], SIZE_NAME FROM M_SIZE WHERE ACTIVE = 1";
-                popup.ShowF2(_query, "SIZE_NAME", ((TextBox)sender).Text, "SIZE_NAME", sender);
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf5 popup = new frmf5();
+            //    string _query = "SELECT SIZE_ID AS [ID], SIZE_NAME FROM M_SIZE WHERE ACTIVE = 1";
+            //    popup.ShowF2(_query, "SIZE_NAME", ((TextBox)sender).Text, "SIZE_NAME", sender);
 
 
-            }
+            //}
         }
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           
             String str = "SELECT SIZE_ID AS [ID], SIZE_NAME FROM M_SIZE WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -132,7 +133,7 @@ namespace IMS
 
         private void txt_item_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT SIZE_ID AS [ID], SIZE_NAME FROM M_SIZE WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);

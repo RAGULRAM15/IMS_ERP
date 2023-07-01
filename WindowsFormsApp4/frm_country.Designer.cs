@@ -33,6 +33,9 @@ namespace IMS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_country));
             this.txt3 = new System.Windows.Forms.TextBox();
             this.dtgF4 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COUNTRY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COUNTRY_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtcountry = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,9 +60,13 @@ namespace IMS
             // 
             this.dtgF4.AllowUserToAddRows = false;
             this.dtgF4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgF4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(153)))), ((int)(((byte)(199)))));
+            this.dtgF4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.dtgF4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgF4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgF4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.COUNTRY,
+            this.COUNTRY_CODE});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,10 +77,33 @@ namespace IMS
             this.dtgF4.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgF4.Location = new System.Drawing.Point(39, 124);
             this.dtgF4.Name = "dtgF4";
+            this.dtgF4.ReadOnly = true;
             this.dtgF4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgF4.Size = new System.Drawing.Size(458, 349);
             this.dtgF4.TabIndex = 28;
             this.dtgF4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgF4_CellDoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // COUNTRY
+            // 
+            this.COUNTRY.DataPropertyName = "COUNTRY";
+            this.COUNTRY.HeaderText = "COUNTRY";
+            this.COUNTRY.Name = "COUNTRY";
+            this.COUNTRY.ReadOnly = true;
+            // 
+            // COUNTRY_CODE
+            // 
+            this.COUNTRY_CODE.DataPropertyName = "COUNTRY_CODE";
+            this.COUNTRY_CODE.HeaderText = "COUNTRY CODE";
+            this.COUNTRY_CODE.Name = "COUNTRY_CODE";
+            this.COUNTRY_CODE.ReadOnly = true;
             // 
             // txtcountry
             // 
@@ -180,7 +210,7 @@ namespace IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(153)))), ((int)(((byte)(199)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(546, 485);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -219,5 +249,8 @@ namespace IMS
         private System.Windows.Forms.Button txt_delete;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button txt_add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COUNTRY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COUNTRY_CODE;
     }
 }

@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Microsoft.Reporting.WinForms;
+
 
 namespace IMS
 {
@@ -31,6 +33,7 @@ namespace IMS
         public static int year_id { get; set; }
         public static string NAME_ID { get; set; }
         public static string STATUS { get; set; }
+        public static string CUSTOMER { get; set; }
         public static string user_name { get; set; }
         public static int count_qut { get; set; }
         String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
@@ -437,6 +440,26 @@ namespace IMS
                     {
                         e.HasMorePages = false;
                     }
+                    if (numberOfItemsPrintedSoFar >= dtg_qut.Rows.Count)
+
+                    {
+                        //int lastRowIndex = dtg_inv.Rows.Count - 1;
+                        //int lastRowHeight = dtg_inv.Rows[lastRowIndex].GetPreferredHeight(lastRowIndex, DataGridViewAutoSizeRowMode.AllCells, true);
+                        //float lastlLineY = e.MarginBounds.Bottom - lastRowHeight;
+                        string S4 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, height + 22);
+                        e.Graphics.DrawString("Net Amount : ", dtg_qut.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut.Columns[0].Width = 500, height + 44);
+                        double sum = 0;
+                        for (int i = 0; i < dtg_qut.Rows.Count; i++)
+                        {
+                            sum += Convert.ToDouble(dtg_qut.Rows[i].Cells["TOTAL"].Value.ToString());
+
+                        }
+                        e.Graphics.DrawString(sum.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut.Columns[0].Width = 600, height + 44);
+
+
+
+                    }
 
                 }
                 else
@@ -464,20 +487,28 @@ namespace IMS
                         DataGridViewRow edit_row = dtg_qut.Rows[rowIndex];
                         value1 = edit_row.Cells["QUOTATION_NO"].Value.ToString();
                         STATUS = edit_row.Cells["STATUS"].Value.ToString();
-
-                        if (STATUS == "ACTIVE")
+                    CUSTOMER = edit_row.Cells["CUSTOMER_NAME"].Value.ToString();
+                    if (STATUS == "ACTIVE")
                         {
-                            frmQuotation detialform = new frmQuotation();
-                            detialform.MdiParent = frm_mid.ActiveForm;
-                            // detialform.mode = "VIEW QUOTATION";
+                        Frm_Quotation_print detialform = new Frm_Quotation_print();
+                        detialform.mode = "PRINT QUOTATION";
+                        detialform.MdiParent = frm_mid.ActiveForm;
 
-                            //value2 = edit_row.Cells[0].Value.ToString();
-                            //value2 = edit_row.Cells["CUSTOMER_ID"].Value.ToString();
-                            detialform.print_form();
+                        //value2 = edit_row.Cells["CUSTOMER_NAME"].Value.ToString();
+                        //detialform.print_form();
+                        detialform.Show();
+                       // this.Hide();
+                        //frmQuotation detialform = new frmQuotation();
+                        //detialform.MdiParent = frm_mid.ActiveForm;
+                        //// detialform.mode = "VIEW QUOTATION";
 
-                        }
-                       
+                        ////value2 = edit_row.Cells[0].Value.ToString();
+                        ////value2 = edit_row.Cells["CUSTOMER_ID"].Value.ToString();
+                        //detialform.print_form();
+
                     }
+
+                }
                     else
                     {
                         if (printPreviewDialog.ShowDialog() != 0)
@@ -517,7 +548,7 @@ namespace IMS
         private void btn_load_Click(object sender, EventArgs e)
         {
            
-            String str = "SELECT QUOTATION_ID , QUOTATION_NO,QUOTATION_DATE,CUSTOMER_NAME,TOTAL,STATUS FROM T_QUOTATION" +
+            String str = "SELECT  QUOTATION_NO,QUOTATION_DATE,CUSTOMER_NAME,TOTAL,STATUS FROM T_QUOTATION" +
                 "   INNER JOIN[M_CUSTOMER] ON [T_QUOTATION].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID " +
                 " WHERE [T_QUOTATION].COMPANY_ID =" + camp_id + "" +
                 " order by QUOTATION_ID desc";

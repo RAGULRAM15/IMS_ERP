@@ -25,6 +25,7 @@ namespace IMS
             from_date();
             year_id = frm_mid.year_id;
             //DROP();
+            from_date();
         }
         private void label5_Click(object sender, EventArgs e)
         {
@@ -54,9 +55,11 @@ namespace IMS
 
 
                 }
+                dr.Close();
+                conn.Close();
             }
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+       
         public void company_name()
         {
 
@@ -148,17 +151,18 @@ namespace IMS
             //int item = txt_company.SelectedIndex;
             //txt_company.Tag = item;
         }
-
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         private void btn_gridview_Click(object sender, EventArgs e)
         {
             dtg_inv_report.Visible = true;
             txt_total.Visible = true;
             if (txt_customer.Text != "")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
-                String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,SUB_TOTAL FROM T_INVOICE" +
+                
+                String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,NET_AMOUNT FROM T_INVOICE" +
                     "   INNER JOIN [M_CUSTOMER] ON [T_INVOICE].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
-                    " WHERE T_INVOICE.CUSTOMER_ID=" + txt_customer.Tag + " AND T_INVOICE.COMPANY_ID =" + txt_company.Tag + "";
+                    " WHERE T_INVOICE.CUSTOMER_ID=" + txt_customer.Tag + " AND T_INVOICE.COMPANY_ID =" + txt_company.Tag + "" +
+                    "ORDER BY INVOICE_ID";
 
 
                 using (SqlConnection conn = new SqlConnection(ConnString))
@@ -172,16 +176,22 @@ namespace IMS
                     DA.Fill(DT);
                     dtg_inv_report.DataSource = DT.Tables[0];
                     conn.Close();
+                    DateTime startDate = txt_from.Value.Date;
+                    DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                    DataView dv = DT.Tables[0].DefaultView;
+                    dv.RowFilter = "INVOICE_DATE >= '" + startDate + "' AND INVOICE_DATE <= '" + endDate + "'";
+                    dtg_inv_report.DataSource = dv;
                 }
             }
             else
             {
                 if (txt_customer.Text == "")
                 {
-                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
-                    String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,SUB_TOTAL FROM T_INVOICE" +
+                    
+                    String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,NET_AMOUNT FROM T_INVOICE" +
                         "   INNER JOIN [M_CUSTOMER] ON [T_INVOICE].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
-                        " WHERE COMPANY_ID=" + txt_company.Tag + "";
+                        " WHERE COMPANY_ID=" + txt_company.Tag + "" +
+                        "ORDER BY INVOICE_ID";
 
 
                     using (SqlConnection conn = new SqlConnection(ConnString))
@@ -195,6 +205,11 @@ namespace IMS
                         DA.Fill(DT);
                         dtg_inv_report.DataSource = DT.Tables[0];
                         conn.Close();
+                        DateTime startDate = txt_from.Value.Date;
+                        DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                        DataView dv = DT.Tables[0].DefaultView;
+                        dv.RowFilter = "INVOICE_DATE >= '" + startDate + "' AND INVOICE_DATE <= '" + endDate + "'";
+                        dtg_inv_report.DataSource = dv;
                     }
                 }
             }
@@ -315,7 +330,33 @@ namespace IMS
 
                         e.HasMorePages = false;
                     }
+                    if (numberOfItemsPrintedSoFar >= dtg_inv_report.Rows.Count)
 
+                    {
+                        //int lastRowIndex = dtg_inv.Rows.Count - 1;
+                        //int lastRowHeight = dtg_inv.Rows[lastRowIndex].GetPreferredHeight(lastRowIndex, DataGridViewAutoSizeRowMode.AllCells, true);
+                        //float lastlLineY = e.MarginBounds.Bottom - lastRowHeight;
+                        string S4 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, height + 22);
+                        e.Graphics.DrawString("TOTAL : ", dtg_inv_report.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_inv_report.Columns[0].Width = 10, height + 44);
+
+
+                        double sum = 0;
+                        int value = 0;
+                        for (int i = 0; i < dtg_inv_report.Rows.Count; i++)
+                        {
+                            sum += Convert.ToDouble(dtg_inv_report.Rows[i].Cells["NET_AMOUNT"].Value.ToString());
+                            
+                        }
+                        value = Convert.ToInt32(dtg_inv_report.Rows.Count.ToString());
+                        e.Graphics.DrawString(value.ToString(), dtg_inv_report.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_inv_report.Columns[0].Width = 80, height + 44);
+                        e.Graphics.DrawString(sum.ToString(), dtg_inv_report.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_inv_report.Columns[0].Width = 700, height + 44);
+
+                        string S5 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S5, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, height + 66);
+
+
+                    }
                 }
                 else
                 {
@@ -336,10 +377,11 @@ namespace IMS
         {
             if (txt_customer.Text != "")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
-                String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,SUB_TOTAL FROM T_INVOICE" +
+               
+                String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,NET_AMOUNT FROM T_INVOICE" +
                     "   INNER JOIN [M_CUSTOMER] ON [T_INVOICE].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
-                    " WHERE T_INVOICE.CUSTOMER_ID =" + txt_customer.Tag + " AND T_INVOICE.COMPANY_ID ="+txt_company.Tag+"";
+                    " WHERE T_INVOICE.CUSTOMER_ID =" + txt_customer.Tag + " AND T_INVOICE.COMPANY_ID ="+txt_company.Tag+"" +
+                    "ORDER BY INVOICE_ID";
 
 
                 using (SqlConnection conn = new SqlConnection(ConnString))
@@ -353,6 +395,11 @@ namespace IMS
                     DA.Fill(DT);
                     dtg_inv_report.DataSource = DT.Tables[0];
                     conn.Close();
+                    DateTime startDate = txt_from.Value.Date;
+                    DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                    DataView dv = DT.Tables[0].DefaultView;
+                    dv.RowFilter = "INVOICE_DATE >= '" + startDate + "' AND INVOICE_DATE <= '" + endDate + "'";
+                    dtg_inv_report.DataSource = dv;
                     printPreviewDialog.ShowDialog();
                 }
             }
@@ -360,10 +407,11 @@ namespace IMS
             {
                 if (txt_customer.Text == "")
                 {
-                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
-                    String str = "SELECT INVOICE_ID ,INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,SUB_TOTAL FROM T_INVOICE" +
+                   
+                    String str = "SELECT INVOICE_ID ,INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,NET_AMOUNT FROM T_INVOICE" +
                         "   INNER JOIN [M_CUSTOMER] ON [T_INVOICE].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
-                        " WHERE COMPANY_ID=" + txt_company.Tag + "";
+                        " WHERE COMPANY_ID=" + txt_company.Tag + "" +
+                        "ORDER BY INVOICE_ID";
 
 
                     using (SqlConnection conn = new SqlConnection(ConnString))
@@ -377,6 +425,11 @@ namespace IMS
                         DA.Fill(DT);
                         dtg_inv_report.DataSource = DT.Tables[0];
                         conn.Close();
+                        DateTime startDate = txt_from.Value.Date;
+                        DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                        DataView dv = DT.Tables[0].DefaultView;
+                        dv.RowFilter = "INVOICE_DATE >= '" + startDate + "' AND INVOICE_DATE <= '" + endDate + "'";
+                        dtg_inv_report.DataSource = dv;
                         printPreviewDialog.ShowDialog();
                     }
                 }

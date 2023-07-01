@@ -51,7 +51,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_BANK WHERE BANK = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -74,17 +74,18 @@ namespace IMS
 
         private void txtbank_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf2 popup = new frmf2();
-                String Query = "SELECT BANK_ID AS [ID],BANK,ACCOUNT_NO FROM M_BANK";
-                popup.ShowF2(Query, "BANK", ((TextBox)sender).Text, "BANK", sender);
-            }
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf2 popup = new frmf2();
+            //    String Query = "SELECT BANK_ID AS [ID],BANK,ACCOUNT_NO FROM M_BANK";
+            //    popup.ShowF2(Query, "BANK", ((TextBox)sender).Text, "BANK", sender);
+            //}
         }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
-            String str = "SELECT BANK,ACCOUNT_NO FROM M_BANK";
+            
+            String str = "SELECT BANK,ACCOUNT_NO FROM M_BANK WHERE BANK <> 'NOT BANK TRANSACTION'";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
             {
@@ -129,7 +130,7 @@ namespace IMS
 
         private void txtbank_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
             String str = "SELECT BANK,ACCOUNT_NO FROM M_BANK";
 
             SqlConnection conn = new SqlConnection(ConnString);

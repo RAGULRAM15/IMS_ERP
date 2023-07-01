@@ -18,6 +18,7 @@ namespace IMS
         {
             InitializeComponent();
         }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         public static string value1 { get; set; }
         public static string value2 { get; set; }
         private void btn_add_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace IMS
             value1 = edit_row.Cells["COMPANY_NAME"].Value.ToString();
             txt1.Text = value1;
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = "DELETE FROM M_COMPANY WHERE COMPANY_NAME = '" + txt1.Text + "'";
             //String sqlquery = "DELETE FROM T_QUOTATION WHERE QUOTATION_NO = '" + txtquotation.Text + "'";
@@ -125,7 +126,7 @@ namespace IMS
         }
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           
             String str = "SELECT COMPANY_ID AS [ID],COMPANY_NAME,GSTIN FROM M_COMPANY" +
                 " WHERE ACTIVE =1";
 
@@ -152,7 +153,7 @@ namespace IMS
         private void txtcompany_TextChanged(object sender, EventArgs e)
         {
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
             String str = "SELECT COMPANY_ID AS [ID],COMPANY_NAME,GST_NO FROM M_COMPANY WHERE ACTIVE =1";
 
             SqlConnection conn = new SqlConnection(ConnString);

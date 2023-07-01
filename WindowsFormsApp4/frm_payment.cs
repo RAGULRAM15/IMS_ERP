@@ -816,6 +816,7 @@ namespace IMS
                 //    MessageBox.Show(ex.Message);
                 //}
             }
+            Address();
          }
         DataTable dt = new DataTable();
         DataTable dk = new DataTable();
@@ -908,6 +909,7 @@ namespace IMS
                 ///*btnadd*/.Enabled = false;
 
             }
+            Address();
         }
         public void DELETE_form()
         {
@@ -995,6 +997,7 @@ namespace IMS
                 ///*btnadd*/.Enabled = false;
 
             }
+            Address();
         }
         //public void print_form()
         //{
@@ -1039,7 +1042,8 @@ namespace IMS
             {
                 frmf2 popup = new frmf2();
                 popup.MdiParent = frm_mid.ActiveForm;
-                string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, CUSTOMER_TITLE FROM M_CUSTOMER WHERE ACTIVE = 1";
+                popup.mode = "payment";
+                string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, C.CITY FROM M_CUSTOMER CU INNER JOIN M_CITY C ON C.CITY_ID = CU.CITY_ID WHERE CU.ACTIVE = 1";
                 popup.ShowF2(_query, "CUSTOMER_NAME", ((TextBox)sender).Text, "CUSTOMER_NAME", sender);
             }
         }
@@ -1594,8 +1598,11 @@ namespace IMS
         String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         private void dtg_pay_bank_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            foreach (DataGridViewColumn column in dtg_pay_bank.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
 
-            
         }
         public DateTimePicker dateTimePicker;
         private void dtg_pay_bank_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -1723,8 +1730,7 @@ namespace IMS
                 payment_List.Show();
             }
         }
-
-        private void txtcustomer_TextChanged(object sender, EventArgs e)
+        public void Address()
         {
             if (txtcustomer.Tag != null)
             {
@@ -1751,6 +1757,10 @@ namespace IMS
                     amount_add();
                 }
             }
+        }
+        private void txtcustomer_TextChanged(object sender, EventArgs e)
+        {
+           
         }
         public void ITEM_LOAD()
         {
@@ -2113,6 +2123,10 @@ namespace IMS
                 {
                     gridView.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
                 }
+            }
+            foreach (DataGridViewColumn column in dtg_credit.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
 

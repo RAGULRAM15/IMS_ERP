@@ -302,7 +302,7 @@ namespace IMS
             // 
             // printDialog
             // 
-            this.printDialog.Document = this.printDocument;
+            this.printDialog.Document = this.printDocument1;
             this.printDialog.UseEXDialog = true;
             // 
             // printPreviewDialog
@@ -310,11 +310,15 @@ namespace IMS
             this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog.Document = this.printDocument;
+            this.printPreviewDialog.Document = this.printDocument1;
             this.printPreviewDialog.Enabled = true;
             this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
             // dtg_qut
             // 
@@ -366,6 +370,7 @@ namespace IMS
             this.dtg_qut.ShowRowErrors = false;
             this.dtg_qut.Size = new System.Drawing.Size(1164, 411);
             this.dtg_qut.TabIndex = 109;
+            this.dtg_qut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_qut_CellContentClick_1);
             this.dtg_qut.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_qut_CellEnter);
             this.dtg_qut.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtg_qut_DataBindingComplete_1);
             // 

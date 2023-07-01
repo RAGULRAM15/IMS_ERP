@@ -30,10 +30,13 @@ namespace IMS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_company));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt1 = new System.Windows.Forms.TextBox();
             this.btn_view = new System.Windows.Forms.Button();
             this.dtgF4 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COMPANY_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GST_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtcompany = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,23 +74,50 @@ namespace IMS
             // 
             this.dtgF4.AllowUserToAddRows = false;
             this.dtgF4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgF4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(152)))), ((int)(((byte)(78)))));
+            this.dtgF4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.dtgF4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgF4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgF4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgF4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.COMPANY_NAME,
+            this.GST_NO});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgF4.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgF4.Location = new System.Drawing.Point(31, 130);
             this.dtgF4.Name = "dtgF4";
+            this.dtgF4.ReadOnly = true;
             this.dtgF4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgF4.Size = new System.Drawing.Size(458, 358);
             this.dtgF4.TabIndex = 23;
             this.dtgF4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgF4_CellDoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // COMPANY_NAME
+            // 
+            this.COMPANY_NAME.DataPropertyName = "COMPANY_NAME";
+            this.COMPANY_NAME.HeaderText = "COMPANY NAME";
+            this.COMPANY_NAME.Name = "COMPANY_NAME";
+            this.COMPANY_NAME.ReadOnly = true;
+            // 
+            // GST_NO
+            // 
+            this.GST_NO.DataPropertyName = "GSTIN";
+            this.GST_NO.HeaderText = "GST NO";
+            this.GST_NO.Name = "GST_NO";
+            this.GST_NO.ReadOnly = true;
             // 
             // txtcompany
             // 
@@ -205,7 +235,7 @@ namespace IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(152)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(523, 493);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -248,5 +278,8 @@ namespace IMS
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button txt_add;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COMPANY_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GST_NO;
     }
 }

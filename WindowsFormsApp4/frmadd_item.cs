@@ -304,28 +304,29 @@ namespace IMS
             }
             txt_left.Text = sb.ToString();
             txt_right.SelectedText = "";
-            string selectedText = txt_right.SelectedText;
-            int selectionStart = txt_right.SelectionStart;
+            txt_right.SelectedText = txt_right.SelectedText.Trim();
+            //string selectedText = txt_right.SelectedText;
+            //int selectionStart = txt_right.SelectionStart;
 
-            if (selectionStart > 0)
-            {
-                // Find the index of the previous character
+            //if (selectionStart > 0)
+            //{
+            //    // Find the index of the previous character
                
 
-                txt_right.SelectedText = txt_right.SelectedText.Remove(selectedText.Length - selectedText.Length);
-                //if(selectedText == )
-                //{
-                //    int previousCharIndex = selectionStart - 1;
+            //    txt_right.SelectedText = txt_right.SelectedText.Remove(selectedText.Length - selectedText.Length);
+            //    //if(selectedText == )
+            //    //{
+            //    //    int previousCharIndex = selectionStart - 1;
 
-                //    // Swap the selected text with the previous character
-                //    string previousChar = txt_right.Text.Substring(previousCharIndex, 1);
-                //    txt_right.Text = txt_right.Text.Remove(previousCharIndex, 1);
-                //    txt_right.Text = txt_right.Text.Insert(previousCharIndex + selectedText.Length, previousChar);
+            //    //    // Swap the selected text with the previous character
+            //    //    string previousChar = txt_right.Text.Substring(previousCharIndex, 1);
+            //    //    txt_right.Text = txt_right.Text.Remove(previousCharIndex, 1);
+            //    //    txt_right.Text = txt_right.Text.Insert(previousCharIndex + selectedText.Length, previousChar);
 
-                //    // Update the selection
-                //    txt_right.Select(previousCharIndex, selectedText.Length);
-                //}
-            }
+            //    //    // Update the selection
+            //    //    txt_right.Select(previousCharIndex, selectedText.Length);
+            //    //}
+            //}
 
 
 
@@ -430,6 +431,30 @@ namespace IMS
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_left_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                // Get the clicked line index
+                int clickedLineIndex = txt_left.GetLineFromCharIndex(txt_left.SelectionStart);
+
+                // Calculate the start and end positions of the clicked line
+                int clickedLineStart = txt_left.GetFirstCharIndexFromLine(clickedLineIndex);
+                int clickedLineEnd = txt_left.GetFirstCharIndexFromLine(clickedLineIndex + 1);
+                if (clickedLineEnd == -1)  // If it's the last line
+                    clickedLineEnd = txt_left.Text.Length;
+
+                // Select the entire line
+                txt_left.SelectionStart = clickedLineStart;
+                txt_left.SelectionLength = clickedLineEnd - clickedLineStart;
+            }
+        }
+
+        private void txt_right_MouseDown(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

@@ -353,13 +353,13 @@ namespace IMS
             e.Graphics.DrawString(g2, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 150, 140);
 
             string g3 = "CUSTOMER NAME";
-            e.Graphics.DrawString(g3, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 350, 140);
+            e.Graphics.DrawString(g3, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 430, 140);
 
             string g4 = "TOTAL";
-            e.Graphics.DrawString(g4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 590, 140);
+            e.Graphics.DrawString(g4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 710, 140);
 
-            string g5 = "STATUS";
-            e.Graphics.DrawString(g5, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 710, 140);
+            //string g5 = "STATUS";
+            //e.Graphics.DrawString(g5, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 710, 140);
 
             string l2 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
             e.Graphics.DrawString(l2, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, 160);
@@ -376,12 +376,12 @@ namespace IMS
                     {
 
                         height += dtg_qut.Rows[0].Height;
-                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["INVOICE_NO"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(40, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
-                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["INVOICE_DATE"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(160, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
-                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["CUSTOMER_NAME"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(320, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
-                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["TOTAL"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(600, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
+                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["PAYMENT_NO"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(40, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
+                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["PAYMENT_DATE"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(160, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
+                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["CUSTOMER_NAME"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black,  400, height );
+                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["RECEIVED"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, 715, height);
 
-                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["STATUS"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(700, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
+                        //e.Graphics.DrawString(dtg_qut.Rows[l].Cells["STATUS"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(700, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
                         //string S4 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
                         //e.Graphics.DrawString(S4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, 160);
                         //S4 = height + Convert.ToInt32(S4).ToString();
@@ -391,6 +391,27 @@ namespace IMS
                     {
                         e.HasMorePages = false;
                     }
+                    if (numberOfItemsPrintedSoFar >= dtg_qut.Rows.Count)
+
+                    {
+                        //int lastRowIndex = dtg_inv.Rows.Count - 1;
+                        //int lastRowHeight = dtg_inv.Rows[lastRowIndex].GetPreferredHeight(lastRowIndex, DataGridViewAutoSizeRowMode.AllCells, true);
+                        //float lastlLineY = e.MarginBounds.Bottom - lastRowHeight;
+                        string S4 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, height + 22);
+                        //e.Graphics.DrawString("Net Amount : ", dtg_qut.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut.Columns[0].Width = 500, height + 44);
+                        //double sum = 0;
+                        //for (int i = 0; i < dtg_qut.Rows.Count; i++)
+                        //{
+                        //    sum += Convert.ToDouble(dtg_qut.Rows[i].Cells["TOTAL"].Value.ToString());
+
+                        //}
+                        //e.Graphics.DrawString(sum.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut.Columns[0].Width = 600, height + 44);
+
+
+
+                    }
+
 
                 }
                 else
@@ -659,6 +680,11 @@ namespace IMS
                 txt_fillter.Text = "Customer Name";
                 txt_fillter.ForeColor = SystemColors.GrayText;
             }
+        }
+
+        private void txt_fillter_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

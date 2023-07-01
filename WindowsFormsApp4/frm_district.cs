@@ -27,6 +27,7 @@ namespace IMS
             f4.Show();
             this.Hide();
         }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         public static string value { get; set; }
         public static string value1 { get; set; }
         public static string value2 { get; set; }
@@ -51,7 +52,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_DISTRICT WHERE DISTRICT_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -68,7 +69,7 @@ namespace IMS
         }
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT DISTRICT_ID AS [ID], DISTRICT, DISTRICT_CODE FROM M_DISTRICT WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -92,13 +93,13 @@ namespace IMS
 
         private void txtdistrict_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf2 popup = new frmf2();
+           // if (e.KeyCode == Keys.F2)
+           // {
+            //    frmf2 popup = new frmf2();
                 // string _query = "SELECT DISTRICT_ID AS [ID], DISTRICT, DISTRICT_CODE FROM M_DISTRICT WHERE ACTIVE = 1";
-                string _query = "SELECT DISTRICT_ID AS [ID], DISTRICT, S.STATE FROM [M_DISTRICT] D INNER JOIN[dbo].[M_STATE] S ON D.STATE_ID = S.STATE_ID WHERE D.ACTIVE = 1";
-                popup.ShowF2(_query, "District", ((TextBox)sender).Text, "District", sender);
-            }
+              //  string _query = "SELECT DISTRICT_ID AS [ID], DISTRICT, S.STATE FROM [M_DISTRICT] D INNER JOIN[dbo].[M_STATE] S ON D.STATE_ID = S.STATE_ID WHERE D.ACTIVE = 1";
+              //  popup.ShowF2(_query, "District", ((TextBox)sender).Text, "District", sender);
+           // }
         }
 
         private void dtgF4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -136,7 +137,7 @@ namespace IMS
 
         private void txtdistrict_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
             String str = "SELECT DISTRICT_ID AS [ID], DISTRICT, DISTRICT_CODE FROM M_DISTRICT WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);

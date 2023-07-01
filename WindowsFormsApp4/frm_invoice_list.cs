@@ -22,6 +22,7 @@ namespace IMS
         public static int comp_id { get; set; }
         public static int year_id { get; set; }
         public static string user_name { get; set; }
+        public static string CUSTOMER { get; set; }
         private void frm_invoice_main_Load(object sender, EventArgs e)
         {
             comp_id = frm_mid.comp_id;
@@ -325,7 +326,7 @@ namespace IMS
         }
         public void from_date()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
 
             String str = "SELECT FY_YEAR_ID, FROM_DATE, TO_DATE  FROM M_FY_YEAR where  FY_YEAR_ID =" + year_id + "";
 
@@ -350,7 +351,7 @@ namespace IMS
         }
         public void to_date()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
 
             String str = "SELECT fy_year_id, to_date FROM m_fy_year where  fy_year_id =" + year_id + "";
 
@@ -437,7 +438,8 @@ namespace IMS
             e.Graphics.DrawString(l2, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, 160);
 
             int height = 165;
-            for (int l = numberOfItemsPrintedSoFar; l < dtg_inv.Rows.Count; l++)
+            int l;
+            for (l = numberOfItemsPrintedSoFar; l < dtg_inv.Rows.Count; l++)
             {
                 numberOfItemsPerPage = numberOfItemsPerPage + 1;
                 if (numberOfItemsPerPage <= 50)
@@ -449,8 +451,8 @@ namespace IMS
 
                         height += dtg_inv.Rows[0].Height;
                         e.Graphics.DrawString(dtg_inv.Rows[l].Cells["INVOICE_NO"].FormattedValue.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(40, height, dtg_inv.Columns[0].Width = 200, dtg_inv.Rows[0].Height));
-                        e.Graphics.DrawString(dtg_inv.Rows[l].Cells["INVOICE_DATE"].FormattedValue.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(160, height, dtg_inv.Columns[0].Width = 200, dtg_inv.Rows[0].Height));
-                        e.Graphics.DrawString(dtg_inv.Rows[l].Cells["CUSTOMER_NAME"].FormattedValue.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(320, height, dtg_inv.Columns[0].Width = 200, dtg_inv.Rows[0].Height));
+                        e.Graphics.DrawString(dtg_inv.Rows[l].Cells[2].FormattedValue.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(160, height, dtg_inv.Columns[0].Width = 200, dtg_inv.Rows[0].Height));
+                        e.Graphics.DrawString(dtg_inv.Rows[l].Cells[3].FormattedValue.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(320, height, dtg_inv.Columns[0].Width = 200, dtg_inv.Rows[0].Height));
                         e.Graphics.DrawString(dtg_inv.Rows[l].Cells["TOTAL"].FormattedValue.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(600, height, dtg_inv.Columns[0].Width = 200, dtg_inv.Rows[0].Height));
 
                         e.Graphics.DrawString(dtg_inv.Rows[l].Cells["STATUS"].FormattedValue.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(700, height, dtg_inv.Columns[0].Width = 200, dtg_inv.Rows[0].Height));
@@ -459,10 +461,32 @@ namespace IMS
                         //S4 = height + Convert.ToInt32(S4).ToString();
 
                     }
-                    else
+                                        else
                     {
                         e.HasMorePages = false;
                     }
+
+                    if (numberOfItemsPrintedSoFar >= dtg_inv.Rows.Count)
+
+                    {
+                        //int lastRowIndex = dtg_inv.Rows.Count - 1;
+                        //int lastRowHeight = dtg_inv.Rows[lastRowIndex].GetPreferredHeight(lastRowIndex, DataGridViewAutoSizeRowMode.AllCells, true);
+                        //float lastlLineY = e.MarginBounds.Bottom - lastRowHeight;
+                        string S4 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black,0 , height+22);
+                        e.Graphics.DrawString("Net Amount : ", dtg_inv.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_inv.Columns[0].Width = 500, height + 44);
+                        double sum = 0;
+                        for (int i = 0; i < dtg_inv.Rows.Count; i++)
+                        {
+                            sum += Convert.ToDouble(dtg_inv.Rows[i].Cells["TOTAL"].Value.ToString());
+
+                        }
+                        e.Graphics.DrawString(sum.ToString(), dtg_inv.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_inv.Columns[0].Width = 600, height+44);
+
+
+
+                    }
+
 
                 }
                 else
@@ -489,18 +513,27 @@ namespace IMS
                 {
                     int rowIndex = dtg_inv.CurrentCell.RowIndex;
                     DataGridViewRow edit_row = dtg_inv.Rows[rowIndex];
-                    value1 = edit_row.Cells["QUOTATION_NO"].Value.ToString();
+                    value1 = edit_row.Cells["INVOICE_NO"].Value.ToString();
                     STATUS = edit_row.Cells["STATUS"].Value.ToString();
-
+                    CUSTOMER = edit_row.Cells["CUSTOMER"].Value.ToString();
                     if (STATUS == "ACTIVE")
                     {
-                        frm_invoice detialform = new frm_invoice();
+                        Frm_Invoice_print detialform = new Frm_Invoice_print();
+                        detialform.mode = "PRINT INVOICE";
                         detialform.MdiParent = frm_mid.ActiveForm;
-                        // detialform.mode = "VIEW QUOTATION";
 
-                        //value2 = edit_row.Cells[0].Value.ToString();
-                        //value2 = edit_row.Cells["CUSTOMER_ID"].Value.ToString();
-                        detialform.print_form();
+                        //value2 = edit_row.Cells["CUSTOMER_NAME"].Value.ToString();
+                        //detialform.print_form();
+                        detialform.Show();
+                        this.Hide();
+
+                        //frm_invoice detialform = new frm_invoice();
+                        //detialform.MdiParent = frm_mid.ActiveForm;
+                        //// detialform.mode = "VIEW QUOTATION";
+
+                        ////value2 = edit_row.Cells[0].Value.ToString();
+                        ////value2 = edit_row.Cells["CUSTOMER_ID"].Value.ToString();
+                        //detialform.print_form();
 
                     }
 

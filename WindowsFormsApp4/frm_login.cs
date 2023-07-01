@@ -190,5 +190,48 @@ namespace IMS
             }
 
         }
+
+        private void txtuser_Enter(object sender, EventArgs e)
+        {
+            if (txtuser.Text == "User Name")
+            {
+                txtuser.Text = "";
+                txtuser.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void txtuser_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtuser.Text))
+            {
+                txtuser.Text = "User Name";
+                txtuser.ForeColor = SystemColors.GrayText;
+            }
+        }
+
+        private void txtpassword_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtpassword.Text))
+            {
+                txtpassword.Text = "Password";
+                txtpassword.ForeColor = SystemColors.GrayText;
+                btnshow.BringToFront();
+                txtpassword.PasswordChar = '\0';
+
+            }
+        }
+
+        private void txtpassword_Enter(object sender, EventArgs e)
+        {
+            if (txtpassword.Text == "Password")
+            {
+                txtpassword.Text = "";
+                txtpassword.ForeColor = SystemColors.WindowText;
+                txtpassword.PasswordChar = '*';
+                btnshow.BringToFront();
+                txtpassword.PasswordChar = '*';
+
+            }
+        }
     }
 }

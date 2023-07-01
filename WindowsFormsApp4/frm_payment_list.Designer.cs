@@ -183,6 +183,7 @@ namespace IMS
             this.txt_fillter.Size = new System.Drawing.Size(386, 25);
             this.txt_fillter.TabIndex = 121;
             this.txt_fillter.Text = "Customer Name";
+            this.txt_fillter.TextChanged += new System.EventHandler(this.txt_fillter_TextChanged_1);
             this.txt_fillter.Enter += new System.EventHandler(this.txt_fillter_Enter);
             this.txt_fillter.Leave += new System.EventHandler(this.txt_fillter_Leave);
             // 

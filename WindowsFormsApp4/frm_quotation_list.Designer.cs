@@ -71,6 +71,7 @@ namespace IMS
             this.quotation_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quotation_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtg_qut = new System.Windows.Forms.DataGridView();
+            //this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_qut)).BeginInit();
             this.SuspendLayout();
             // 
@@ -453,6 +454,13 @@ namespace IMS
             this.dtg_qut.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtg_qut_CellMouseDown);
             this.dtg_qut.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtg_qut_DataBindingComplete);
             // 
+            // reportViewer1
+            // 
+           //// this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            ////.reportViewer1.Name = "ReportViewer";
+            //this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            //this.reportViewer1.TabIndex = 0;
+            // 
             // frm_quotation_list
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -524,5 +532,6 @@ namespace IMS
         private System.Windows.Forms.DataGridViewTextBoxColumn quotation_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn quotation_id;
         private System.Windows.Forms.DataGridView dtg_qut;
+        //private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

@@ -135,7 +135,10 @@ namespace IMS
         DataTable dt = new DataTable();
         private void btnok_Click(object sender, EventArgs e)
         {
-           
+            if(txt_discount.Text == "")
+            {
+                txt_discount.Text = "0";
+            }
             
             if (mode == "EDIT QUOTATION")
             //if (txtquotation.focus)
@@ -377,6 +380,7 @@ namespace IMS
             {
                 if (txt_sum_discount.Text == "")
                 {
+
                     Decimal sum = 0;
                     for (int i = 0; i < dgvitemform.Rows.Count; i++)
                     {
@@ -1595,7 +1599,7 @@ namespace IMS
             {
                 MessageBox.Show(ex.Message);
             }
-
+            Address();
         }
         public string STATUS { get; set; }
         public void view_form()
@@ -1657,7 +1661,7 @@ namespace IMS
             btnadd.Enabled = false;
             btn_save.Enabled = false;
             btn_cancel.Enabled = false;
-
+            Address();
         }
         public void DELETE_form()
         {
@@ -1719,7 +1723,7 @@ namespace IMS
             user_box.Enabled = false;
             dgvitemform.Enabled = false;
             btnadd.Enabled = false;
-           
+            Address();
 
         }
         public void print_form()
@@ -1853,6 +1857,7 @@ namespace IMS
                 {
                     frmf2 popup = new frmf2();
                     popup.MdiParent = frm_mid.ActiveForm;
+                    popup.mode = "Quotation";
                     string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, C.CITY FROM M_CUSTOMER CU INNER JOIN M_CITY C ON C.CITY_ID = CU.CITY_ID WHERE CU.ACTIVE = 1";
                     popup.ShowF2(_query, "CUSTOMER_NAME", ((TextBox)sender).Text, "CUSTOMER_NAME", sender);
                 }
@@ -1861,10 +1866,10 @@ namespace IMS
                 //}
 
             }
-            if (e.KeyCode == Keys.F5)
-            {
-                drop_down();
-            }
+            //if (e.KeyCode == Keys.F5)
+            //{
+            //    drop_down();
+            //}
         }
        
 
@@ -2060,8 +2065,7 @@ namespace IMS
         {
             
         }
-
-        private void txtcustomer_TextChanged(object sender, EventArgs e)
+        public void Address()
         {
             if (txtcustomer.Tag != null)
             {
@@ -2087,6 +2091,10 @@ namespace IMS
                 conn.Close();
 
             }
+        }
+        private void txtcustomer_TextChanged(object sender, EventArgs e)
+        {
+          
 
         }
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -2194,14 +2202,16 @@ namespace IMS
         {
             if(e.KeyCode == Keys.F5)
             {
-                Timer.Start();
-                pnlright.Visible = true;
-                pnlclose.Visible = true;
-                btn_update.Visible = false;
-                btnok.Visible = true;
-                btn_save.Visible = false;
-                btn_cancel.Visible = false;
-
+                if (pnlright.Visible == false)
+                {
+                    Timer.Start();
+                    pnlright.Visible = true;
+                    pnlclose.Visible = true;
+                    btn_update.Visible = false;
+                    btnok.Visible = true;
+                    btn_save.Visible = false;
+                    btn_cancel.Visible = false;
+                }
             }
             if (e.KeyCode == Keys.X && e.Alt)
             {
@@ -2218,6 +2228,14 @@ namespace IMS
         private void label16_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvitemform_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewColumn column in dgvitemform.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }

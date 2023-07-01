@@ -74,6 +74,7 @@ namespace IMS
             this.dgvHelp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHelp.Location = new System.Drawing.Point(12, 94);
             this.dgvHelp.Name = "dgvHelp";
+            this.dgvHelp.ReadOnly = true;
             this.dgvHelp.Size = new System.Drawing.Size(460, 247);
             this.dgvHelp.TabIndex = 14;
             this.dgvHelp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHelp_CellClick);

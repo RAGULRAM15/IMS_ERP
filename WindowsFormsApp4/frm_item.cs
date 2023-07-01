@@ -35,7 +35,7 @@ namespace IMS
 
         private void txt_item_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT ITEM_ID AS [ID], ITEM_NAME, HSN_CODE FROM M_ITEM WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);
@@ -55,14 +55,14 @@ namespace IMS
 
         private void txt_item_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf5 popup = new frmf5();
-                string _query = "SELECT ITEM_ID AS [ID], ITEM_NAME, HSN_CODE FROM M_ITEM WHERE ACTIVE = 1";
-                popup.ShowF2(_query, "ITEM_NAME", ((TextBox)sender).Text, "ITEM_NAME", sender);
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf5 popup = new frmf5();
+            //    string _query = "SELECT ITEM_ID AS [ID], ITEM_NAME, HSN_CODE FROM M_ITEM WHERE ACTIVE = 1";
+            //    popup.ShowF2(_query, "ITEM_NAME", ((TextBox)sender).Text, "ITEM_NAME", sender);
 
 
-            }
+            //}
         }
 
         private void txt_add_Click(object sender, EventArgs e)
@@ -80,9 +80,10 @@ namespace IMS
         {
             refresh();
         }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           
             String str = "SELECT ITEM_ID AS [ID], ITEM_NAME, HSN_CODE FROM M_ITEM WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -105,7 +106,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_ITEM WHERE ITEM_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))

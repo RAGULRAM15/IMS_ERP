@@ -76,6 +76,7 @@ namespace IMS
             // 
             this.dgvHelp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHelp.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            this.dgvHelp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHelp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHelp.Location = new System.Drawing.Point(12, 122);
             this.dgvHelp.MultiSelect = false;

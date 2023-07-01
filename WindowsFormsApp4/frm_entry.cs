@@ -52,7 +52,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_ENTRY WHERE ENTRY_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -69,7 +69,7 @@ namespace IMS
         }
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT ENTRY_ID AS [ID],ENTRY_NAME FROM M_ENTRY WHERE ACTIVE = 1 ORDER BY ID ASC";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -93,12 +93,12 @@ namespace IMS
 
         private void txtentry_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf2 popup = new frmf2();
-                String Query = "SELECT ENTRY_ID AS [ID],ENTRY_NAME FROM M_ENTRY WHERE ACTIVE = 1";
-                popup.ShowF2(Query, "ENTRY_NAME", ((TextBox)sender).Text, "ENTRY_NAME", sender);
-            }
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf2 popup = new frmf2();
+            //    String Query = "SELECT ENTRY_ID AS [ID],ENTRY_NAME FROM M_ENTRY WHERE ACTIVE = 1";
+            //    popup.ShowF2(Query, "ENTRY_NAME", ((TextBox)sender).Text, "ENTRY_NAME", sender);
+            //}
         }
 
         private void dtgF4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -128,10 +128,10 @@ namespace IMS
             //dtgF4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtgF4.Width, dtgF4.Height, 20, 20));
             refresh();
         }
-
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         private void txtentry_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
             String str = "SELECT ENTRY_ID AS [ID],ENTRY_NAME FROM M_ENTRY  WHERE ACTIVE = 1  ";
 
             SqlConnection conn = new SqlConnection(ConnString);

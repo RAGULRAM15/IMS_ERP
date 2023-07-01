@@ -20,10 +20,11 @@ namespace IMS
 
         private void Frm_payment_report_Load(object sender, EventArgs e)
         {
+            year_id = frm_mid.year_id;
             txt_company.Tag = frm_mid.comp_id;
             company_name();
             from_date();
-            year_id = frm_mid.year_id;
+            
             //DROP();
         }
         private void label5_Click(object sender, EventArgs e)
@@ -54,6 +55,8 @@ namespace IMS
 
 
                 }
+                dr.Close();
+                conn.Close();
             }
         }
         String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
@@ -174,6 +177,11 @@ namespace IMS
                         DA.Fill(DT);
                         dtg_pay_report.DataSource = DT.Tables[0];
                         conn.Close();
+                        DateTime startDate = txt_from.Value.Date;
+                        DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                        DataView dv = DT.Tables[0].DefaultView;
+                        dv.RowFilter = "PAYMENT_DATE >= '" + startDate + "' AND PAYMENT_DATE <= '" + endDate + "'";
+                        dtg_pay_report.DataSource = dv;
                     }
                 }
                 else
@@ -196,6 +204,11 @@ namespace IMS
                             DataSet DT = new DataSet();
                             DA.Fill(DT);
                             dtg_pay_report.DataSource = DT.Tables[0];
+                            DateTime startDate = txt_from.Value.Date;
+                            DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                            DataView dv = DT.Tables[0].DefaultView;
+                            dv.RowFilter = "PAYMENT_DATE >= '" + startDate + "' AND PAYMENT_DATE <= '" + endDate + "'";
+                            dtg_pay_report.DataSource = dv;
                             conn.Close();
                         }
                     }
@@ -358,6 +371,11 @@ namespace IMS
                         DA.Fill(DT);
                         dtg_pay_report.DataSource = DT.Tables[0];
                         conn.Close();
+                        DateTime startDate = txt_from.Value.Date;
+                        DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                        DataView dv = DT.Tables[0].DefaultView;
+                        dv.RowFilter = "PAYMENT_DATE >= '" + startDate + "' AND PAYMENT_DATE <= '" + endDate + "'";
+                        dtg_pay_report.DataSource = dv;
                         printPreviewDialog.ShowDialog();
                     }
                 }
@@ -382,6 +400,11 @@ namespace IMS
                             DA.Fill(DT);
                             dtg_pay_report.DataSource = DT.Tables[0];
                             conn.Close();
+                            DateTime startDate = txt_from.Value.Date;
+                            DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                            DataView dv = DT.Tables[0].DefaultView;
+                            dv.RowFilter = "PAYMENT_DATE >= '" + startDate + "' AND PAYMENT_DATE <= '" + endDate + "'";
+                            dtg_pay_report.DataSource = dv;
                             printPreviewDialog.ShowDialog();
                         }
                     }

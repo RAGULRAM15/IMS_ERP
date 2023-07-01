@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QUOTATIONDataSet" targetNamespace="http://tempuri.org/QUOTATIONDataSet.xsd" xmlns:mstns="http://tempuri.org/QUOTATIONDataSet.xsd" xmlns="http://tempuri.org/QUOTATIONDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QUOTATIONConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QUOTATIONConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IMS.Properties.Settings.GlobalReference.Default.QUOTATIONConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="M_COMPANY_VIEWTableAdapter" GeneratorDataComponentClassName="M_COMPANY_VIEWTableAdapter" Name="M_COMPANY_VIEW" UserDataComponentName="M_COMPANY_VIEWTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUOTATIONConnectionString (Settings)" DbObjectName="QUOTATION.dbo.M_COMPANY_VIEW" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT COMPANY_ID, COMPANY_NAME, ADDRESS, CITY, DISTRICT, STATE, COUNTRY, PINCODE, PHONE, MOBILE, E_MAIL, WEBSITE, GSTIN, GST_STATE_CODE FROM dbo.M_COMPANY_VIEW</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="COMPANY_ID" DataSetColumn="COMPANY_ID" />
+              <Mapping SourceColumn="COMPANY_NAME" DataSetColumn="COMPANY_NAME" />
+              <Mapping SourceColumn="ADDRESS" DataSetColumn="ADDRESS" />
+              <Mapping SourceColumn="CITY" DataSetColumn="CITY" />
+              <Mapping SourceColumn="DISTRICT" DataSetColumn="DISTRICT" />
+              <Mapping SourceColumn="STATE" DataSetColumn="STATE" />
+              <Mapping SourceColumn="COUNTRY" DataSetColumn="COUNTRY" />
+              <Mapping SourceColumn="PINCODE" DataSetColumn="PINCODE" />
+              <Mapping SourceColumn="PHONE" DataSetColumn="PHONE" />
+              <Mapping SourceColumn="MOBILE" DataSetColumn="MOBILE" />
+              <Mapping SourceColumn="E_MAIL" DataSetColumn="E_MAIL" />
+              <Mapping SourceColumn="WEBSITE" DataSetColumn="WEBSITE" />
+              <Mapping SourceColumn="GSTIN" DataSetColumn="GSTIN" />
+              <Mapping SourceColumn="GST_STATE_CODE" DataSetColumn="GST_STATE_CODE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="M_CUSTOMER_VIEWTableAdapter" GeneratorDataComponentClassName="M_CUSTOMER_VIEWTableAdapter" Name="M_CUSTOMER_VIEW" UserDataComponentName="M_CUSTOMER_VIEWTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUOTATIONConnectionString (Settings)" DbObjectName="QUOTATION.dbo.M_CUSTOMER_VIEW" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CUSTOMER_ID, CUSTOMER_TITLE, CUSTOMER_NAME, ADDRESS_1, CITY, DISTRICT, STATE, COUNTRY, POSTAL_CODE, PHONE_NO, MOBILE_NO, EMAIL, WEBSITE, GST_NO, GST_STATE_CODE FROM dbo.M_CUSTOMER_VIEW</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CUSTOMER_ID" DataSetColumn="CUSTOMER_ID" />
+              <Mapping SourceColumn="CUSTOMER_TITLE" DataSetColumn="CUSTOMER_TITLE" />
+              <Mapping SourceColumn="CUSTOMER_NAME" DataSetColumn="CUSTOMER_NAME" />
+              <Mapping SourceColumn="ADDRESS_1" DataSetColumn="ADDRESS_1" />
+              <Mapping SourceColumn="CITY" DataSetColumn="CITY" />
+              <Mapping SourceColumn="DISTRICT" DataSetColumn="DISTRICT" />
+              <Mapping SourceColumn="STATE" DataSetColumn="STATE" />
+              <Mapping SourceColumn="COUNTRY" DataSetColumn="COUNTRY" />
+              <Mapping SourceColumn="POSTAL_CODE" DataSetColumn="POSTAL_CODE" />
+              <Mapping SourceColumn="PHONE_NO" DataSetColumn="PHONE_NO" />
+              <Mapping SourceColumn="MOBILE_NO" DataSetColumn="MOBILE_NO" />
+              <Mapping SourceColumn="EMAIL" DataSetColumn="EMAIL" />
+              <Mapping SourceColumn="WEBSITE" DataSetColumn="WEBSITE" />
+              <Mapping SourceColumn="GST_NO" DataSetColumn="GST_NO" />
+              <Mapping SourceColumn="GST_STATE_CODE" DataSetColumn="GST_STATE_CODE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="T_QUOTATION_REPORTTableAdapter" GeneratorDataComponentClassName="T_QUOTATION_REPORTTableAdapter" Name="T_QUOTATION_REPORT" UserDataComponentName="T_QUOTATION_REPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUOTATIONConnectionString (Settings)" DbObjectName="QUOTATION.dbo.T_QUOTATION_REPORT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT QUOTATION_DATE, QUOTATION_NO, DISCOUNT, TOTAL, CUSTOMER_NAME, QUANTITY, USER_NAME, CUSTOMER_ID FROM dbo.T_QUOTATION_REPORT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="QUOTATION_DATE" DataSetColumn="QUOTATION_DATE" />
+              <Mapping SourceColumn="QUOTATION_NO" DataSetColumn="QUOTATION_NO" />
+              <Mapping SourceColumn="DISCOUNT" DataSetColumn="DISCOUNT" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="CUSTOMER_NAME" DataSetColumn="CUSTOMER_NAME" />
+              <Mapping SourceColumn="QUANTITY" DataSetColumn="QUANTITY" />
+              <Mapping SourceColumn="USER_NAME" DataSetColumn="USER_NAME" />
+              <Mapping SourceColumn="CUSTOMER_ID" DataSetColumn="CUSTOMER_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="T_QUOTATOIN_ITEM_REPORTTableAdapter" GeneratorDataComponentClassName="T_QUOTATOIN_ITEM_REPORTTableAdapter" Name="T_QUOTATOIN_ITEM_REPORT" UserDataComponentName="T_QUOTATOIN_ITEM_REPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUOTATIONConnectionString (Settings)" DbObjectName="QUOTATION.dbo.T_QUOTATOIN_ITEM_REPORT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT QUOTATION_ROW_ID, QUOTATION_NO, ROW_ID, ITEM_NAME, SIZE_NAME, STYLE_NAME, QUANTITY, RATE, DISCOUNT, TOTAL, ITEM_ID, SIZE_ID FROM dbo.T_QUOTATOIN_ITEM_REPORT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="QUOTATION_ROW_ID" DataSetColumn="QUOTATION_ROW_ID" />
+              <Mapping SourceColumn="QUOTATION_NO" DataSetColumn="QUOTATION_NO" />
+              <Mapping SourceColumn="ROW_ID" DataSetColumn="ROW_ID" />
+              <Mapping SourceColumn="ITEM_NAME" DataSetColumn="ITEM_NAME" />
+              <Mapping SourceColumn="SIZE_NAME" DataSetColumn="SIZE_NAME" />
+              <Mapping SourceColumn="STYLE_NAME" DataSetColumn="STYLE_NAME" />
+              <Mapping SourceColumn="QUANTITY" DataSetColumn="QUANTITY" />
+              <Mapping SourceColumn="RATE" DataSetColumn="RATE" />
+              <Mapping SourceColumn="DISCOUNT" DataSetColumn="DISCOUNT" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="ITEM_ID" DataSetColumn="ITEM_ID" />
+              <Mapping SourceColumn="SIZE_ID" DataSetColumn="SIZE_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QUOTATIONDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QUOTATIONDataSet" msprop:Generator_UserDSName="QUOTATIONDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="M_COMPANY_VIEW" msprop:Generator_TableClassName="M_COMPANY_VIEWDataTable" msprop:Generator_TableVarName="tableM_COMPANY_VIEW" msprop:Generator_TablePropName="M_COMPANY_VIEW" msprop:Generator_RowDeletingName="M_COMPANY_VIEWRowDeleting" msprop:Generator_RowChangingName="M_COMPANY_VIEWRowChanging" msprop:Generator_RowEvHandlerName="M_COMPANY_VIEWRowChangeEventHandler" msprop:Generator_RowDeletedName="M_COMPANY_VIEWRowDeleted" msprop:Generator_UserTableName="M_COMPANY_VIEW" msprop:Generator_RowChangedName="M_COMPANY_VIEWRowChanged" msprop:Generator_RowEvArgName="M_COMPANY_VIEWRowChangeEvent" msprop:Generator_RowClassName="M_COMPANY_VIEWRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COMPANY_ID" msprop:Generator_ColumnVarNameInTable="columnCOMPANY_ID" msprop:Generator_ColumnPropNameInRow="COMPANY_ID" msprop:Generator_ColumnPropNameInTable="COMPANY_IDColumn" msprop:Generator_UserColumnName="COMPANY_ID" type="xs:int" />
+              <xs:element name="COMPANY_NAME" msprop:Generator_ColumnVarNameInTable="columnCOMPANY_NAME" msprop:Generator_ColumnPropNameInRow="COMPANY_NAME" msprop:Generator_ColumnPropNameInTable="COMPANY_NAMEColumn" msprop:Generator_UserColumnName="COMPANY_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" msprop:Generator_UserColumnName="ADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CITY" msprop:Generator_ColumnVarNameInTable="columnCITY" msprop:Generator_ColumnPropNameInRow="CITY" msprop:Generator_ColumnPropNameInTable="CITYColumn" msprop:Generator_UserColumnName="CITY">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DISTRICT" msprop:Generator_ColumnVarNameInTable="columnDISTRICT" msprop:Generator_ColumnPropNameInRow="DISTRICT" msprop:Generator_ColumnPropNameInTable="DISTRICTColumn" msprop:Generator_UserColumnName="DISTRICT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATE" msprop:Generator_ColumnVarNameInTable="columnSTATE" msprop:Generator_ColumnPropNameInRow="STATE" msprop:Generator_ColumnPropNameInTable="STATEColumn" msprop:Generator_UserColumnName="STATE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COUNTRY" msprop:Generator_ColumnVarNameInTable="columnCOUNTRY" msprop:Generator_ColumnPropNameInRow="COUNTRY" msprop:Generator_ColumnPropNameInTable="COUNTRYColumn" msprop:Generator_UserColumnName="COUNTRY">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PINCODE" msprop:Generator_ColumnVarNameInTable="columnPINCODE" msprop:Generator_ColumnPropNameInRow="PINCODE" msprop:Generator_ColumnPropNameInTable="PINCODEColumn" msprop:Generator_UserColumnName="PINCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PHONE" msprop:Generator_ColumnVarNameInTable="columnPHONE" msprop:Generator_ColumnPropNameInRow="PHONE" msprop:Generator_ColumnPropNameInTable="PHONEColumn" msprop:Generator_UserColumnName="PHONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MOBILE" msprop:Generator_ColumnVarNameInTable="columnMOBILE" msprop:Generator_ColumnPropNameInRow="MOBILE" msprop:Generator_ColumnPropNameInTable="MOBILEColumn" msprop:Generator_UserColumnName="MOBILE" type="xs:int" minOccurs="0" />
+              <xs:element name="E_MAIL" msprop:Generator_ColumnVarNameInTable="columnE_MAIL" msprop:Generator_ColumnPropNameInRow="E_MAIL" msprop:Generator_ColumnPropNameInTable="E_MAILColumn" msprop:Generator_UserColumnName="E_MAIL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WEBSITE" msprop:Generator_ColumnVarNameInTable="columnWEBSITE" msprop:Generator_ColumnPropNameInRow="WEBSITE" msprop:Generator_ColumnPropNameInTable="WEBSITEColumn" msprop:Generator_UserColumnName="WEBSITE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GSTIN" msprop:Generator_ColumnVarNameInTable="columnGSTIN" msprop:Generator_ColumnPropNameInRow="GSTIN" msprop:Generator_ColumnPropNameInTable="GSTINColumn" msprop:Generator_UserColumnName="GSTIN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GST_STATE_CODE" msprop:Generator_ColumnVarNameInTable="columnGST_STATE_CODE" msprop:Generator_ColumnPropNameInRow="GST_STATE_CODE" msprop:Generator_ColumnPropNameInTable="GST_STATE_CODEColumn" msprop:Generator_UserColumnName="GST_STATE_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="M_CUSTOMER_VIEW" msprop:Generator_TableClassName="M_CUSTOMER_VIEWDataTable" msprop:Generator_TableVarName="tableM_CUSTOMER_VIEW" msprop:Generator_TablePropName="M_CUSTOMER_VIEW" msprop:Generator_RowDeletingName="M_CUSTOMER_VIEWRowDeleting" msprop:Generator_RowChangingName="M_CUSTOMER_VIEWRowChanging" msprop:Generator_RowEvHandlerName="M_CUSTOMER_VIEWRowChangeEventHandler" msprop:Generator_RowDeletedName="M_CUSTOMER_VIEWRowDeleted" msprop:Generator_UserTableName="M_CUSTOMER_VIEW" msprop:Generator_RowChangedName="M_CUSTOMER_VIEWRowChanged" msprop:Generator_RowEvArgName="M_CUSTOMER_VIEWRowChangeEvent" msprop:Generator_RowClassName="M_CUSTOMER_VIEWRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CUSTOMER_ID" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_ID" msprop:Generator_ColumnPropNameInRow="CUSTOMER_ID" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IDColumn" msprop:Generator_UserColumnName="CUSTOMER_ID" type="xs:long" />
+              <xs:element name="CUSTOMER_TITLE" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_TITLE" msprop:Generator_ColumnPropNameInRow="CUSTOMER_TITLE" msprop:Generator_ColumnPropNameInTable="CUSTOMER_TITLEColumn" msprop:Generator_UserColumnName="CUSTOMER_TITLE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTOMER_NAME" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NAME" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NAME" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NAMEColumn" msprop:Generator_UserColumnName="CUSTOMER_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADDRESS_1" msprop:Generator_ColumnVarNameInTable="columnADDRESS_1" msprop:Generator_ColumnPropNameInRow="ADDRESS_1" msprop:Generator_ColumnPropNameInTable="ADDRESS_1Column" msprop:Generator_UserColumnName="ADDRESS_1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CITY" msprop:Generator_ColumnVarNameInTable="columnCITY" msprop:Generator_ColumnPropNameInRow="CITY" msprop:Generator_ColumnPropNameInTable="CITYColumn" msprop:Generator_UserColumnName="CITY">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DISTRICT" msprop:Generator_ColumnVarNameInTable="columnDISTRICT" msprop:Generator_ColumnPropNameInRow="DISTRICT" msprop:Generator_ColumnPropNameInTable="DISTRICTColumn" msprop:Generator_UserColumnName="DISTRICT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATE" msprop:Generator_ColumnVarNameInTable="columnSTATE" msprop:Generator_ColumnPropNameInRow="STATE" msprop:Generator_ColumnPropNameInTable="STATEColumn" msprop:Generator_UserColumnName="STATE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COUNTRY" msprop:Generator_ColumnVarNameInTable="columnCOUNTRY" msprop:Generator_ColumnPropNameInRow="COUNTRY" msprop:Generator_ColumnPropNameInTable="COUNTRYColumn" msprop:Generator_UserColumnName="COUNTRY">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POSTAL_CODE" msprop:Generator_ColumnVarNameInTable="columnPOSTAL_CODE" msprop:Generator_ColumnPropNameInRow="POSTAL_CODE" msprop:Generator_ColumnPropNameInTable="POSTAL_CODEColumn" msprop:Generator_UserColumnName="POSTAL_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PHONE_NO" msprop:Generator_ColumnVarNameInTable="columnPHONE_NO" msprop:Generator_ColumnPropNameInRow="PHONE_NO" msprop:Generator_ColumnPropNameInTable="PHONE_NOColumn" msprop:Generator_UserColumnName="PHONE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MOBILE_NO" msprop:Generator_ColumnVarNameInTable="columnMOBILE_NO" msprop:Generator_ColumnPropNameInRow="MOBILE_NO" msprop:Generator_ColumnPropNameInTable="MOBILE_NOColumn" msprop:Generator_UserColumnName="MOBILE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WEBSITE" msprop:Generator_ColumnVarNameInTable="columnWEBSITE" msprop:Generator_ColumnPropNameInRow="WEBSITE" msprop:Generator_ColumnPropNameInTable="WEBSITEColumn" msprop:Generator_UserColumnName="WEBSITE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GST_NO" msprop:Generator_ColumnVarNameInTable="columnGST_NO" msprop:Generator_ColumnPropNameInRow="GST_NO" msprop:Generator_ColumnPropNameInTable="GST_NOColumn" msprop:Generator_UserColumnName="GST_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GST_STATE_CODE" msprop:Generator_ColumnVarNameInTable="columnGST_STATE_CODE" msprop:Generator_ColumnPropNameInRow="GST_STATE_CODE" msprop:Generator_ColumnPropNameInTable="GST_STATE_CODEColumn" msprop:Generator_UserColumnName="GST_STATE_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="T_QUOTATION_REPORT" msprop:Generator_TableClassName="T_QUOTATION_REPORTDataTable" msprop:Generator_TableVarName="tableT_QUOTATION_REPORT" msprop:Generator_TablePropName="T_QUOTATION_REPORT" msprop:Generator_RowDeletingName="T_QUOTATION_REPORTRowDeleting" msprop:Generator_RowChangingName="T_QUOTATION_REPORTRowChanging" msprop:Generator_RowEvHandlerName="T_QUOTATION_REPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="T_QUOTATION_REPORTRowDeleted" msprop:Generator_UserTableName="T_QUOTATION_REPORT" msprop:Generator_RowChangedName="T_QUOTATION_REPORTRowChanged" msprop:Generator_RowEvArgName="T_QUOTATION_REPORTRowChangeEvent" msprop:Generator_RowClassName="T_QUOTATION_REPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QUOTATION_DATE" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_DATE" msprop:Generator_ColumnPropNameInRow="QUOTATION_DATE" msprop:Generator_ColumnPropNameInTable="QUOTATION_DATEColumn" msprop:Generator_UserColumnName="QUOTATION_DATE" type="xs:dateTime" />
+              <xs:element name="QUOTATION_NO" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_NO" msprop:Generator_ColumnPropNameInRow="QUOTATION_NO" msprop:Generator_ColumnPropNameInTable="QUOTATION_NOColumn" msprop:Generator_UserColumnName="QUOTATION_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DISCOUNT" msprop:Generator_ColumnVarNameInTable="columnDISCOUNT" msprop:Generator_ColumnPropNameInRow="DISCOUNT" msprop:Generator_ColumnPropNameInTable="DISCOUNTColumn" msprop:Generator_UserColumnName="DISCOUNT" type="xs:decimal" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:decimal" />
+              <xs:element name="CUSTOMER_NAME" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NAME" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NAME" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NAMEColumn" msprop:Generator_UserColumnName="CUSTOMER_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUANTITY" msprop:Generator_ColumnVarNameInTable="columnQUANTITY" msprop:Generator_ColumnPropNameInRow="QUANTITY" msprop:Generator_ColumnPropNameInTable="QUANTITYColumn" msprop:Generator_UserColumnName="QUANTITY" type="xs:int" />
+              <xs:element name="USER_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_NAME" msprop:Generator_ColumnPropNameInRow="USER_NAME" msprop:Generator_ColumnPropNameInTable="USER_NAMEColumn" msprop:Generator_UserColumnName="USER_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTOMER_ID" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_ID" msprop:Generator_ColumnPropNameInRow="CUSTOMER_ID" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IDColumn" msprop:Generator_UserColumnName="CUSTOMER_ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="T_QUOTATOIN_ITEM_REPORT" msprop:Generator_TableClassName="T_QUOTATOIN_ITEM_REPORTDataTable" msprop:Generator_TableVarName="tableT_QUOTATOIN_ITEM_REPORT" msprop:Generator_TablePropName="T_QUOTATOIN_ITEM_REPORT" msprop:Generator_RowDeletingName="T_QUOTATOIN_ITEM_REPORTRowDeleting" msprop:Generator_RowChangingName="T_QUOTATOIN_ITEM_REPORTRowChanging" msprop:Generator_RowEvHandlerName="T_QUOTATOIN_ITEM_REPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="T_QUOTATOIN_ITEM_REPORTRowDeleted" msprop:Generator_UserTableName="T_QUOTATOIN_ITEM_REPORT" msprop:Generator_RowChangedName="T_QUOTATOIN_ITEM_REPORTRowChanged" msprop:Generator_RowEvArgName="T_QUOTATOIN_ITEM_REPORTRowChangeEvent" msprop:Generator_RowClassName="T_QUOTATOIN_ITEM_REPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QUOTATION_ROW_ID" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_ROW_ID" msprop:Generator_ColumnPropNameInRow="QUOTATION_ROW_ID" msprop:Generator_ColumnPropNameInTable="QUOTATION_ROW_IDColumn" msprop:Generator_UserColumnName="QUOTATION_ROW_ID" type="xs:long" />
+              <xs:element name="QUOTATION_NO" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_NO" msprop:Generator_ColumnPropNameInRow="QUOTATION_NO" msprop:Generator_ColumnPropNameInTable="QUOTATION_NOColumn" msprop:Generator_UserColumnName="QUOTATION_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ROW_ID" msprop:Generator_ColumnVarNameInTable="columnROW_ID" msprop:Generator_ColumnPropNameInRow="ROW_ID" msprop:Generator_ColumnPropNameInTable="ROW_IDColumn" msprop:Generator_UserColumnName="ROW_ID" type="xs:int" />
+              <xs:element name="ITEM_NAME" msprop:Generator_ColumnVarNameInTable="columnITEM_NAME" msprop:Generator_ColumnPropNameInRow="ITEM_NAME" msprop:Generator_ColumnPropNameInTable="ITEM_NAMEColumn" msprop:Generator_UserColumnName="ITEM_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIZE_NAME" msprop:Generator_ColumnVarNameInTable="columnSIZE_NAME" msprop:Generator_ColumnPropNameInRow="SIZE_NAME" msprop:Generator_ColumnPropNameInTable="SIZE_NAMEColumn" msprop:Generator_UserColumnName="SIZE_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STYLE_NAME" msprop:Generator_ColumnVarNameInTable="columnSTYLE_NAME" msprop:Generator_ColumnPropNameInRow="STYLE_NAME" msprop:Generator_ColumnPropNameInTable="STYLE_NAMEColumn" msprop:Generator_UserColumnName="STYLE_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUANTITY" msprop:Generator_ColumnVarNameInTable="columnQUANTITY" msprop:Generator_ColumnPropNameInRow="QUANTITY" msprop:Generator_ColumnPropNameInTable="QUANTITYColumn" msprop:Generator_UserColumnName="QUANTITY" type="xs:int" />
+              <xs:element name="RATE" msprop:Generator_ColumnVarNameInTable="columnRATE" msprop:Generator_ColumnPropNameInRow="RATE" msprop:Generator_ColumnPropNameInTable="RATEColumn" msprop:Generator_UserColumnName="RATE" type="xs:decimal" />
+              <xs:element name="DISCOUNT" msprop:Generator_ColumnVarNameInTable="columnDISCOUNT" msprop:Generator_ColumnPropNameInRow="DISCOUNT" msprop:Generator_ColumnPropNameInTable="DISCOUNTColumn" msprop:Generator_UserColumnName="DISCOUNT" type="xs:decimal" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:decimal" />
+              <xs:element name="ITEM_ID" msprop:Generator_ColumnVarNameInTable="columnITEM_ID" msprop:Generator_ColumnPropNameInRow="ITEM_ID" msprop:Generator_ColumnPropNameInTable="ITEM_IDColumn" msprop:Generator_UserColumnName="ITEM_ID" type="xs:int" />
+              <xs:element name="SIZE_ID" msprop:Generator_ColumnVarNameInTable="columnSIZE_ID" msprop:Generator_ColumnPropNameInRow="SIZE_ID" msprop:Generator_ColumnPropNameInTable="SIZE_IDColumn" msprop:Generator_UserColumnName="SIZE_ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:M_CUSTOMER_VIEW" />
+      <xs:field xpath="mstns:CUSTOMER_ID" />
+    </xs:unique>
+    <xs:unique name="T_QUOTATOIN_ITEM_REPORT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:T_QUOTATOIN_ITEM_REPORT" />
+      <xs:field xpath="mstns:QUOTATION_ROW_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

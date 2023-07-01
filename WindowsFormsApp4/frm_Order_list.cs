@@ -132,7 +132,7 @@ namespace IMS
                 {
                     if (value3 != "1")
                     {
-                        frm_sales_order detialform = new frm_sales_order();
+                    frm_sales_order detialform = new frm_sales_order();
                     detialform.mode = "EDIT SALES ORDER";
                     detialform.MdiParent = frm_mid.ActiveForm;
 
@@ -410,16 +410,16 @@ namespace IMS
         private int numberOfItemsPrintedSoFar = 0;
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            string curdhead = "INVOICE";
+            string curdhead = "SALES ORDER";
             e.Graphics.DrawString(curdhead, new System.Drawing.Font("Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 370, 50);
 
             string l1 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
             e.Graphics.DrawString(l1, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, 100);
 
-            string g1 = "INVOICE NO ";
+            string g1 = "SALES ORDER NO ";
             e.Graphics.DrawString(g1, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 20, 140);
 
-            string g2 = "INVOICE DATE";
+            string g2 = "SALES ORDER DATE";
             e.Graphics.DrawString(g2, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 150, 140);
 
             string g3 = "CUSTOMER NAME";
@@ -446,8 +446,8 @@ namespace IMS
                     {
 
                         height += dtg_qut.Rows[0].Height;
-                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["INVOICE_NO"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(40, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
-                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["INVOICE_DATE"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(160, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
+                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["SALES_ORDER_NO"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(40, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
+                        e.Graphics.DrawString(dtg_qut.Rows[l].Cells["SALES_ORDER_DATE"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(160, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
                         e.Graphics.DrawString(dtg_qut.Rows[l].Cells["CUSTOMER_NAME"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(320, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
                         e.Graphics.DrawString(dtg_qut.Rows[l].Cells["TOTAL"].FormattedValue.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 8), Brushes.Black, new RectangleF(600, height, dtg_qut.Columns[0].Width = 200, dtg_qut.Rows[0].Height));
 
@@ -460,6 +460,26 @@ namespace IMS
                     else
                     {
                         e.HasMorePages = false;
+                    }
+                    if (numberOfItemsPrintedSoFar >= dtg_qut.Rows.Count)
+
+                    {
+                        //int lastRowIndex = dtg_inv.Rows.Count - 1;
+                        //int lastRowHeight = dtg_inv.Rows[lastRowIndex].GetPreferredHeight(lastRowIndex, DataGridViewAutoSizeRowMode.AllCells, true);
+                        //float lastlLineY = e.MarginBounds.Bottom - lastRowHeight;
+                        string S4 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, height + 22);
+                        e.Graphics.DrawString("Net Amount : ", dtg_qut.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut.Columns[0].Width = 500, height + 44);
+                        double sum = 0;
+                        for (int i = 0; i < dtg_qut.Rows.Count; i++)
+                        {
+                            sum += Convert.ToDouble(dtg_qut.Rows[i].Cells["TOTAL"].Value.ToString());
+
+                        }
+                        e.Graphics.DrawString(sum.ToString(), dtg_qut.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut.Columns[0].Width = 600, height + 44);
+
+
+
                     }
 
                 }
@@ -483,28 +503,28 @@ namespace IMS
             if (dtg_qut.Rows.Count != 0)
             {
 
-                if (dtg_qut.SelectedRows.Count > 0)
-                {
-                    int rowIndex = dtg_qut.CurrentCell.RowIndex;
-                    DataGridViewRow edit_row = dtg_qut.Rows[rowIndex];
-                    value1 = edit_row.Cells["SALES_ORDER_NO"].Value.ToString();
-                    STATUS = edit_row.Cells["STATUS"].Value.ToString();
+                //if (dtg_qut.SelectedRows.Count > 0)
+                //{
+                //    int rowIndex = dtg_qut.CurrentCell.RowIndex;
+                //    DataGridViewRow edit_row = dtg_qut.Rows[rowIndex];
+                //    value1 = edit_row.Cells["SALES_ORDER_NO"].Value.ToString();
+                //    STATUS = edit_row.Cells["STATUS"].Value.ToString();
 
-                    if (STATUS == "ACTIVE")
-                    {
-                        frm_invoice detialform = new frm_invoice();
-                        detialform.MdiParent = frm_mid.ActiveForm;
-                        // detialform.mode = "VIEW QUOTATION";
+                //    if (STATUS == "ACTIVE")
+                //    {
+                //        frm_invoice detialform = new frm_invoice();
+                //        detialform.MdiParent = frm_mid.ActiveForm;
+                //        // detialform.mode = "VIEW QUOTATION";
 
-                        //value2 = edit_row.Cells[0].Value.ToString();
-                        //value2 = edit_row.Cells["CUSTOMER_ID"].Value.ToString();
-                        detialform.print_form();
+                //        //value2 = edit_row.Cells[0].Value.ToString();
+                //        //value2 = edit_row.Cells["CUSTOMER_ID"].Value.ToString();
+                //        detialform.print_form();
 
-                    }
+                //    }
 
-                }
-                else
-                {
+                //}
+                //else
+                //{
                     if (printPreviewDialog.ShowDialog() != 0)
                     {
 
@@ -520,7 +540,7 @@ namespace IMS
                         refresh();
                     }
 
-                }
+                //}
             }
         }
 
@@ -717,6 +737,11 @@ namespace IMS
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+        }
+
+        private void dtg_qut_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

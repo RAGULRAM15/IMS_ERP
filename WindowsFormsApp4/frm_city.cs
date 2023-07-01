@@ -115,9 +115,10 @@ namespace IMS
             //dtgF4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, dtgF4.Width, dtgF4.Height, 20, 20));
             refresh();
         }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+          
             String str = "SELECT CITY_ID AS [ID], CITY, CITY_CODE FROM M_CITY WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))

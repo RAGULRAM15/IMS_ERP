@@ -47,6 +47,7 @@ namespace IMS
             int nWidthEllipse,
             int nHeightEllipse
            );
+        public  string mode { get; set; }
         private void frmf2_Load(object sender, EventArgs e)
         {
             //btnok.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnok.Width, btnok.Height, 20, 20));
@@ -96,6 +97,36 @@ namespace IMS
             _myText = txtSearch.Text;
             ((TextBox)_ct).Tag = txtDataload.Tag;
             ((TextBox)_ct).Text = txtDataload.Text;
+            if (mode == "invoice")
+            {
+                var instance = Application.OpenForms.OfType<frm_invoice>().FirstOrDefault();
+                instance.Address();
+                frm_invoice invoice = new frm_invoice();
+                invoice.Address();
+            }
+            if (mode == "Quotation")
+            {
+                var instance = Application.OpenForms.OfType<frmQuotation>().FirstOrDefault();
+                instance.Address();
+                frmQuotation quotation = new frmQuotation();
+                quotation.Address();
+            }
+            if (mode == "sales order")
+            {
+                var instance = Application.OpenForms.OfType<frm_sales_order>().FirstOrDefault();
+                instance.Address();
+                frm_sales_order order = new frm_sales_order();
+                order.Address();
+            }
+            if (mode == "payment")
+            {
+                var instance = Application.OpenForms.OfType<frm_payment>().FirstOrDefault();
+                instance.Address();
+                frm_payment order = new frm_payment();
+                order.Address();
+            }
+           
+
             this.Close();
         }
 

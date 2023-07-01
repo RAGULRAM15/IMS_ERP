@@ -51,7 +51,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_TAX WHERE TAX_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -69,7 +69,7 @@ namespace IMS
         }
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT TAX_ID AS [ID], TAX, PERCENTAGE FROM M_TAX WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -93,13 +93,13 @@ namespace IMS
 
         private void txttax_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf2 popup = new frmf2();
-                string _query = "SELECT TAX_ID AS [ID], TAX, PERCENTAGE FROM M_TAX WHERE ACTIVE = 1";
-                //string _query=" SELECT DISTRICT_ID AS[ID], DISTRICT, S.STATE FROM[M_DISTRICT] DINNER JOIN[dbo].[M_STATE] S ON D.STATE_ID = S.STATE_ID WHERE D.ACTIVE = 1";
-                popup.ShowF2(_query, "Tax", ((TextBox)sender).Text, "Tax", sender);
-            }
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf2 popup = new frmf2();
+            //    string _query = "SELECT TAX_ID AS [ID], TAX, PERCENTAGE FROM M_TAX WHERE ACTIVE = 1";
+            //    //string _query=" SELECT DISTRICT_ID AS[ID], DISTRICT, S.STATE FROM[M_DISTRICT] DINNER JOIN[dbo].[M_STATE] S ON D.STATE_ID = S.STATE_ID WHERE D.ACTIVE = 1";
+            //    popup.ShowF2(_query, "Tax", ((TextBox)sender).Text, "Tax", sender);
+            //}
         }
 
         private void dtgF4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -130,10 +130,10 @@ namespace IMS
             refresh();
 
         }
-
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         private void txttax_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           
             String str = "SELECT TAX_ID AS [ID], TAX, PERCENTAGE FROM M_TAX WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);

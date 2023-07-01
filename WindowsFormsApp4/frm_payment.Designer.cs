@@ -713,12 +713,14 @@ namespace IMS
             this.ITEM_ID.DefaultCellStyle = dataGridViewCellStyle24;
             this.ITEM_ID.HeaderText = "ITEM_ID";
             this.ITEM_ID.Name = "ITEM_ID";
+            this.ITEM_ID.Visible = false;
             // 
             // SIZE_ID
             // 
             this.SIZE_ID.DataPropertyName = "SIZE_ID";
             this.SIZE_ID.HeaderText = "SIZE_ID";
             this.SIZE_ID.Name = "SIZE_ID";
+            this.SIZE_ID.Visible = false;
             // 
             // payment_id
             // 

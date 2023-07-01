@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QUOTATIONDataSet3" targetNamespace="http://tempuri.org/QUOTATIONDataSet3.xsd" xmlns:mstns="http://tempuri.org/QUOTATIONDataSet3.xsd" xmlns="http://tempuri.org/QUOTATIONDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QUOTATIONConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QUOTATIONConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IMS.Properties.Settings.GlobalReference.Default.QUOTATIONConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="T_QUOTATION_REPORTTableAdapter" GeneratorDataComponentClassName="T_QUOTATION_REPORTTableAdapter" Name="T_QUOTATION_REPORT" UserDataComponentName="T_QUOTATION_REPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUOTATIONConnectionString (Settings)" DbObjectName="QUOTATION.dbo.T_QUOTATION_REPORT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT QUOTATION_DATE, QUOTATION_NO, DISCOUNT, TOTAL, CUSTOMER_NAME, QUANTITY, USER_NAME, CUSTOMER_ID FROM dbo.T_QUOTATION_REPORT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="QUOTATION_DATE" DataSetColumn="QUOTATION_DATE" />
+              <Mapping SourceColumn="QUOTATION_NO" DataSetColumn="QUOTATION_NO" />
+              <Mapping SourceColumn="DISCOUNT" DataSetColumn="DISCOUNT" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="CUSTOMER_NAME" DataSetColumn="CUSTOMER_NAME" />
+              <Mapping SourceColumn="QUANTITY" DataSetColumn="QUANTITY" />
+              <Mapping SourceColumn="USER_NAME" DataSetColumn="USER_NAME" />
+              <Mapping SourceColumn="CUSTOMER_ID" DataSetColumn="CUSTOMER_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QUOTATIONDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QUOTATIONDataSet3" msprop:Generator_UserDSName="QUOTATIONDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T_QUOTATION_REPORT" msprop:Generator_TableClassName="T_QUOTATION_REPORTDataTable" msprop:Generator_TableVarName="tableT_QUOTATION_REPORT" msprop:Generator_TablePropName="T_QUOTATION_REPORT" msprop:Generator_RowDeletingName="T_QUOTATION_REPORTRowDeleting" msprop:Generator_RowChangingName="T_QUOTATION_REPORTRowChanging" msprop:Generator_RowEvHandlerName="T_QUOTATION_REPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="T_QUOTATION_REPORTRowDeleted" msprop:Generator_UserTableName="T_QUOTATION_REPORT" msprop:Generator_RowChangedName="T_QUOTATION_REPORTRowChanged" msprop:Generator_RowEvArgName="T_QUOTATION_REPORTRowChangeEvent" msprop:Generator_RowClassName="T_QUOTATION_REPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QUOTATION_DATE" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_DATE" msprop:Generator_ColumnPropNameInRow="QUOTATION_DATE" msprop:Generator_ColumnPropNameInTable="QUOTATION_DATEColumn" msprop:Generator_UserColumnName="QUOTATION_DATE" type="xs:dateTime" />
+              <xs:element name="QUOTATION_NO" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_NO" msprop:Generator_ColumnPropNameInRow="QUOTATION_NO" msprop:Generator_ColumnPropNameInTable="QUOTATION_NOColumn" msprop:Generator_UserColumnName="QUOTATION_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DISCOUNT" msprop:Generator_ColumnVarNameInTable="columnDISCOUNT" msprop:Generator_ColumnPropNameInRow="DISCOUNT" msprop:Generator_ColumnPropNameInTable="DISCOUNTColumn" msprop:Generator_UserColumnName="DISCOUNT" type="xs:decimal" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:decimal" />
+              <xs:element name="CUSTOMER_NAME" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NAME" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NAME" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NAMEColumn" msprop:Generator_UserColumnName="CUSTOMER_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUANTITY" msprop:Generator_ColumnVarNameInTable="columnQUANTITY" msprop:Generator_ColumnPropNameInRow="QUANTITY" msprop:Generator_ColumnPropNameInTable="QUANTITYColumn" msprop:Generator_UserColumnName="QUANTITY" type="xs:int" />
+              <xs:element name="USER_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_NAME" msprop:Generator_ColumnPropNameInRow="USER_NAME" msprop:Generator_ColumnPropNameInTable="USER_NAMEColumn" msprop:Generator_UserColumnName="USER_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTOMER_ID" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_ID" msprop:Generator_ColumnPropNameInRow="CUSTOMER_ID" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IDColumn" msprop:Generator_UserColumnName="CUSTOMER_ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

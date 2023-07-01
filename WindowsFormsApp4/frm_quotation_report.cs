@@ -36,16 +36,18 @@ namespace IMS
                 SqlCommand comm = new SqlCommand(str, conn);
                 //comm.Connection = conn;
                 //comm.CommandText = str;
-                SqlDataReader dr = comm.ExecuteReader();
-                while (dr.Read())
+                SqlDataReader dr1 = comm.ExecuteReader();
+                while (dr1.Read())
                 {
-                    txt_from.Tag = dr[0].ToString();
-                    txt_to.Tag = dr[0].ToString();
-                    txt_from.Value = Convert.ToDateTime(dr[1].ToString());
-                    txt_to.Value = Convert.ToDateTime(dr[2].ToString());
+                    txt_from.Tag = dr1[0].ToString();
+                    txt_to.Tag = dr1[0].ToString();
+                    txt_from.Value = Convert.ToDateTime(dr1[1].ToString());
+                    txt_to.Value = Convert.ToDateTime(dr1[2].ToString());
 
 
                 }
+                dr1.Close();
+                conn.Close();
             }
         }
         String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
@@ -79,11 +81,12 @@ namespace IMS
         public static int year_id { get; set; }
         private void frm_qut_report_Load(object sender, EventArgs e)
         {
+            year_id = frm_mid.year_id;
             txt_company.Tag = frm_mid.comp_id;
             company_name();
             from_date();
-            year_id = frm_mid.year_id;
-            DROP();
+            
+            //DROP();
         }
         public void DROP()
         {
@@ -151,7 +154,7 @@ namespace IMS
             txt_total.Visible = true;
             if (txt_customer.Text != "")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+              
                 String str = "SELECT QUOTATION_ID , QUOTATION_NO,QUOTATION_DATE,CUSTOMER_NAME,TOTAL FROM T_QUOTATION" +
                     "   INNER JOIN [M_CUSTOMER] ON [T_QUOTATION].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                     " WHERE T_QUOTATION.CUSTOMER_ID=" + txt_customer.Tag + " AND T_QUOTATION.COMPANY_ID ="+txt_company.Tag+"";
@@ -167,6 +170,11 @@ namespace IMS
                     DataSet DT = new DataSet();
                     DA.Fill(DT);
                     dtg_qut_report.DataSource = DT.Tables[0];
+                    DateTime startDate = txt_from.Value.Date;
+                    DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                    DataView dv = DT.Tables[0].DefaultView;
+                    dv.RowFilter = "QUOTATION_DATE >= '" + startDate + "' AND QUOTATION_DATE <= '" + endDate + "'";
+                    dtg_qut_report.DataSource = dv;
                     conn.Close();
                 }
             }
@@ -174,7 +182,7 @@ namespace IMS
             {
                 if (txt_customer.Text == "")
                 {
-                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                  
                     String str = "SELECT QUOTATION_ID , QUOTATION_NO,QUOTATION_DATE,CUSTOMER_NAME,TOTAL FROM T_QUOTATION" +
                         "   INNER JOIN [M_CUSTOMER] ON [T_QUOTATION].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                         " WHERE COMPANY_ID=" + txt_company.Tag + " AND T_QUOTATION.COMPANY_ID =" + txt_company.Tag + "";
@@ -190,6 +198,12 @@ namespace IMS
                         DataSet DT = new DataSet();
                         DA.Fill(DT);
                         dtg_qut_report.DataSource = DT.Tables[0];
+                        conn.Close();
+                        DateTime startDate = txt_from.Value.Date;
+                        DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                        DataView dv = DT.Tables[0].DefaultView;
+                        dv.RowFilter = "QUOTATION_DATE >= '" + startDate + "' AND QUOTATION_DATE <= '" + endDate + "'";
+                        dtg_qut_report.DataSource = dv;
                         conn.Close();
                     }
                 }
@@ -254,7 +268,7 @@ namespace IMS
                 e.Graphics.DrawString(curdhead4, new System.Drawing.Font("Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 500, 100);
             }
             string curdhead5 = "COMPANY : " + txt_company.Text + "";
-            e.Graphics.DrawString(curdhead5, new System.Drawing.Font("Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, 100);
+            e.Graphics.DrawString(curdhead5, new System.Drawing.Font("Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 10, 100);
 
 
 
@@ -311,6 +325,33 @@ namespace IMS
                         
                         e.HasMorePages = false;
                     }
+                    if (numberOfItemsPrintedSoFar >= dtg_qut_report.Rows.Count)
+
+                    {
+                        //int lastRowIndex = dtg_inv.Rows.Count - 1;
+                        //int lastRowHeight = dtg_inv.Rows[lastRowIndex].GetPreferredHeight(lastRowIndex, DataGridViewAutoSizeRowMode.AllCells, true);
+                        //float lastlLineY = e.MarginBounds.Bottom - lastRowHeight;
+                        string S4 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S4, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, height + 22);
+                       e.Graphics.DrawString("TOTAL : ", dtg_qut_report.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut_report.Columns[0].Width = 10, height + 44);
+                        
+                        
+                        double sum = 0;
+                        int value =1;
+                        for (int i = 0; i < dtg_qut_report.Rows.Count; i++)
+                        {
+                            sum += Convert.ToDouble(dtg_qut_report.Rows[i].Cells["NET_AMOUNT"].Value.ToString());
+                            
+                        }
+                        value = Convert.ToInt32(dtg_qut_report.Rows.Count.ToString()); ;
+                        e.Graphics.DrawString(value.ToString(), dtg_qut_report.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut_report.Columns[0].Width = 80, height + 44);
+                        e.Graphics.DrawString(sum.ToString(), dtg_qut_report.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_qut_report.Columns[0].Width = 700, height + 44);
+
+                        string S5 = "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+                        e.Graphics.DrawString(S5, new System.Drawing.Font(" Segoe UI Emoji", 9, FontStyle.Bold), Brushes.Black, 0, height +66);
+                       
+
+                    }
 
                 }
                 else
@@ -332,7 +373,7 @@ namespace IMS
         {
            if (txt_customer.Text != "")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+               
                 String str = "SELECT QUOTATION_ID , QUOTATION_NO,QUOTATION_DATE,CUSTOMER_NAME,TOTAL FROM T_QUOTATION" +
                     "   INNER JOIN [M_CUSTOMER] ON [T_QUOTATION].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                     " WHERE T_QUOTATION.CUSTOMER_ID=" + txt_customer.Tag + " AND T_QUOTATION.COMPANY_ID =" + txt_company.Tag + "";
@@ -349,6 +390,12 @@ namespace IMS
                     DA.Fill(DT);
                     dtg_qut_report.DataSource = DT.Tables[0];
                     conn.Close();
+                    DateTime startDate = txt_from.Value.Date;
+                    DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                    DataView dv = DT.Tables[0].DefaultView;
+                    dv.RowFilter = "QUOTATION_DATE >= '" + startDate + "' AND QUOTATION_DATE <= '" + endDate + "'";
+                    dtg_qut_report.DataSource = dv;
+                    conn.Close();
                     printPreviewDialog.ShowDialog();
                 }
             }
@@ -356,7 +403,7 @@ namespace IMS
             {
                 if (txt_customer.Text == "")
                 {
-                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                   
                     String str = "SELECT QUOTATION_ID , QUOTATION_NO,QUOTATION_DATE,CUSTOMER_NAME,TOTAL FROM T_QUOTATION" +
                         "   INNER JOIN [M_CUSTOMER] ON [T_QUOTATION].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                         " WHERE COMPANY_ID=" + txt_company.Tag + " AND T_QUOTATION.COMPANY_ID =" + txt_company.Tag + "";
@@ -372,6 +419,12 @@ namespace IMS
                         DataSet DT = new DataSet();
                         DA.Fill(DT);
                         dtg_qut_report.DataSource = DT.Tables[0];
+                        conn.Close();
+                        DateTime startDate = txt_from.Value.Date;
+                        DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
+                        DataView dv = DT.Tables[0].DefaultView;
+                        dv.RowFilter = "QUOTATION_DATE >= '" + startDate + "' AND QUOTATION_DATE <= '" + endDate + "'";
+                        dtg_qut_report.DataSource = dv;
                         conn.Close();
                         printPreviewDialog.ShowDialog();
                     }

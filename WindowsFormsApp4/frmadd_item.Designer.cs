@@ -192,6 +192,7 @@ namespace IMS
             this.txt_left.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_left.Size = new System.Drawing.Size(138, 301);
             this.txt_left.TabIndex = 58;
+            this.txt_left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_left_MouseDown);
             // 
             // txt_right
             // 
@@ -202,6 +203,7 @@ namespace IMS
             this.txt_right.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_right.Size = new System.Drawing.Size(138, 301);
             this.txt_right.TabIndex = 59;
+            this.txt_right.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_right_MouseDown);
             this.txt_right.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txt_right_MouseUp);
             // 
             // btn_left
@@ -274,7 +276,7 @@ namespace IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(153)))), ((int)(((byte)(199)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(479, 550);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);

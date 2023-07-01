@@ -18,6 +18,7 @@ namespace IMS
         {
             InitializeComponent();
         }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         public static string value { get; set; }
         public static string value1 { get; set; }
         public static string value2 { get; set; }
@@ -51,7 +52,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_COUNTRY WHERE COUNTRY_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -68,7 +69,7 @@ namespace IMS
         }
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT COUNTRY_ID AS [ID], COUNTRY, COUNTRY_CODE FROM M_COUNTRY WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -91,12 +92,12 @@ namespace IMS
 
         private void txtcountry_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf2 popup = new frmf2();
-                string _query = "SELECT COUNTRY_ID AS [ID], COUNTRY, COUNTRY_CODE FROM M_COUNTRY WHERE ACTIVE = 1";
-                popup.ShowF2(_query, "Country", ((TextBox)sender).Text, "Country", sender);
-            }
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf2 popup = new frmf2();
+            //    string _query = "SELECT COUNTRY_ID AS [ID], COUNTRY, COUNTRY_CODE FROM M_COUNTRY WHERE ACTIVE = 1";
+            //    popup.ShowF2(_query, "Country", ((TextBox)sender).Text, "Country", sender);
+            //}
         }
 
         private void dtgF4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -129,7 +130,7 @@ namespace IMS
 
         private void txtcountry_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
             String str = "SELECT COUNTRY_ID AS [ID], COUNTRY, COUNTRY_CODE FROM M_COUNTRY WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);

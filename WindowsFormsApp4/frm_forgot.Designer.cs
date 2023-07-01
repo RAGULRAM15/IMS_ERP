@@ -218,6 +218,7 @@ namespace IMS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 227);
             this.Controls.Add(this.panel_login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Name = "frm_forgot";
             this.Text = "Forgot Password";

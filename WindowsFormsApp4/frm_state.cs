@@ -52,7 +52,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_STATE WHERE STATE_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -76,17 +76,18 @@ namespace IMS
         private void txtstate_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.KeyCode == Keys.F2)
-            {
-                frmf2 popup = new frmf2();
-                string _query = "SELECT STATE_ID AS [ID], STATE,STATE_CODE, S.COUNTRY FROM [M_STATE] D INNER JOIN[dbo].[M_COUNTRY] S ON D.COUNTRY_ID = S.COUNTRY_ID WHERE D.ACTIVE = 1";
-                //string _query = "SELECT STATE_ID AS [ID], STATE, STATE_CODE FROM M_STATE WHERE ACTIVE = 1";
-                popup.ShowF2(_query, "State", ((TextBox)sender).Text, "State", sender);
-            }
+            //if (e.KeyCode == Keys.F2)
+            //{
+            //    frmf2 popup = new frmf2();
+            //    string _query = "SELECT STATE_ID AS [ID], STATE,STATE_CODE, S.COUNTRY FROM [M_STATE] D INNER JOIN[dbo].[M_COUNTRY] S ON D.COUNTRY_ID = S.COUNTRY_ID WHERE D.ACTIVE = 1";
+            //    //string _query = "SELECT STATE_ID AS [ID], STATE, STATE_CODE FROM M_STATE WHERE ACTIVE = 1";
+            //    popup.ShowF2(_query, "State", ((TextBox)sender).Text, "State", sender);
+            //}
         }
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         public void refresh()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            
             String str = "SELECT  STATE_ID AS [ID], STATE, STATE_CODE FROM M_STATE WHERE ACTIVE = 1";
 
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -125,7 +126,7 @@ namespace IMS
 
         private void txtstate_TextChanged(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
             String str = "SELECT  STATE_ID AS [ID], STATE, STATE_CODE FROM M_STATE WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);

@@ -50,7 +50,6 @@ namespace IMS
             this.sETUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gENERALSETUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eNTRYNOSETUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cHANGEPASSWORDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSERRIGHTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip5 = new System.Windows.Forms.MenuStrip();
@@ -78,11 +77,9 @@ namespace IMS
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtdate = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_cname = new System.Windows.Forms.Label();
             this.lbl_fyear = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnprofile = new System.Windows.Forms.Button();
             this.txttime = new System.Windows.Forms.TextBox();
             this.lbl_comp_tag = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,6 +87,7 @@ namespace IMS
             this.pnltop = new System.Windows.Forms.Panel();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pic_Box = new System.Windows.Forms.PictureBox();
             this.pnlleft.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -100,8 +98,8 @@ namespace IMS
             this.menuStrip7.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnltop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Box)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlleft
@@ -275,7 +273,6 @@ namespace IMS
             this.sETUPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gENERALSETUPToolStripMenuItem,
             this.eNTRYNOSETUPToolStripMenuItem,
-            this.cHANGEPASSWORDToolStripMenuItem,
             this.uSERToolStripMenuItem,
             this.uSERRIGHTSToolStripMenuItem});
             this.sETUPToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,33 +285,27 @@ namespace IMS
             // gENERALSETUPToolStripMenuItem
             // 
             this.gENERALSETUPToolStripMenuItem.Name = "gENERALSETUPToolStripMenuItem";
-            this.gENERALSETUPToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gENERALSETUPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gENERALSETUPToolStripMenuItem.Text = "GENERAL SETUP";
             // 
             // eNTRYNOSETUPToolStripMenuItem
             // 
             this.eNTRYNOSETUPToolStripMenuItem.Name = "eNTRYNOSETUPToolStripMenuItem";
-            this.eNTRYNOSETUPToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.eNTRYNOSETUPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eNTRYNOSETUPToolStripMenuItem.Text = "ENTRYNO SETUP";
             this.eNTRYNOSETUPToolStripMenuItem.Click += new System.EventHandler(this.mnuentrysetup_Click);
-            // 
-            // cHANGEPASSWORDToolStripMenuItem
-            // 
-            this.cHANGEPASSWORDToolStripMenuItem.Name = "cHANGEPASSWORDToolStripMenuItem";
-            this.cHANGEPASSWORDToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.cHANGEPASSWORDToolStripMenuItem.Text = "CHANGE PASSWORD";
-            this.cHANGEPASSWORDToolStripMenuItem.Click += new System.EventHandler(this.cHANGEPASSWORDToolStripMenuItem_Click);
             // 
             // uSERToolStripMenuItem
             // 
             this.uSERToolStripMenuItem.Name = "uSERToolStripMenuItem";
-            this.uSERToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.uSERToolStripMenuItem.ShowShortcutKeys = false;
+            this.uSERToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uSERToolStripMenuItem.Text = "USER";
             // 
             // uSERRIGHTSToolStripMenuItem
             // 
             this.uSERRIGHTSToolStripMenuItem.Name = "uSERRIGHTSToolStripMenuItem";
-            this.uSERRIGHTSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.uSERRIGHTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uSERRIGHTSToolStripMenuItem.Text = "USER RIGHTS";
             // 
             // menuStrip5
@@ -446,7 +437,7 @@ namespace IMS
             // 
             this.cITYToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cITYToolStripMenuItem.Image")));
             this.cITYToolStripMenuItem.Name = "cITYToolStripMenuItem";
-            this.cITYToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.cITYToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.cITYToolStripMenuItem.Text = "CITY";
             this.cITYToolStripMenuItem.Click += new System.EventHandler(this.mnuCity_Click);
             // 
@@ -454,7 +445,7 @@ namespace IMS
             // 
             this.sTATEToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sTATEToolStripMenuItem.Image")));
             this.sTATEToolStripMenuItem.Name = "sTATEToolStripMenuItem";
-            this.sTATEToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.sTATEToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.sTATEToolStripMenuItem.Text = "STATE";
             this.sTATEToolStripMenuItem.Click += new System.EventHandler(this.mnuState_Click);
             // 
@@ -462,7 +453,7 @@ namespace IMS
             // 
             this.cOUNTRYToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cOUNTRYToolStripMenuItem.Image")));
             this.cOUNTRYToolStripMenuItem.Name = "cOUNTRYToolStripMenuItem";
-            this.cOUNTRYToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.cOUNTRYToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.cOUNTRYToolStripMenuItem.Text = "COUNTRY";
             this.cOUNTRYToolStripMenuItem.Click += new System.EventHandler(this.mnuCountry_Click);
             // 
@@ -470,7 +461,7 @@ namespace IMS
             // 
             this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
             this.toolStripMenuItem2.Text = "DISTRICT";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.mnudistrict_Click);
             // 
@@ -478,7 +469,7 @@ namespace IMS
             // 
             this.aDDLESSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aDDLESSToolStripMenuItem.Image")));
             this.aDDLESSToolStripMenuItem.Name = "aDDLESSToolStripMenuItem";
-            this.aDDLESSToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.aDDLESSToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.aDDLESSToolStripMenuItem.Text = "TAX";
             this.aDDLESSToolStripMenuItem.Click += new System.EventHandler(this.mnutax_Click);
             // 
@@ -486,7 +477,7 @@ namespace IMS
             // 
             this.iTEMToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("iTEMToolStripMenuItem.Image")));
             this.iTEMToolStripMenuItem.Name = "iTEMToolStripMenuItem";
-            this.iTEMToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.iTEMToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.iTEMToolStripMenuItem.Text = "ITEM";
             this.iTEMToolStripMenuItem.Click += new System.EventHandler(this.mnuitem_REPORT_Click);
             // 
@@ -494,7 +485,7 @@ namespace IMS
             // 
             this.sIZEToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sIZEToolStripMenuItem.Image")));
             this.sIZEToolStripMenuItem.Name = "sIZEToolStripMenuItem";
-            this.sIZEToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.sIZEToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.sIZEToolStripMenuItem.Text = "SIZE";
             this.sIZEToolStripMenuItem.Click += new System.EventHandler(this.mnusize_Click);
             // 
@@ -502,7 +493,7 @@ namespace IMS
             // 
             this.bANKToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bANKToolStripMenuItem.Image")));
             this.bANKToolStripMenuItem.Name = "bANKToolStripMenuItem";
-            this.bANKToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.bANKToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.bANKToolStripMenuItem.Text = "BANK";
             this.bANKToolStripMenuItem.Click += new System.EventHandler(this.mnubank_Click);
             // 
@@ -510,7 +501,7 @@ namespace IMS
             // 
             this.cUSTOMERToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cUSTOMERToolStripMenuItem.Image")));
             this.cUSTOMERToolStripMenuItem.Name = "cUSTOMERToolStripMenuItem";
-            this.cUSTOMERToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.cUSTOMERToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.cUSTOMERToolStripMenuItem.Text = "CUSTOMER";
             this.cUSTOMERToolStripMenuItem.Click += new System.EventHandler(this.mnuCUSTOMER_Click);
             // 
@@ -518,7 +509,7 @@ namespace IMS
             // 
             this.cOMPANYToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cOMPANYToolStripMenuItem.Image")));
             this.cOMPANYToolStripMenuItem.Name = "cOMPANYToolStripMenuItem";
-            this.cOMPANYToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.cOMPANYToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.cOMPANYToolStripMenuItem.Text = "COMPANY";
             this.cOMPANYToolStripMenuItem.Click += new System.EventHandler(this.mnucompany_Click);
             // 
@@ -526,7 +517,7 @@ namespace IMS
             // 
             this.eNTRYNAMEToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eNTRYNAMEToolStripMenuItem.Image")));
             this.eNTRYNAMEToolStripMenuItem.Name = "eNTRYNAMEToolStripMenuItem";
-            this.eNTRYNAMEToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.eNTRYNAMEToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.eNTRYNAMEToolStripMenuItem.Text = "ENTRY NAME";
             this.eNTRYNAMEToolStripMenuItem.Click += new System.EventHandler(this.mnuentry_Click);
             // 
@@ -540,33 +531,33 @@ namespace IMS
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtdate, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_cname, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_fyear, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnprofile, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.txttime, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_comp_tag, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_year_tag, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pic_Box, 6, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.01961F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.98039F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1187, 75);
             this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 36);
+            this.label5.Location = new System.Drawing.Point(3, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(1, 13);
             this.label5.TabIndex = 51;
@@ -578,7 +569,7 @@ namespace IMS
             this.txtdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtdate.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdate.Location = new System.Drawing.Point(941, 39);
+            this.txtdate.Location = new System.Drawing.Point(938, 44);
             this.txtdate.Name = "txtdate";
             this.txtdate.ReadOnly = true;
             this.txtdate.Size = new System.Drawing.Size(112, 23);
@@ -586,25 +577,14 @@ namespace IMS
             this.txtdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtdate.Visible = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(85, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // lbl_cname
             // 
             this.lbl_cname.AutoSize = true;
             this.lbl_cname.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_cname.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cname.Location = new System.Drawing.Point(935, 0);
+            this.lbl_cname.Location = new System.Drawing.Point(932, 0);
             this.lbl_cname.Name = "lbl_cname";
-            this.lbl_cname.Size = new System.Drawing.Size(0, 36);
+            this.lbl_cname.Size = new System.Drawing.Size(0, 41);
             this.lbl_cname.TabIndex = 2;
             this.lbl_cname.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_cname.Click += new System.EventHandler(this.lbl_cname_Click);
@@ -614,9 +594,9 @@ namespace IMS
             this.lbl_fyear.AutoSize = true;
             this.lbl_fyear.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_fyear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fyear.Location = new System.Drawing.Point(935, 36);
+            this.lbl_fyear.Location = new System.Drawing.Point(932, 41);
             this.lbl_fyear.Name = "lbl_fyear";
-            this.lbl_fyear.Size = new System.Drawing.Size(0, 39);
+            this.lbl_fyear.Size = new System.Drawing.Size(0, 34);
             this.lbl_fyear.TabIndex = 3;
             this.lbl_fyear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_fyear.Click += new System.EventHandler(this.lbl_fyear_Click);
@@ -628,25 +608,13 @@ namespace IMS
             this.textBox1.Size = new System.Drawing.Size(1, 20);
             this.textBox1.TabIndex = 4;
             // 
-            // btnprofile
-            // 
-            this.btnprofile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnprofile.FlatAppearance.BorderSize = 0;
-            this.btnprofile.Image = ((System.Drawing.Image)(resources.GetObject("btnprofile.Image")));
-            this.btnprofile.Location = new System.Drawing.Point(1059, 3);
-            this.btnprofile.Name = "btnprofile";
-            this.btnprofile.Size = new System.Drawing.Size(125, 30);
-            this.btnprofile.TabIndex = 2;
-            this.btnprofile.UseVisualStyleBackColor = true;
-            this.btnprofile.Click += new System.EventHandler(this.btnprofile_Click);
-            // 
             // txttime
             // 
             this.txttime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.txttime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txttime.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttime.Location = new System.Drawing.Point(941, 3);
+            this.txttime.Location = new System.Drawing.Point(938, 3);
             this.txttime.Name = "txttime";
             this.txttime.ReadOnly = true;
             this.txttime.Size = new System.Drawing.Size(112, 23);
@@ -656,7 +624,7 @@ namespace IMS
             // lbl_comp_tag
             // 
             this.lbl_comp_tag.AutoSize = true;
-            this.lbl_comp_tag.Location = new System.Drawing.Point(514, 0);
+            this.lbl_comp_tag.Location = new System.Drawing.Point(511, 0);
             this.lbl_comp_tag.Name = "lbl_comp_tag";
             this.lbl_comp_tag.Size = new System.Drawing.Size(35, 13);
             this.lbl_comp_tag.TabIndex = 49;
@@ -666,7 +634,7 @@ namespace IMS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(96, 0);
+            this.label2.Location = new System.Drawing.Point(93, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 10;
@@ -674,7 +642,7 @@ namespace IMS
             // lbl_year_tag
             // 
             this.lbl_year_tag.AutoSize = true;
-            this.lbl_year_tag.Location = new System.Drawing.Point(514, 36);
+            this.lbl_year_tag.Location = new System.Drawing.Point(511, 41);
             this.lbl_year_tag.Name = "lbl_year_tag";
             this.lbl_year_tag.Size = new System.Drawing.Size(35, 13);
             this.lbl_year_tag.TabIndex = 50;
@@ -699,6 +667,18 @@ namespace IMS
             this.timer1.Interval = 1000000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pic_Box
+            // 
+            this.pic_Box.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_Box.Location = new System.Drawing.Point(1056, 3);
+            this.pic_Box.Name = "pic_Box";
+            this.tableLayoutPanel1.SetRowSpan(this.pic_Box, 2);
+            this.pic_Box.Size = new System.Drawing.Size(128, 69);
+            this.pic_Box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Box.TabIndex = 52;
+            this.pic_Box.TabStop = false;
+            this.pic_Box.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frm_mid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -707,6 +687,7 @@ namespace IMS
             this.ClientSize = new System.Drawing.Size(1187, 549);
             this.Controls.Add(this.pnlleft);
             this.Controls.Add(this.pnltop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
             this.Name = "frm_mid";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -730,8 +711,8 @@ namespace IMS
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnltop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Box)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -740,11 +721,9 @@ namespace IMS
         private System.Windows.Forms.Panel pnlleft;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtdate;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_cname;
         private System.Windows.Forms.Label lbl_fyear;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnprofile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txttime;
         private System.Windows.Forms.Panel pnltop;
@@ -770,7 +749,6 @@ namespace IMS
         private System.Windows.Forms.ToolStripMenuItem sETUPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gENERALSETUPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eNTRYNOSETUPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cHANGEPASSWORDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uSERToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uSERRIGHTSToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip5;
@@ -796,5 +774,6 @@ namespace IMS
         private System.Windows.Forms.ToolStripMenuItem cOMPANYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eNTRYNAMEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sALESORDERToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pic_Box;
     }
 }

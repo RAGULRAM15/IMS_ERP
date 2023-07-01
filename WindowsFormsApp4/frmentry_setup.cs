@@ -27,11 +27,12 @@ namespace IMS
           int nWidthEllipse,
           int nHeightEllipse
          );
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
         private void frmentry_setup_Load(object sender, EventArgs e)
         {
 
             //String c;
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           
             String str = "SELECT ENTRY_SETUP_ID AS [ID],M_FY_YEAR.FY_YEAR,M_COMPANY.COMPANY_NAME,M_ENTRY.ENTRY_NAME,PREFIIX,RESET_BY,LAST_NO FROM  M_ENTRY_SETUP INNER JOIN M_FY_YEAR  ON M_ENTRY_SETUP.ACTIVE = M_FY_YEAR.ACTIVE INNER JOIN M_COMPANY  ON M_ENTRY_SETUP.ACTIVE = M_COMPANY.ACTIVE INNER JOIN M_ENTRY  ON M_ENTRY_SETUP.ACTIVE = M_ENTRY.ACTIVE WHERE M_FY_YEAR.FY_YEAR_ID = M_ENTRY_SETUP.FY_YEAR_ID AND M_COMPANY.COMPANY_ID = M_ENTRY_SETUP.COMPANY_ID AND M_ENTRY.ENTRY_ID = M_ENTRY_SETUP.ENTRY_ID";
 
 

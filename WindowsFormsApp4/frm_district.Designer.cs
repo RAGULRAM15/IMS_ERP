@@ -33,6 +33,9 @@ namespace IMS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_district));
             this.txt3 = new System.Windows.Forms.TextBox();
             this.dtgF4 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DISTRICT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DISTRICT_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtdistrict = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,9 +61,13 @@ namespace IMS
             // 
             this.dtgF4.AllowUserToAddRows = false;
             this.dtgF4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgF4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
+            this.dtgF4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.dtgF4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgF4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgF4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.DISTRICT,
+            this.DISTRICT_CODE});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -71,10 +78,33 @@ namespace IMS
             this.dtgF4.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgF4.Location = new System.Drawing.Point(40, 141);
             this.dtgF4.Name = "dtgF4";
+            this.dtgF4.ReadOnly = true;
             this.dtgF4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgF4.Size = new System.Drawing.Size(414, 362);
             this.dtgF4.TabIndex = 18;
             this.dtgF4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgF4_CellDoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // DISTRICT
+            // 
+            this.DISTRICT.DataPropertyName = "DISTRICT";
+            this.DISTRICT.HeaderText = "DISTRICT";
+            this.DISTRICT.Name = "DISTRICT";
+            this.DISTRICT.ReadOnly = true;
+            // 
+            // DISTRICT_CODE
+            // 
+            this.DISTRICT_CODE.DataPropertyName = "DISTRICT_CODE";
+            this.DISTRICT_CODE.HeaderText = "DISTRICT CODE";
+            this.DISTRICT_CODE.Name = "DISTRICT_CODE";
+            this.DISTRICT_CODE.ReadOnly = true;
             // 
             // txtdistrict
             // 
@@ -182,7 +212,7 @@ namespace IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(490, 510);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -221,5 +251,8 @@ namespace IMS
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DISTRICT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DISTRICT_CODE;
     }
 }

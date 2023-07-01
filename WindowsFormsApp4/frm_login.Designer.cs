@@ -69,11 +69,15 @@ namespace IMS
             // txtuser
             // 
             this.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtuser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuser.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuser.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtuser.Location = new System.Drawing.Point(82, 155);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(182, 22);
             this.txtuser.TabIndex = 1;
+            this.txtuser.Text = "User Name";
+            this.txtuser.Enter += new System.EventHandler(this.txtuser_Enter);
+            this.txtuser.Leave += new System.EventHandler(this.txtuser_Leave);
             // 
             // picuser
             // 
@@ -103,15 +107,17 @@ namespace IMS
             // 
             this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpassword.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassword.ForeColor = System.Drawing.Color.DimGray;
+            this.txtpassword.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtpassword.Location = new System.Drawing.Point(82, 190);
             this.txtpassword.Multiline = true;
             this.txtpassword.Name = "txtpassword";
-            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(182, 24);
             this.txtpassword.TabIndex = 2;
+            this.txtpassword.Text = "Password";
             this.txtpassword.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
+            this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
             this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpassword_KeyDown);
+            this.txtpassword.Leave += new System.EventHandler(this.txtpassword_Leave);
             // 
             // btnclose
             // 
