@@ -27,7 +27,7 @@ namespace IMS
           int nWidthEllipse,
           int nHeightEllipse
          );
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void frmentry_setup_Load(object sender, EventArgs e)
         {
 

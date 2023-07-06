@@ -60,7 +60,7 @@ namespace IMS
                 if (MODE == "ADD ITEM")
                 {
                     {
-                        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                         string qurey = "INSERT INTO [M_ITEM](ITEM_NAME,HSN_CODE,CGST,SGST,IGST,SIZE,SIZE_ID,ACTIVE) VALUES('" + txt1.Text + "','" + txthsn.Text + "'," +
 
                             " '" + txtcgst.Text + "','"
@@ -81,7 +81,7 @@ namespace IMS
                 {
                     txt2.Text = frm_item.value1;
                     String Query;
-                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                     using (SqlConnection conn = new SqlConnection(ConnString))
                     {
                         //INSERT (  ) VALUES ("
@@ -197,7 +197,7 @@ namespace IMS
             //btnclose.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnclose.Width, btnclose.Height, 20, 20));
             //btnok.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnok.Width, btnok.Height, 20, 20));
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public void drop()
         {
            

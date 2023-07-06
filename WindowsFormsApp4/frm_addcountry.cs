@@ -46,7 +46,7 @@ namespace IMS
 
             if (txtcode.Text != "" && txtcountry.Text != "" && txt3.Text=="")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "INSERT INTO [dbo].[M_COUNTRY](COUNTRY,COUNTRY_CODE,ACTIVE) VALUES('" + txtcountry.Text + "','" + txtcode.Text + "'," + "1" + ")";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();
@@ -59,7 +59,7 @@ namespace IMS
             }
             else if (txt3.Text != "")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "UPDATE M_COUNTRY  SET COUNTRY ='" + txtcountry.Text + "', COUNTRY_CODE ='" + txtcode.Text + "'WHERE COUNTRY_ID="+txt3.Text+"";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();

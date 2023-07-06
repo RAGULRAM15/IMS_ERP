@@ -62,7 +62,7 @@ namespace IMS
         }
        // int indexRow;
         //double multi;
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public string mode { get; set; }
         public string entry_name { get; set; }
 
@@ -119,7 +119,7 @@ namespace IMS
             txtsalesorder.Text = frm_Order_list.value1;
             //// textBox3.Text = frm_invoice_list.value2;
             this.Text = mode;
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE_NAME,STYLE_NAME,QUANTITY,RATE,TOTAL,T_SALES_ORDER_ITEM.ITEM_ID,T_SALES_ORDER_ITEM.SIZE_ID FROM T_SALES_ORDER_ITEM " +
              "INNER JOIN M_ITEM ON M_ITEM.ITEM_ID = T_SALES_ORDER_ITEM.ITEM_ID " +
@@ -174,7 +174,7 @@ namespace IMS
             txtsalesorder.Text = frm_Order_list.value1;
             //txtcustomer.Text = frm_invoice_main.value2;
             this.Text = mode;
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE_NAME,STYLE_NAME,QUANTITY,RATE,TOTAL,T_SALES_ORDER_ITEM.ITEM_ID,T_SALES_ORDER_ITEM.SIZE_ID FROM T_SALES_ORDER_ITEM " +
             "INNER JOIN M_ITEM ON M_ITEM.ITEM_ID = T_SALES_ORDER_ITEM.ITEM_ID " +
@@ -252,7 +252,7 @@ namespace IMS
             txtsalesorder.Text = frm_Order_list.value1;
             //txtcustomer.Text = frm_invoice_main.value2;
             this.Text = mode;
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE_NAME,STYLE_NAME,QUANTITY,RATE,TOTAL,T_SALES_ORDER_ITEM.ITEM_ID,T_SALES_ORDER_ITEM.SIZE_ID FROM T_SALES_ORDER_ITEM " +
            "INNER JOIN M_ITEM ON M_ITEM.ITEM_ID = T_SALES_ORDER_ITEM.ITEM_ID " +
@@ -436,7 +436,7 @@ namespace IMS
                             //foreach (DataGridViewRow row in dgvitemform.Rows)SALES_ORDER_FILTER
                             for (int i = 0; i < dgvitemform.Rows.Count; i++)
                             {
-                                StrQuery = @"INSERT INTO [T_SALES_ORDER_ITEM](SALES_ORDER_NO,ROW_ID,ITEM_ID,SIZE_ID,STYLE_NAME,QUANTITY,RATE,TOTAL,ACTIVE) VALUES ("
+                                StrQuery = @"INSERT INTO [T_SALES_ORDER_ITEM](SALES_ORDER_NO,ROW_ID,ITEM_ID,SIZE_ID,STYLE_NAME,QUANTITY,RATE,TOTAL,ACTIVE,BACKUP_QUANTITY) VALUES ("
                                   + "'" + txtsalesorder.Text + "',"
                                   + "'" + dgvitemform.Rows[i].Cells["row_id"].Value + "', "
                                   + "'" + dgvitemform.Rows[i].Cells["item_id"].Value + "' ,"
@@ -446,7 +446,8 @@ namespace IMS
                                   + "'" + dgvitemform.Rows[i].Cells["rate_item"].Value + "',"
 
                                   + "'" + dgvitemform.Rows[i].Cells["netamount"].Value + "',"
-                                  + "'" + "1" + "')";
+                                  + "'" + "1" + "',"
+                                  +"'"+"0"+"')";
                                 sb.Append(StrQuery);
 
 
@@ -549,6 +550,7 @@ namespace IMS
                                              "RATE='" + dgvitemform.Rows[i].Cells["rate_item"].Value + "'," +
 
                                               "TOTAL = '" + dgvitemform.Rows[i].Cells["netamount"].Value + "'," +
+                                              "BACKUP_QUANTITY ='" + "0" + "',"+
                                               "" + "ACTIVE =" + "1" + " WHERE SALES_ORDER_NO ='" + txtsalesorder.Text + "' AND ROW_ID = '"+dgvitemform.Rows[i].Cells["row_id"].Value+"'";
 
                                 sb.Append(StrQuery);
@@ -684,7 +686,6 @@ namespace IMS
 
         private void txt_rate_TextChanged(object sender, EventArgs e)
         {
-
             //if (txt_rate.Text != "" && txt_quantity.Text != "")
             //{
             //    txt_total.Text = (Convert.ToString(Convert.ToDouble(txt_rate.Text) * Convert.ToDouble(txt_quantity.Text)));
@@ -806,7 +807,7 @@ namespace IMS
                             dgvitemform.Rows.RemoveAt(selectedRowIndex);
 
 
-                            MessageBox.Show("DELETED SUCCESSFULLY");
+                           
                             //deletedRowValue = Convert.ToDouble(selectedRow.Cells[7].Value);
                             //deletedRowValue1 = Convert.ToDouble(selectedRow.Cells[4].Value);
                             //sum_total();
@@ -839,7 +840,7 @@ namespace IMS
                            // dgvitemform.Rows.RemoveAt(selectedRowIndex);
 
 
-                            MessageBox.Show("DELETED SUCCESSFULLY");
+                           
                             //deletedRowValue = Convert.ToDouble(selectedRow.Cells[7].Value);
                             //deletedRowValue1 = Convert.ToDouble(selectedRow.Cells[4].Value);
                             //UpdateTotalValue();
@@ -974,9 +975,9 @@ namespace IMS
        
         public void last_no()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //int s = Convert.ToInt32(textBox1.Text);
-            // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             {
                 string query = "select LAST_NO from M_ENTRY_SETUP  WHERE COMPANY_ID=" + lbl_comp.Tag + " AND ENTRY_ID = " + entry_name + "";
                 SqlConnection con = new SqlConnection(ConnString);
@@ -1009,7 +1010,7 @@ namespace IMS
         }
         public void SALES_ORDER_NO()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             String Query = " SELECT CONCAT([PREFIIX],'-',[LAST_NO]+1) AS[SALES_ORDER_NO] FROM[M_ENTRY_SETUP] WHERE COMPANY_ID=" + lbl_comp.Tag + " AND ENTRY_ID = " + entry_name + "";
             using (SqlConnection conn = new SqlConnection(ConnString))
             {
@@ -1066,7 +1067,7 @@ namespace IMS
 
         public void drop_customer()
         {
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //// String str = "Select * from T_QUOTATION_ITEM";
             //String SQLQuery = "SELECT CUSTOMER_ID, CUSTOMER_NAME FROM M_CUSTOMER ";
             //try
@@ -1122,7 +1123,7 @@ namespace IMS
             if (e.KeyCode == Keys.Enter)
             {
 
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 // String str = "Select * from T_QUOTATION_ITEM";
                 String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE_NAME,STYLE_NAME,QUANTITY,RATE,DISCOUNT,TOTAL FROM T_INVOICE_ITEM " +
                 "INNER JOIN M_ITEM ON M_ITEM.ITEM_ID = T_INVOICE_ITEM.ITEM_ID " +
@@ -1196,11 +1197,38 @@ namespace IMS
             if (mode == "EDIT SALES ORDER" || mode == "ADD")
             {
                 txtsubtotal.Text = txt_total_sum.Text;
-                foreach (DataGridViewRow gridViewRow in dgvitemform.Rows)
+                if (dgvitemform.Rows.Count == 0)
                 {
-                  
+                    txtsgst.Text = "0";
+                    txtcgst.Text = "0";
+                    txtigst.Text = "0";
+
+                    double Sgst = Convert.ToDouble(txtsgst.Text);
+                    double Cgst = Convert.ToDouble(txtcgst.Text);
+                    double Igst = Convert.ToDouble(txtigst.Text);
+
+
+                    if (txt_total_sum.Text == "")
+                    {
+
+                        txt_total_sum.Text = "0";
+                    }
+
+                    txtgst_value.Text = Convert.ToString(Convert.ToDouble(Sgst) + Convert.ToDouble(Cgst) + Convert.ToDouble(Igst));
+                    string txt_total = Convert.ToString(((Convert.ToDouble(txt_total_sum.Text)) * ((100 - Convert.ToDouble(txt_discount.Text)) / 100.00)));
+                    double input = Convert.ToDouble(txtgst_value.Text) + Convert.ToDouble(txt_total);
+                    double result = Math.Round(input, 0);
+                    txtnet_amount.Text = result.ToString();
+                    txtnet_amountB.Text = txtnet_amount.Text;
+                    txtroundoff.Text = ((input - Convert.ToDouble(txtnet_amount.Text)) * -1).ToString();
+                }
+                else
+                {
+                    foreach (DataGridViewRow gridViewRow in dgvitemform.Rows)
+                    {
+
                         stxtitem.Text = gridViewRow.Cells["ITEM_ID"].Value.ToString();
-                        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                         String query = "select cgst,igst,sgst from m_item where ITEM_ID='" + stxtitem.Text + "'";
                         SqlConnection conn = new SqlConnection(ConnString);
                         conn.Open();
@@ -1237,7 +1265,8 @@ namespace IMS
 
 
                         stxtitem.Text = "";
-                    
+
+                    }
                 }
                 //if (cal_del_value == true)
                 //{
@@ -1787,7 +1816,7 @@ namespace IMS
                             double total2 = 0;
                             foreach (DataGridViewRow row in dgvitemform.Rows)
                             {
-                                if (viewRow.Cells["rate_item"].Value != null)
+                                if (viewRow.Cells["rate_item"].Value != null && viewRow.Cells["QUANTITY_ITEM"].Value != null )
                                 {
 
                                     if (/*row.Index >= e.RowIndex && */row.Cells["rate_item"].Value != null && row.Cells["netamount"].Value.ToString() != string.Empty)
@@ -1795,7 +1824,7 @@ namespace IMS
                                         total1 += Convert.ToDouble(row.Cells["netamount"].Value);
                                         txt_total_sum.Text = total1.ToString();
                                     }
-                                    if (/*row.Index >= e.RowIndex &&*/ row.Cells["rate_item"].Value != null && row.Cells["QUANTITY_ITEM"].Value.ToString() != string.Empty)
+                                    if (/*row.Index >= e.RowIndex &&*/ row.Cells["QUANTITY_ITEM"].Value != null && row.Cells["netamount"].Value.ToString() != string.Empty)
                                     {
                                         total2 += Convert.ToDouble(row.Cells["QUANTITY_ITEM"].Value);
                                         txt_quantity_sum.Text = total2.ToString();

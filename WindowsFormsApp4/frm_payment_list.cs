@@ -19,7 +19,7 @@ namespace IMS
             InitializeComponent();
         }
 
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
        
         public static int comp_id { get; set; }
         public static int year_id { get; set; }
@@ -138,7 +138,7 @@ namespace IMS
             //value1 = edit_row.Cells[0].Value.ToString();
             //txtquotation.Text = value1;
 
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //// String str = "Select * from T_QUOTATION_ITEM";
             //String SQLQuery = "DELETE FROM T_QUOTATION_ITEM WHERE QUOTATION_ID = '" + txtquotation.Text + "'";
             //String sqlquery = "DELETE FROM T_QUOTATION WHERE QUOTATION_ID = '" + txtquotation.Text + "'";
@@ -253,7 +253,7 @@ namespace IMS
         }
         public void from_date()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
 
             String str = "SELECT FY_YEAR_ID, FROM_DATE, TO_DATE  FROM M_FY_YEAR where  FY_YEAR_ID =" + year_id + "";
 
@@ -278,7 +278,7 @@ namespace IMS
         }
         public void to_date()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
 
             String str = "SELECT fy_year_id, to_date FROM m_fy_year where  fy_year_id =" + year_id + "";
 
@@ -521,7 +521,7 @@ namespace IMS
 
         private void btn_load_Click(object sender, EventArgs e)
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             String str = "SELECT PAYMENT_ID , PAYMENT_NO,PAYMENT_DATE,CUSTOMER_NAME,RECEIVED_BY FROM T_PAYMENT_MAIN" +
                   "   INNER JOIN[M_CUSTOMER] ON [T_PAYMENT_MAIN].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID " +
                   " WHERE [T_PAYMENT_MAIN].COMPANY_ID =" + comp_id + "" +

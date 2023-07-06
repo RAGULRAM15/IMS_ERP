@@ -30,7 +30,7 @@ namespace IMS
         }
         public void DROP()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = " SELECT COMPANY_ID, COMPANY_NAME FROM M_COMPANY WHERE ACTIVE =1 ";
             try
@@ -68,7 +68,7 @@ namespace IMS
         }
         public void DOWN()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = "SELECT FY_YEAR_ID, FY_YEAR FROM M_FY_YEAR WHERE ACTIVE =1 ";
 
@@ -131,7 +131,7 @@ namespace IMS
                 mdi.Show();
                 this.Hide();
             }
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //String Query;
 
             //using (SqlConnection conn = new SqlConnection(ConnString))

@@ -38,7 +38,7 @@ namespace IMS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True")]
         public string QUOTATIONConnectionString {
             get {
                 return ((string)(this["QUOTATIONConnectionString"]));

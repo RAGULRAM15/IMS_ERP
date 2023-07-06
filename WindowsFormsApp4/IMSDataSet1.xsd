@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IMSDataSet1" targetNamespace="http://tempuri.org/IMSDataSet1.xsd" xmlns:mstns="http://tempuri.org/IMSDataSet1.xsd" xmlns="http://tempuri.org/IMSDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QUOTATIONConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QUOTATIONConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IMS.Properties.Settings.GlobalReference.Default.QUOTATIONConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="T_INVOICE_ITEM_REPORTTableAdapter" GeneratorDataComponentClassName="T_INVOICE_ITEM_REPORTTableAdapter" Name="T_INVOICE_ITEM_REPORT" UserDataComponentName="T_INVOICE_ITEM_REPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUOTATIONConnectionString (Settings)" DbObjectName="IMS.dbo.T_INVOICE_ITEM_REPORT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT INVOICE_NO, ROW_ID, ITEM_NAME, SIZE_NAME, STYLE_NAME, BALANCE_QUANTITY, RATE, TOTAL, ITEM_ID, SIZE_ID FROM dbo.T_INVOICE_ITEM_REPORT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="INVOICE_NO" DataSetColumn="INVOICE_NO" />
+              <Mapping SourceColumn="ROW_ID" DataSetColumn="ROW_ID" />
+              <Mapping SourceColumn="ITEM_NAME" DataSetColumn="ITEM_NAME" />
+              <Mapping SourceColumn="SIZE_NAME" DataSetColumn="SIZE_NAME" />
+              <Mapping SourceColumn="STYLE_NAME" DataSetColumn="STYLE_NAME" />
+              <Mapping SourceColumn="BALANCE_QUANTITY" DataSetColumn="BALANCE_QUANTITY" />
+              <Mapping SourceColumn="RATE" DataSetColumn="RATE" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="ITEM_ID" DataSetColumn="ITEM_ID" />
+              <Mapping SourceColumn="SIZE_ID" DataSetColumn="SIZE_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IMSDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="IMSDataSet1" msprop:Generator_UserDSName="IMSDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T_INVOICE_ITEM_REPORT" msprop:Generator_TableClassName="T_INVOICE_ITEM_REPORTDataTable" msprop:Generator_TableVarName="tableT_INVOICE_ITEM_REPORT" msprop:Generator_TablePropName="T_INVOICE_ITEM_REPORT" msprop:Generator_RowDeletingName="T_INVOICE_ITEM_REPORTRowDeleting" msprop:Generator_RowChangingName="T_INVOICE_ITEM_REPORTRowChanging" msprop:Generator_RowEvHandlerName="T_INVOICE_ITEM_REPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="T_INVOICE_ITEM_REPORTRowDeleted" msprop:Generator_UserTableName="T_INVOICE_ITEM_REPORT" msprop:Generator_RowChangedName="T_INVOICE_ITEM_REPORTRowChanged" msprop:Generator_RowEvArgName="T_INVOICE_ITEM_REPORTRowChangeEvent" msprop:Generator_RowClassName="T_INVOICE_ITEM_REPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="INVOICE_NO" msprop:Generator_ColumnVarNameInTable="columnINVOICE_NO" msprop:Generator_ColumnPropNameInRow="INVOICE_NO" msprop:Generator_ColumnPropNameInTable="INVOICE_NOColumn" msprop:Generator_UserColumnName="INVOICE_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ROW_ID" msprop:Generator_ColumnVarNameInTable="columnROW_ID" msprop:Generator_ColumnPropNameInRow="ROW_ID" msprop:Generator_ColumnPropNameInTable="ROW_IDColumn" msprop:Generator_UserColumnName="ROW_ID" type="xs:int" />
+              <xs:element name="ITEM_NAME" msprop:Generator_ColumnVarNameInTable="columnITEM_NAME" msprop:Generator_ColumnPropNameInRow="ITEM_NAME" msprop:Generator_ColumnPropNameInTable="ITEM_NAMEColumn" msprop:Generator_UserColumnName="ITEM_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIZE_NAME" msprop:Generator_ColumnVarNameInTable="columnSIZE_NAME" msprop:Generator_ColumnPropNameInRow="SIZE_NAME" msprop:Generator_ColumnPropNameInTable="SIZE_NAMEColumn" msprop:Generator_UserColumnName="SIZE_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STYLE_NAME" msprop:Generator_ColumnVarNameInTable="columnSTYLE_NAME" msprop:Generator_ColumnPropNameInRow="STYLE_NAME" msprop:Generator_ColumnPropNameInTable="STYLE_NAMEColumn" msprop:Generator_UserColumnName="STYLE_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BALANCE_QUANTITY" msprop:Generator_ColumnVarNameInTable="columnBALANCE_QUANTITY" msprop:Generator_ColumnPropNameInRow="BALANCE_QUANTITY" msprop:Generator_ColumnPropNameInTable="BALANCE_QUANTITYColumn" msprop:Generator_UserColumnName="BALANCE_QUANTITY" type="xs:int" />
+              <xs:element name="RATE" msprop:Generator_ColumnVarNameInTable="columnRATE" msprop:Generator_ColumnPropNameInRow="RATE" msprop:Generator_ColumnPropNameInTable="RATEColumn" msprop:Generator_UserColumnName="RATE" type="xs:decimal" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:decimal" />
+              <xs:element name="ITEM_ID" msprop:Generator_ColumnVarNameInTable="columnITEM_ID" msprop:Generator_ColumnPropNameInRow="ITEM_ID" msprop:Generator_ColumnPropNameInTable="ITEM_IDColumn" msprop:Generator_UserColumnName="ITEM_ID" type="xs:int" />
+              <xs:element name="SIZE_ID" msprop:Generator_ColumnVarNameInTable="columnSIZE_ID" msprop:Generator_ColumnPropNameInRow="SIZE_ID" msprop:Generator_ColumnPropNameInTable="SIZE_IDColumn" msprop:Generator_UserColumnName="SIZE_ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

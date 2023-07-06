@@ -23,7 +23,7 @@ namespace IMS
         public void last_no()
         {
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // int s = Convert.ToInt32(textBox1.Text);
             int N = 1000000;
             for (int s = Convert.ToInt32(textBox1.Text); s <= N; s++)
@@ -61,7 +61,7 @@ namespace IMS
         }
         public void DEBIT_NO()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             String Query = " SELECT CONCAT([PREFIIX],'-',[SUFFIX],'',[LAST_NO]) AS[CREDIT_NO] FROM[M_ENTRY_SETUP] WHERE ENTRY_SETUP_ID = 9";
             using (SqlConnection conn = new SqlConnection(ConnString))
             {
@@ -404,7 +404,7 @@ namespace IMS
             foreach (DataGridViewRow row in dtg_debit.SelectedRows)
             {
                 string ITEM = row.Cells["ITEM_ID"].Value.ToString();
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 String query = "select cgst,igst,sgst from m_item where ITEM_ID='" + ITEM + "'";
                 SqlConnection conn = new SqlConnection(ConnString);
                 conn.Open();
@@ -567,7 +567,7 @@ namespace IMS
 
         private void txtcustomer_TextChanged(object sender, EventArgs e)
         {
-            String Con = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String Con = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //String str = "Select * from T_QUOTATION_ITEM";
             try
             {

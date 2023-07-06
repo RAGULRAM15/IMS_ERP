@@ -23,7 +23,7 @@ namespace IMS
         public object _ct;
 
         //SQL Declarations
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True");
         DataSet ds = new DataSet();
 
 

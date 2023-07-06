@@ -20,7 +20,7 @@ namespace IMS
         private void frmadd_customer_Load(object sender, EventArgs e)
         {
             this.Text = MODE;
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = " SELECT DISTRICT_ID, DISTRICT FROM M_DISTRICT WHERE ACTIVE =1 ";
 
@@ -53,7 +53,7 @@ namespace IMS
                 txt3.ValueMember = "DISTRICT_ID";
                 //txt2.Tag = txt2.ValueMember.ToString();
             }
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery1 = " SELECT STATE_ID, STATE FROM M_STATE WHERE ACTIVE =1 ";
 
@@ -89,7 +89,7 @@ namespace IMS
             }
 
 
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery2 = " SELECT COUNTRY_ID, COUNTRY FROM M_COUNTRY WHERE ACTIVE =1 ";
 
@@ -187,7 +187,7 @@ namespace IMS
             txt15.Text = frmcustomer.value2;
             // [M_CUSTOMER] (  [,[ACTIVE
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             //String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE,STYLE_NAME,QUANTITY,RATE,DISCOUNT,TOTAL FROM T_QUOTATION_ITEM WHERE QUOTATION_NO = '" + txtquotation.Text + "'";
             String sqlquery = "SELECT[CUSTOMER_NAME], [ADDRESS_1], [M_CITY].[CITY], M_DISTRICT.[DISTRICT], M_STATE.[STATE],M_COUNTRY.COUNTRY, [POSTAL_CODE],[PHONE_NO],[MOBILE_NO],[EMAIL],[WEBSITE],[GST_NO], " +
@@ -258,7 +258,7 @@ namespace IMS
         private void btnok_Click(object sender, EventArgs e)
         {
            // txt15.Text = frmcustomer.value2;
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             String Query;
             try
             {
@@ -305,7 +305,7 @@ namespace IMS
                 else if (txt15.Text != "")
                 {
                     txt19.Text = frmcustomer.value2;
-                    // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                    // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                     String Query1;
 
                     using (SqlConnection conn = new SqlConnection(ConnString))
@@ -440,7 +440,7 @@ namespace IMS
             txt1.Text = frmcustomer.value1;
             // [M_CUSTOMER] (  [,[ACTIVE
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             //String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE,STYLE_NAME,QUANTITY,RATE,DISCOUNT,TOTAL FROM T_QUOTATION_ITEM WHERE QUOTATION_NO = '" + txtquotation.Text + "'";
             String sqlquery = "SELECT[CUSTOMER_NAME], [ADDRESS_1], [M_CITY].[CITY], M_DISTRICT.[DISTRICT], M_STATE.[STATE],M_COUNTRY.COUNTRY, [POSTAL_CODE],[PHONE_NO],[MOBILE_NO],[EMAIL],[WEBSITE],[GST_NO], " +

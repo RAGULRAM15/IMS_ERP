@@ -30,22 +30,14 @@ namespace IMS
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_payment));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_payment));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,18 +46,21 @@ namespace IMS
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_amount = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnl_full = new System.Windows.Forms.Panel();
             this.txt_payment = new System.Windows.Forms.TextBox();
             this.dtg_paymain = new System.Windows.Forms.DataGridView();
-            this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoice_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_balance = new System.Windows.Forms.TextBox();
             this.txt_paid = new System.Windows.Forms.TextBox();
             this.btn_close = new System.Windows.Forms.Button();
@@ -78,6 +73,7 @@ namespace IMS
             this.PAY_MODE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BANK_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PAYMENT_REF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_save = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_refer = new System.Windows.Forms.TextBox();
@@ -91,13 +87,6 @@ namespace IMS
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_comp = new System.Windows.Forms.Label();
             this.dtg_credit = new System.Windows.Forms.DataGridView();
-            this.rbtn_credit_note = new System.Windows.Forms.RadioButton();
-            this.txt_credit = new System.Windows.Forms.TextBox();
-            this.lblcreditcheck = new System.Windows.Forms.Label();
-            this.txtpay_id = new System.Windows.Forms.TextBox();
-            this.rate_txt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIZE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,6 +98,22 @@ namespace IMS
             this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIZE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payment_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbtn_credit_note = new System.Windows.Forms.RadioButton();
+            this.txt_credit = new System.Windows.Forms.TextBox();
+            this.lblcreditcheck = new System.Windows.Forms.Label();
+            this.txtpay_id = new System.Windows.Forms.TextBox();
+            this.rate_txt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.invoice_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoice_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CREDIT_NOTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paid_dupicate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_full.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_paymain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_pay_bank)).BeginInit();
@@ -175,9 +180,11 @@ namespace IMS
             this.invoice_date,
             this.total,
             this.paid,
+            this.CREDIT_NOTE,
             this.balance,
             this.select,
-            this.Payment});
+            this.Payment,
+            this.paid_dupicate});
             this.dtg_paymain.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtg_paymain.Location = new System.Drawing.Point(0, 0);
             this.dtg_paymain.Name = "dtg_paymain";
@@ -193,69 +200,6 @@ namespace IMS
             this.dtg_paymain.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_paymain_CellValueChanged);
             this.dtg_paymain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtg_paymain_DataBindingComplete);
             this.dtg_paymain.SelectionChanged += new System.EventHandler(this.dtg_paymain_SelectionChanged);
-            // 
-            // invoice_no
-            // 
-            this.invoice_no.DataPropertyName = "invoice_no";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.invoice_no.DefaultCellStyle = dataGridViewCellStyle2;
-            this.invoice_no.HeaderText = "INVOICE NO";
-            this.invoice_no.Name = "invoice_no";
-            // 
-            // invoice_date
-            // 
-            this.invoice_date.DataPropertyName = "invoice_date";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.invoice_date.DefaultCellStyle = dataGridViewCellStyle3;
-            this.invoice_date.HeaderText = "INVOICE DATE";
-            this.invoice_date.Name = "invoice_date";
-            // 
-            // total
-            // 
-            this.total.DataPropertyName = "NET_AMOUNT";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.total.DefaultCellStyle = dataGridViewCellStyle4;
-            this.total.HeaderText = "AMOUNT";
-            this.total.Name = "total";
-            // 
-            // paid
-            // 
-            this.paid.DataPropertyName = "PAID";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.paid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.paid.HeaderText = "PAID";
-            this.paid.Name = "paid";
-            // 
-            // balance
-            // 
-            this.balance.DataPropertyName = "balance";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.balance.DefaultCellStyle = dataGridViewCellStyle6;
-            this.balance.HeaderText = "BALANCE";
-            this.balance.Name = "balance";
-            // 
-            // select
-            // 
-            this.select.DataPropertyName = "active";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle7.NullValue = false;
-            this.select.DefaultCellStyle = dataGridViewCellStyle7;
-            this.select.HeaderText = "SELECT";
-            this.select.Name = "select";
-            // 
-            // Payment
-            // 
-            this.Payment.DataPropertyName = "Payment";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.Payment.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Payment.HeaderText = "PAYMENT";
-            this.Payment.Name = "Payment";
-            this.Payment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // txt_balance
             // 
@@ -294,14 +238,14 @@ namespace IMS
             // 
             this.dtg_pay_bank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_pay_bank.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_pay_bank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_pay_bank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dtg_pay_bank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_pay_bank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pay_mode,
@@ -311,9 +255,18 @@ namespace IMS
             this.amount,
             this.PAY_MODE_ID,
             this.BANK_ID,
-            this.PAYMENT_REF});
+            this.PAYMENT_REF,
+            this.invoiceno});
             this.dtg_pay_bank.Location = new System.Drawing.Point(0, 437);
             this.dtg_pay_bank.Name = "dtg_pay_bank";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_pay_bank.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dtg_pay_bank.Size = new System.Drawing.Size(517, 150);
             this.dtg_pay_bank.TabIndex = 1;
             this.dtg_pay_bank.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_pay_bank_CellClick);
@@ -332,8 +285,8 @@ namespace IMS
             // pay_mode
             // 
             this.pay_mode.DataPropertyName = "pay_mode";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.pay_mode.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.pay_mode.DefaultCellStyle = dataGridViewCellStyle11;
             this.pay_mode.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.pay_mode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pay_mode.HeaderText = "PAY MODE";
@@ -344,16 +297,16 @@ namespace IMS
             // ref_no
             // 
             this.ref_no.DataPropertyName = "ref_no";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.ref_no.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.ref_no.DefaultCellStyle = dataGridViewCellStyle12;
             this.ref_no.HeaderText = "Ref.No";
             this.ref_no.Name = "ref_no";
             // 
             // ref_date
             // 
             this.ref_date.DataPropertyName = "ref_date";
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.ref_date.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.ref_date.DefaultCellStyle = dataGridViewCellStyle13;
             this.ref_date.HeaderText = "Ref.Date";
             this.ref_date.Name = "ref_date";
             this.ref_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -361,8 +314,8 @@ namespace IMS
             // bank
             // 
             this.bank.DataPropertyName = "bank";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.bank.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.bank.DefaultCellStyle = dataGridViewCellStyle14;
             this.bank.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.bank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bank.HeaderText = "BANK";
@@ -373,8 +326,8 @@ namespace IMS
             // amount
             // 
             this.amount.DataPropertyName = "amount";
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.amount.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.amount.DefaultCellStyle = dataGridViewCellStyle15;
             this.amount.HeaderText = "AMOUNT";
             this.amount.Name = "amount";
             // 
@@ -398,6 +351,13 @@ namespace IMS
             this.PAYMENT_REF.HeaderText = "PAYMENT_REF";
             this.PAYMENT_REF.Name = "PAYMENT_REF";
             this.PAYMENT_REF.Visible = false;
+            // 
+            // invoiceno
+            // 
+            this.invoiceno.DataPropertyName = "INVOICE_NO";
+            this.invoiceno.HeaderText = "invoice_no";
+            this.invoiceno.Name = "invoiceno";
+            this.invoiceno.Visible = false;
             // 
             // btn_save
             // 
@@ -435,7 +395,7 @@ namespace IMS
             // clk_select_all
             // 
             this.clk_select_all.AutoSize = true;
-            this.clk_select_all.Location = new System.Drawing.Point(839, 96);
+            this.clk_select_all.Location = new System.Drawing.Point(896, 96);
             this.clk_select_all.Name = "clk_select_all";
             this.clk_select_all.Size = new System.Drawing.Size(89, 17);
             this.clk_select_all.TabIndex = 48;
@@ -491,10 +451,11 @@ namespace IMS
             this.txt_datetime.Enabled = false;
             this.txt_datetime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_datetime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txt_datetime.Location = new System.Drawing.Point(1000, 59);
+            this.txt_datetime.Location = new System.Drawing.Point(990, 59);
             this.txt_datetime.Name = "txt_datetime";
-            this.txt_datetime.Size = new System.Drawing.Size(111, 22);
+            this.txt_datetime.Size = new System.Drawing.Size(119, 22);
             this.txt_datetime.TabIndex = 43;
+            this.txt_datetime.ValueChanged += new System.EventHandler(this.txt_datetime_ValueChanged);
             // 
             // label3
             // 
@@ -532,14 +493,14 @@ namespace IMS
             this.dtg_credit.AllowUserToResizeRows = false;
             this.dtg_credit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_credit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_credit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_credit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dtg_credit.ColumnHeadersHeight = 21;
             this.dtg_credit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ITEM,
@@ -562,6 +523,102 @@ namespace IMS
             this.dtg_credit.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_credit_CellEndEdit);
             this.dtg_credit.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_credit_CellValidated);
             this.dtg_credit.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtg_credit_DataBindingComplete);
+            // 
+            // ITEM
+            // 
+            this.ITEM.DataPropertyName = "ITEM_NAME";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.ITEM.DefaultCellStyle = dataGridViewCellStyle18;
+            this.ITEM.HeaderText = "ITEM";
+            this.ITEM.Name = "ITEM";
+            // 
+            // SIZE
+            // 
+            this.SIZE.DataPropertyName = "SIZE_NAME";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.SIZE.DefaultCellStyle = dataGridViewCellStyle19;
+            this.SIZE.HeaderText = "SIZE";
+            this.SIZE.Name = "SIZE";
+            // 
+            // QUANTITY
+            // 
+            this.QUANTITY.DataPropertyName = "QUANTITY";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle20;
+            this.QUANTITY.HeaderText = "QUANTITY";
+            this.QUANTITY.Name = "QUANTITY";
+            // 
+            // RATE
+            // 
+            this.RATE.DataPropertyName = "RATE";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.RATE.DefaultCellStyle = dataGridViewCellStyle21;
+            this.RATE.HeaderText = "RATE";
+            this.RATE.Name = "RATE";
+            // 
+            // CGST
+            // 
+            this.CGST.DataPropertyName = "CGST";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.CGST.DefaultCellStyle = dataGridViewCellStyle22;
+            this.CGST.HeaderText = "CGST";
+            this.CGST.Name = "CGST";
+            // 
+            // SGST
+            // 
+            this.SGST.DataPropertyName = "SGST";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.SGST.DefaultCellStyle = dataGridViewCellStyle23;
+            this.SGST.HeaderText = "SGST";
+            this.SGST.Name = "SGST";
+            // 
+            // IGST
+            // 
+            this.IGST.DataPropertyName = "IGST";
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.IGST.DefaultCellStyle = dataGridViewCellStyle24;
+            this.IGST.HeaderText = "IGST";
+            this.IGST.Name = "IGST";
+            // 
+            // NET_AMOUNT
+            // 
+            this.NET_AMOUNT.DataPropertyName = "TOTAL";
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.NET_AMOUNT.DefaultCellStyle = dataGridViewCellStyle25;
+            this.NET_AMOUNT.HeaderText = "AMOUNT";
+            this.NET_AMOUNT.Name = "NET_AMOUNT";
+            // 
+            // ITEM_ID
+            // 
+            this.ITEM_ID.DataPropertyName = "ITEM_ID";
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.ITEM_ID.DefaultCellStyle = dataGridViewCellStyle26;
+            this.ITEM_ID.HeaderText = "ITEM_ID";
+            this.ITEM_ID.Name = "ITEM_ID";
+            this.ITEM_ID.Visible = false;
+            // 
+            // SIZE_ID
+            // 
+            this.SIZE_ID.DataPropertyName = "SIZE_ID";
+            this.SIZE_ID.HeaderText = "SIZE_ID";
+            this.SIZE_ID.Name = "SIZE_ID";
+            this.SIZE_ID.Visible = false;
+            // 
+            // payment_id
+            // 
+            this.payment_id.DataPropertyName = "PAYMENT_ID";
+            this.payment_id.HeaderText = "payment_id";
+            this.payment_id.Name = "payment_id";
+            this.payment_id.Visible = false;
             // 
             // rbtn_credit_note
             // 
@@ -633,101 +690,82 @@ namespace IMS
             this.label7.TabIndex = 503;
             this.label7.Visible = false;
             // 
-            // ITEM
+            // invoice_no
             // 
-            this.ITEM.DataPropertyName = "ITEM_NAME";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.ITEM.DefaultCellStyle = dataGridViewCellStyle16;
-            this.ITEM.HeaderText = "ITEM";
-            this.ITEM.Name = "ITEM";
+            this.invoice_no.DataPropertyName = "invoice_no";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.invoice_no.DefaultCellStyle = dataGridViewCellStyle2;
+            this.invoice_no.HeaderText = "INVOICE NO";
+            this.invoice_no.Name = "invoice_no";
             // 
-            // SIZE
+            // invoice_date
             // 
-            this.SIZE.DataPropertyName = "SIZE_NAME";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.SIZE.DefaultCellStyle = dataGridViewCellStyle17;
-            this.SIZE.HeaderText = "SIZE";
-            this.SIZE.Name = "SIZE";
+            this.invoice_date.DataPropertyName = "invoice_date";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.invoice_date.DefaultCellStyle = dataGridViewCellStyle3;
+            this.invoice_date.HeaderText = "INVOICE DATE";
+            this.invoice_date.Name = "invoice_date";
             // 
-            // QUANTITY
+            // total
             // 
-            this.QUANTITY.DataPropertyName = "QUANTITY";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.QUANTITY.DefaultCellStyle = dataGridViewCellStyle18;
-            this.QUANTITY.HeaderText = "QUANTITY";
-            this.QUANTITY.Name = "QUANTITY";
+            this.total.DataPropertyName = "NET_AMOUNT";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.total.DefaultCellStyle = dataGridViewCellStyle4;
+            this.total.HeaderText = "AMOUNT";
+            this.total.Name = "total";
             // 
-            // RATE
+            // paid
             // 
-            this.RATE.DataPropertyName = "RATE";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.RATE.DefaultCellStyle = dataGridViewCellStyle19;
-            this.RATE.HeaderText = "RATE";
-            this.RATE.Name = "RATE";
+            this.paid.DataPropertyName = "PAID";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.paid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.paid.HeaderText = "PAID";
+            this.paid.Name = "paid";
             // 
-            // CGST
+            // CREDIT_NOTE
             // 
-            this.CGST.DataPropertyName = "CGST";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.CGST.DefaultCellStyle = dataGridViewCellStyle20;
-            this.CGST.HeaderText = "CGST";
-            this.CGST.Name = "CGST";
+            this.CREDIT_NOTE.DataPropertyName = "CREDIT_NOTE";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CREDIT_NOTE.DefaultCellStyle = dataGridViewCellStyle6;
+            this.CREDIT_NOTE.HeaderText = "CREDIT NOTE ";
+            this.CREDIT_NOTE.Name = "CREDIT_NOTE";
             // 
-            // SGST
+            // balance
             // 
-            this.SGST.DataPropertyName = "SGST";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.SGST.DefaultCellStyle = dataGridViewCellStyle21;
-            this.SGST.HeaderText = "SGST";
-            this.SGST.Name = "SGST";
+            this.balance.DataPropertyName = "balance";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.balance.DefaultCellStyle = dataGridViewCellStyle7;
+            this.balance.HeaderText = "BALANCE";
+            this.balance.Name = "balance";
             // 
-            // IGST
+            // select
             // 
-            this.IGST.DataPropertyName = "IGST";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.IGST.DefaultCellStyle = dataGridViewCellStyle22;
-            this.IGST.HeaderText = "IGST";
-            this.IGST.Name = "IGST";
+            this.select.DataPropertyName = "active";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle8.NullValue = false;
+            this.select.DefaultCellStyle = dataGridViewCellStyle8;
+            this.select.HeaderText = "SELECT";
+            this.select.Name = "select";
             // 
-            // NET_AMOUNT
+            // Payment
             // 
-            this.NET_AMOUNT.DataPropertyName = "TOTAL";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.NET_AMOUNT.DefaultCellStyle = dataGridViewCellStyle23;
-            this.NET_AMOUNT.HeaderText = "AMOUNT";
-            this.NET_AMOUNT.Name = "NET_AMOUNT";
+            this.Payment.DataPropertyName = "Payment";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            this.Payment.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Payment.HeaderText = "PAYMENT";
+            this.Payment.Name = "Payment";
+            this.Payment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // ITEM_ID
+            // paid_dupicate
             // 
-            this.ITEM_ID.DataPropertyName = "ITEM_ID";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            this.ITEM_ID.DefaultCellStyle = dataGridViewCellStyle24;
-            this.ITEM_ID.HeaderText = "ITEM_ID";
-            this.ITEM_ID.Name = "ITEM_ID";
-            this.ITEM_ID.Visible = false;
-            // 
-            // SIZE_ID
-            // 
-            this.SIZE_ID.DataPropertyName = "SIZE_ID";
-            this.SIZE_ID.HeaderText = "SIZE_ID";
-            this.SIZE_ID.Name = "SIZE_ID";
-            this.SIZE_ID.Visible = false;
-            // 
-            // payment_id
-            // 
-            this.payment_id.DataPropertyName = "PAYMENT_ID";
-            this.payment_id.HeaderText = "payment_id";
-            this.payment_id.Name = "payment_id";
-            this.payment_id.Visible = false;
+            this.paid_dupicate.HeaderText = "paid_dupicate";
+            this.paid_dupicate.Name = "paid_dupicate";
+            this.paid_dupicate.Visible = false;
             // 
             // frm_payment
             // 
@@ -800,26 +838,11 @@ namespace IMS
         private System.Windows.Forms.DataGridView dtg_credit;
         private System.Windows.Forms.RadioButton rbtn_credit_note;
         private System.Windows.Forms.TextBox txt_credit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoice_no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoice_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn balance;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Payment;
         private System.Windows.Forms.Label lblcreditcheck;
         private System.Windows.Forms.TextBox txtpay_id;
         private System.Windows.Forms.TextBox rate_txt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn pay_mode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ref_no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ref_date;
-        private System.Windows.Forms.DataGridViewComboBoxColumn bank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAY_MODE_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BANK_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENT_REF;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn SIZE;
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
@@ -831,5 +854,23 @@ namespace IMS
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SIZE_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn payment_id;
+        private System.Windows.Forms.DataGridViewComboBoxColumn pay_mode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ref_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ref_date;
+        private System.Windows.Forms.DataGridViewComboBoxColumn bank;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAY_MODE_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BANK_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENT_REF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoice_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoice_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CREDIT_NOTE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balance;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Payment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paid_dupicate;
     }
 }

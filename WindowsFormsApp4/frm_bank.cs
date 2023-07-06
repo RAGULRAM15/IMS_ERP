@@ -81,7 +81,7 @@ namespace IMS
             //    popup.ShowF2(Query, "BANK", ((TextBox)sender).Text, "BANK", sender);
             //}
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public void refresh()
         {
             

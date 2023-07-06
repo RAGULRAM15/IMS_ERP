@@ -48,6 +48,8 @@ namespace IMS
             this.T_INVOICE_REPORTTableAdapter = new IMS.QUOTATIONDataSet5TableAdapters.T_INVOICE_REPORTTableAdapter();
             this.T_INVOICE_ITEM_REPORTTableAdapter = new IMS.QUOTATIONDataSet6TableAdapters.T_INVOICE_ITEM_REPORTTableAdapter();
             this.QUOTATIONDataSet7 = new IMS.QUOTATIONDataSet7();
+            this.IMSDataSet = new IMS.IMSDataSet();
+            this.IMSDataSet1 = new IMS.IMSDataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.M_COMPANY_VIEWBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QUOTATIONDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.M_CUSTOMER_VIEWBindingSource)).BeginInit();
@@ -57,6 +59,8 @@ namespace IMS
             ((System.ComponentModel.ISupportInitialize)(this.T_INVOICE_ITEM_REPORTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QUOTATIONDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QUOTATIONDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMSDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // M_COMPANY_VIEWBindingSource
@@ -142,6 +146,16 @@ namespace IMS
             this.QUOTATIONDataSet7.DataSetName = "QUOTATIONDataSet7";
             this.QUOTATIONDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // IMSDataSet
+            // 
+            this.IMSDataSet.DataSetName = "IMSDataSet";
+            this.IMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // IMSDataSet1
+            // 
+            this.IMSDataSet1.DataSetName = "IMSDataSet1";
+            this.IMSDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Frm_Invoice_print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +174,8 @@ namespace IMS
             ((System.ComponentModel.ISupportInitialize)(this.T_INVOICE_ITEM_REPORTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QUOTATIONDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QUOTATIONDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMSDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +196,7 @@ namespace IMS
         private QUOTATIONDataSet5TableAdapters.T_INVOICE_REPORTTableAdapter T_INVOICE_REPORTTableAdapter;
         private QUOTATIONDataSet6TableAdapters.T_INVOICE_ITEM_REPORTTableAdapter T_INVOICE_ITEM_REPORTTableAdapter;
         private QUOTATIONDataSet7 QUOTATIONDataSet7;
+        private IMSDataSet IMSDataSet;
+        private IMSDataSet1 IMSDataSet1;
     }
 }

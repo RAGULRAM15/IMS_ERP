@@ -30,7 +30,7 @@ namespace IMS
             txt_username.Text = "";
         }
        
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void btnlogin_Click(object sender, EventArgs e)
         {
             CHECK();

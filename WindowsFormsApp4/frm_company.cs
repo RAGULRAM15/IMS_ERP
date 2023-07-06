@@ -18,7 +18,7 @@ namespace IMS
         {
             InitializeComponent();
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public static string value1 { get; set; }
         public static string value2 { get; set; }
         private void btn_add_Click(object sender, EventArgs e)

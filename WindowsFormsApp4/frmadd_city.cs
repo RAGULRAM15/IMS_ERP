@@ -42,7 +42,7 @@ namespace IMS
             txt2.Text = frm_city.value1;
             txt3.Text = frm_city.value2;
             this.Text = MODE;
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String SQLQuery = " SELECT DISTRICT_ID, DISTRICT FROM M_DISTRICT WHERE ACTIVE =1 ";
 
@@ -89,7 +89,7 @@ namespace IMS
             if (txt1.Text != "" && txt2.Text != "" && txt3.Text=="")
             {
 
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "INSERT INTO [M_CITY](CITY,DISTRICT_ID,ACTIVE) VALUES('" + txt1.Text + "'," + txt2.Tag + "," + "1" + ")";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();
@@ -103,7 +103,7 @@ namespace IMS
             else if (txt3.Text != "")
             {
                 MessageBox.Show("SAVED SUCESSFULLY", "Message", MessageBoxButtons.OK);
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "UPDATE [M_CITY] SET CITY='" + txt1.Text + "',DISTRICT_ID=" + txt2.Tag + " WHERE CITY_ID=" + txt3.Text + "";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();

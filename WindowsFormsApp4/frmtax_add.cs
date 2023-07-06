@@ -54,7 +54,7 @@ namespace IMS
             if (txt1.Text != "" && txt2.Text != ""&&txt3.Text=="")
             {
 
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "INSERT INTO [M_TAX](TAX,PERCENTAGE,ACTIVE,CREATED_ON) VALUES('" + txt1.Text + "'," + txt2.Text + "," + "1" + "," + "GETDATE()" + ")";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();
@@ -69,7 +69,7 @@ namespace IMS
             }
             if (txt3.Text != "")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "UPDATE M_TAX SET TAX='" + txt1.Text + "',PERCENTAGE = " + txt2.Text + " WHERE TAX_ID =" + txt3.Text + "";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 SqlCommand COMM = new SqlCommand(qurey, CONN);

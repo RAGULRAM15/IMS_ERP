@@ -40,7 +40,7 @@ namespace IMS
 
         }
 
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void btnlogin_Click(object sender, EventArgs e)
         {
             USER_NAME = txtuser.Text;
@@ -78,7 +78,7 @@ namespace IMS
             //    {
 
 
-            //        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //        using (SqlConnection conn = new SqlConnection(ConnString))
             //        {
             //            SqlCommand cmd = new SqlCommand("select * from F_LOGIN where USER_NAME='" + txtuser.Text + "' and PASSWORD='" + txtpassword.Text + "'");

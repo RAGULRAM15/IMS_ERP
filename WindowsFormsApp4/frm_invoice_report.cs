@@ -94,7 +94,7 @@ namespace IMS
         }
         public void DROP()
         {
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //// String str = "Select * from T_QUOTATION_ITEM";
             //String SQLQuery = " SELECT COMPANY_ID, COMPANY_NAME FROM M_COMPANY WHERE ACTIVE =1 ";
             //try
@@ -151,7 +151,7 @@ namespace IMS
             //int item = txt_company.SelectedIndex;
             //txt_company.Tag = item;
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void btn_gridview_Click(object sender, EventArgs e)
         {
             dtg_inv_report.Visible = true;

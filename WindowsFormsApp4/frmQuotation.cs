@@ -24,7 +24,7 @@ namespace IMS
         private Color bordercolor1 = Color.White;
         public string mode { get; set; }
         
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public frmQuotation()
         {
             InitializeComponent();

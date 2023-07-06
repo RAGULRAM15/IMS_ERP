@@ -52,7 +52,7 @@ namespace IMS
 
             txt3.Text = edit_row.Cells[0].Value.ToString();
 
-           // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+           // String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             // String str = "Select * from T_QUOTATION_ITEM";
             String sqlquery = "DELETE FROM M_STATE WHERE STATE_ID = '" + txt3.Text + "'";
             using (SqlConnection conn = new SqlConnection(ConnString))
@@ -84,7 +84,7 @@ namespace IMS
             //    popup.ShowF2(_query, "State", ((TextBox)sender).Text, "State", sender);
             //}
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public void refresh()
         {
             
@@ -126,7 +126,7 @@ namespace IMS
 
         private void txtstate_TextChanged(object sender, EventArgs e)
         {
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             String str = "SELECT  STATE_ID AS [ID], STATE, STATE_CODE FROM M_STATE WHERE ACTIVE = 1";
 
             SqlConnection conn = new SqlConnection(ConnString);

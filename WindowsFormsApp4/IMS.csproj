@@ -395,6 +395,12 @@
     <Compile Include="frm_payment_list.Designer.cs">
       <DependentUpon>frm_payment_list.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_payment_pending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_payment_pending.Designer.cs">
+      <DependentUpon>frm_payment_pending.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_payment_report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -436,6 +442,16 @@
     </Compile>
     <Compile Include="Frm_UserRights.Designer.cs">
       <DependentUpon>Frm_UserRights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IMSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMSDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -622,6 +638,9 @@
     <EmbeddedResource Include="frm_payment_list.resx">
       <DependentUpon>frm_payment_list.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_payment_pending.resx">
+      <DependentUpon>frm_payment_pending.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_payment_report.resx">
       <DependentUpon>Frm_payment_report.cs</DependentUpon>
     </EmbeddedResource>
@@ -656,6 +675,28 @@
     <EmbeddedResource Include="Rpt_Invoice.rdlc" />
     <EmbeddedResource Include="Rpt_Quototion - Copy.rdlc" />
     <EmbeddedResource Include="Rpt_Quototion.rdlc" />
+    <None Include="IMSDataSet.xsc">
+      <DependentUpon>IMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMSDataSet.xss">
+      <DependentUpon>IMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IMSDataSet1.xsc">
+      <DependentUpon>IMSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="IMSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMSDataSet1.xss">
+      <DependentUpon>IMSDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

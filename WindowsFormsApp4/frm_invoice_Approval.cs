@@ -17,7 +17,7 @@ namespace IMS
         {
             InitializeComponent();
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public  int COMPANY_ID { get; set; }
         public int year_id { get; set; }
         private void frm_invoice_Approval_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace IMS
             from_date();
             // String str = "Select * from T_QUOTATION_ITEM";
             // String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE,STYLE_NAME,QUANTITY,RATE,DISCOUNT,TOTAL FROM T_INVOICE_ITEM WHERE INVOICE_NO = '" + txtinvoice.Text + "'";
-            String sqlquery = "SELECT INVOICE_NO,INVOICE_DATE,MC.CUSTOMER_NAME,NET_AMOUNT,TIA.CUSTOMER_ID,APPROVAL_CHECK  FROM T_INVOICE_APPROVAL  AS TIA " +
+            String sqlquery = "SELECT INVOICE_NO,INVOICE_DATE,MC.CUSTOMER_NAME,NET_AMOUNT,TIA.CUSTOMER_ID,APPROVAL_CHECK  FROM T_INVOICE  AS TIA " +
                 "INNER JOIN M_CUSTOMER AS MC ON TIA.CUSTOMER_ID = MC.CUSTOMER_ID " +
                 "WHERE  TIA.COMPANY_ID=" + COMPANY_ID + " AND TIA.APPROVAL_CHECK = 1  order by INVOICE_NO desc";
             SqlDataAdapter da = new SqlDataAdapter(sqlquery, ConnString);
@@ -101,7 +101,7 @@ namespace IMS
         }
         public void from_date()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
 
             String str = "SELECT FY_YEAR_ID, FROM_DATE, TO_DATE  FROM M_FY_YEAR where  FY_YEAR_ID =" + year_id + "";
 

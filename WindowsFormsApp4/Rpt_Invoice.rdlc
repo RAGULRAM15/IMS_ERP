@@ -1118,7 +1118,6 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ROW_ID.Value</Value>
-                              <ToolTip>=Sum(Fields!ROW_ID.Value, "dtset_invoice_report3")</ToolTip>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1183,7 +1182,6 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SIZE_NAME.Value</Value>
-                              <ToolTip>=First(Fields!SIZE_NAME.Value, "dtset_invoice_report3")</ToolTip>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1208,15 +1206,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="QUANTITY">
+                    <Textbox Name="BALANCE_QUANTITY">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!QUANTITY.Value</Value>
-                              <ToolTip>=Sum(Fields!QUANTITY.Value, "dtset_invoice_report3")</ToolTip>
+                              <Value>=Fields!BALANCE_QUANTITY.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1225,7 +1222,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>QUANTITY</rd:DefaultName>
+                      <rd:DefaultName>BALANCE_QUANTITY</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1249,7 +1246,6 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!RATE.Value</Value>
-                              <ToolTip>=Sum(Fields!RATE.Value, "dtset_invoice_report3")</ToolTip>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1282,7 +1278,6 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TOTAL.Value</Value>
-                              <ToolTip>=Sum(Fields!TOTAL.Value, "dtset_invoice_report3")</ToolTip>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1422,7 +1417,7 @@
       </BottomBorder>
     </Style>
   </Body>
-  <Width>10.28in</Width>
+  <Width>10.3151in</Width>
   <Page>
     <PageHeader>
       <Height>2.67708in</Height>
@@ -1900,6 +1895,13 @@
       </ConnectionProperties>
       <rd:DataSourceID>51907bf8-acab-4c69-98ef-b320ae0ffc74</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="IMSDataSet1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>3311a3f9-373f-448a-9cc2-4e31649eefb7</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="dtset_Quotation_report">
@@ -2132,7 +2134,7 @@
     </DataSet>
     <DataSet Name="dtset_invoice_report3">
       <Query>
-        <DataSourceName>QUOTATIONDataSet6</DataSourceName>
+        <DataSourceName>IMSDataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2156,8 +2158,8 @@
           <DataField>STYLE_NAME</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="QUANTITY">
-          <DataField>QUANTITY</DataField>
+        <Field Name="BALANCE_QUANTITY">
+          <DataField>BALANCE_QUANTITY</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="RATE">
@@ -2178,8 +2180,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>QUOTATIONDataSet6</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\admin\source\repos\IMS_ERP\WindowsFormsApp4\QUOTATIONDataSet6.xsd</rd:SchemaPath>
+        <rd:DataSetName>IMSDataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\admin\source\repos\IMS_ERP\WindowsFormsApp4\IMSDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>T_INVOICE_ITEM_REPORT</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

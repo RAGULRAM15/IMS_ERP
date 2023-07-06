@@ -41,7 +41,7 @@ namespace IMS
             if (txt1.Text != "")
             {
 
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "INSERT INTO [M_ENTRY](ENTRY_NAME,ACTIVE) VALUES('" + txt1.Text + "'," + "1" + ")";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();

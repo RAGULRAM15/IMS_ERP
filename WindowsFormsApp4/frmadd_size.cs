@@ -24,7 +24,7 @@ namespace IMS
             if (txt1.Text != "" && txt2.Text=="")
             {
 
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "INSERT INTO [M_SIZE](SIZE_NAME,ACTIVE) VALUES('" + txt1.Text + "'," + "1" + ")";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();
@@ -40,7 +40,7 @@ namespace IMS
             }
             else if (txt2.Text != "")
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "UPDATE [M_SIZE] SET SIZE_NAME ='" + txt1.Text + "'WHERE SIZE_ID="+txt2.Text+"";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();

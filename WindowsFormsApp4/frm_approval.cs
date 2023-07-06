@@ -55,7 +55,7 @@ namespace IMS
         }
         public void drop_customer()
         {
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //// String str = "Select * from T_QUOTATION_ITEM";
             //String SQLQuery = "SELECT CUSTOMER_ID, CUSTOMER_NAME FROM M_CUSTOMER ";
             //try
@@ -102,7 +102,7 @@ namespace IMS
             // Display the new form.
             newMDIChild.Show();
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void btn_approve_Click(object sender, EventArgs e)
         {
 
@@ -195,26 +195,27 @@ namespace IMS
 
                         //    }
 
-                        
-                                                    //else
-                            //{
-                            //    dtg_iapproval.Rows[i].Cells["APPROVAL_CHECK"].Value = 1;
-                            //}
-                        
-                    
-                        
-                    
-                
-                            
-                        
+
+                        //else
+                        //{
+                        //    dtg_iapproval.Rows[i].Cells["APPROVAL_CHECK"].Value = 1;
+                        //}
+
+
+
+
+
                         MessageBox.Show("UNAPPROVAL SUCESSFULLY", "Message", MessageBoxButtons.OK);
-                      
+
+
+
                     }
                    
                     comm.CommandText = builder.ToString();
                     comm.Transaction = transaction;
                     comm.ExecuteNonQuery();
                     transaction.Commit();
+                    
                     clear();
                    
                     this.Close();
@@ -269,10 +270,10 @@ namespace IMS
         {
             if (rbtn_approve.Checked == true)
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                
                 // String str = "Select * from T_QUOTATION_ITEM";
                 // String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE,STYLE_NAME,QUANTITY,RATE,DISCOUNT,TOTAL FROM T_INVOICE_ITEM WHERE INVOICE_NO = '" + txtinvoice.Text + "'";
-                String sqlquery = "SELECT INVOICE_NO,INVOICE_DATE,MC.CUSTOMER_NAME,NET_AMOUNT,TIA.CUSTOMER_ID,APPROVAL_CHECK  FROM T_INVOICE_APPROVAL  AS TIA " +
+                String sqlquery = "SELECT INVOICE_NO,INVOICE_DATE,MC.CUSTOMER_NAME,NET_AMOUNT,TIA.CUSTOMER_ID,APPROVAL_CHECK  FROM T_INVOICE  AS TIA " +
                     "INNER JOIN M_CUSTOMER AS MC ON TIA.CUSTOMER_ID = MC.CUSTOMER_ID " +
                     "WHERE TIA.CUSTOMER_ID = '" + txtcustomer.Tag + "'  AND TIA.COMPANY_ID=" + COMPANY_ID + " AND TIA.APPROVAL_CHECK = 1 ";
                 SqlDataAdapter da = new SqlDataAdapter(sqlquery, ConnString);
@@ -286,13 +287,13 @@ namespace IMS
            
             else if (rbtn_unapprove.Checked == true)
             {
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                
                 // String str = "Select * from T_QUOTATION_ITEM";
                 // String SQLQuery = "SELECT ROW_ID,ITEM_NAME,SIZE,STYLE_NAME,QUANTITY,RATE,DISCOUNT,TOTAL FROM T_INVOICE_ITEM WHERE INVOICE_NO = '" + txtinvoice.Text + "'";
 
                 String sqlquery = "SELECT INVOICE_NO,INVOICE_DATE,[M_CUSTOMER].CUSTOMER_NAME,NET_AMOUNT,T_INVOICE.CUSTOMER_ID,T_INVOICE.APPROVAL_CHECK FROM T_INVOICE  " +
                     "INNER JOIN[M_CUSTOMER]  ON T_INVOICE.CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID " +
-                    "WHERE T_INVOICE.CUSTOMER_ID = '" + txtcustomer.Tag + "' AND T_INVOICE.ACTIVE = 1 AND T_INVOICE.COMPANY_ID=" + COMPANY_ID + " AND T_INVOICE.APPROVAL_CHECK IS NULL OR T_INVOICE.APPROVAL_CHECK = 0 ";
+                    "WHERE T_INVOICE.CUSTOMER_ID = '" + txtcustomer.Tag + "' AND T_INVOICE.ACTIVE = 1 AND T_INVOICE.COMPANY_ID=" + COMPANY_ID + " AND ISNULL (APPROVAL_CHECK,0 )= 0 ";
                    
                 SqlDataAdapter da = new SqlDataAdapter(sqlquery, ConnString);
                 //SqlCommandBuilder CB = new SqlCommandBuilder(da);

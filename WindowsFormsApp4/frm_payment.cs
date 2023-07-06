@@ -69,7 +69,7 @@ namespace IMS
         public void last_no()
         {
 
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             {
                 string query = "select LAST_NO from M_ENTRY_SETUP  WHERE COMPANY_ID=" + lbl_comp.Tag + " AND ENTRY_ID = " + entry_name + "";
                 SqlConnection con = new SqlConnection(ConnString);
@@ -108,7 +108,7 @@ namespace IMS
         }
         public void payment_no()
         {
-            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             String Query = " SELECT CONCAT([PREFIIX],'-',[LAST_NO]+1) AS[PAYMENT_NO] FROM[M_ENTRY_SETUP] WHERE ENTRY_SETUP_ID = 5";
             using (SqlConnection conn = new SqlConnection(ConnString))
             {
@@ -196,8 +196,12 @@ namespace IMS
                             //foreach (DataGridViewRow row in dgvitemform.Rows)
                             for (int i = 0; i < dtg_paymain.Rows.Count; i++)
                             {
+                                if (dtg_paymain.Rows[i].Cells["CREDIT_NOTE"].Value == null)
+                                {
+                                    dtg_paymain.Rows[i].Cells["CREDIT_NOTE"].Value = "0";
+                                }
                                 StrQuery = @"INSERT INTO  T_PAYMENT_ITEM (PAYMENT_NO,INVOICE_NO,INVOICE_DATE,PAID,BALANCE,
-                                  NET_AMOUNT,PAYMENT,ACTIVE) VALUES ("
+                                  NET_AMOUNT,PAYMENT,CREDIT_NOTE,ACTIVE) VALUES ("
                                   + "'" + txt_pay_no.Text + "',"
                                   + "'" + dtg_paymain.Rows[i].Cells["INVOICE_NO"].Value + "', "
                                   + "'" + dtg_paymain.Rows[i].Cells["INVOICE_DATE"].Value + "' ,"
@@ -205,7 +209,7 @@ namespace IMS
                                   + "" + dtg_paymain.Rows[i].Cells["BALANCE"].Value + ","
                                   + "" + dtg_paymain.Rows[i].Cells["TOTAL"].Value + ","
                                   + "" + dtg_paymain.Rows[i].Cells["PAYMENT"].Value + ","
-
+                                   + "" + dtg_paymain.Rows[i].Cells["CREDIT_NOTE"].Value + ","
 
                                   + "'" + "1" + "')";
                                 sb.Append(StrQuery);
@@ -224,13 +228,14 @@ namespace IMS
                                 {
                                     
                                     StrQuery = @"INSERT INTO T_PAID_ITEM (PAYMENT_NO,PAY_MODE,REF_NO,REF_DATE,BANK,
-                                  AMOUNT,RECEIVED_BY,ACTIVE) VALUES ("
+                                  AMOUNT,INVOICE_NO,RECEIVED_BY,ACTIVE) VALUES ("
                                       + "'" + txt_pay_no.Text + "',"
                                       + "" + dtg_pay_bank.Rows[i].Cells["PAY_MODE"].Value + ", "
                                       + "'" + dtg_pay_bank.Rows[i].Cells["ref_no"].Value + "' ,"
                                       + "'" + dtg_pay_bank.Rows[i].Cells["ref_date"].Value + "',"
                                       + "" + dtg_pay_bank.Rows[i].Cells["BANK"].Value + ","
                                       + "" + dtg_pay_bank.Rows[i].Cells["amount"].Value + ","
+                                      + "'" + dtg_pay_bank.Rows[i].Cells["INVOICENO"].Value + "',"
                                      + "'" + txt_refer.Text + "',"
 
 
@@ -266,17 +271,17 @@ namespace IMS
                             }
                             sb.Append(invoice_update);
 
-                            //for (int i = 0; i < dgvitemform.Rows.Count; i++)
-                            //{
-                            //    String SalesQuery = @"UPDATE [T_SALES_ORDER_ITEM] SET
-                            //              " +
-                            //                "BALANCE_QUANTITY= '" + dgvitemform.Rows[i].Cells["SALES_ORDER_BALANCE_QUANTITY"].Value + "'," +
+                            for (int i = 0; i < dtg_paymain.Rows.Count; i++)
+                            {
+                                String SalesQuery = @"UPDATE [T_INVOICE] SET
+                                          " +
+                                            "PAID= '" + dtg_paymain.Rows[i].Cells["PAID"].Value + "'," +
 
-                            //                   "BALANCE_TOTAL = '" + dgvitemform.Rows[i].Cells["netamount"].Value + "'," +
-                            //                    " WHERE SALES_ORDER_NO ='" + txt_salesorder.Text + "'";
+                                               "BALANCE = '" + dtg_paymain.Rows[i].Cells["BALANCE"].Value + "'" +
+                                                " WHERE INVOICE_NO ='" + dtg_paymain.Rows[i].Cells["INVOICE_NO"].Value + "'";
 
-                            //    sb.Append(SalesQuery);
-                            //}
+                                sb.Append(SalesQuery);
+                            }
 
 
 
@@ -381,7 +386,7 @@ namespace IMS
                             {
                                 if (dtg_pay_bank.Rows[i].Cells["amount"].Value != null)
                                 {
-                                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                                     String MAIN_QUERY = " SELECT BANK_ID, BANK FROM M_BANK where Bank = '" + dtg_pay_bank.Rows[i].Cells["BANK"].Value + "'";
                                     using (SqlConnection con = new SqlConnection(ConnString))
                                     {
@@ -609,9 +614,9 @@ namespace IMS
 
 
                                 string StrQuery = "UPDATE [T_PAYMENT_MAIN] SET STATUS = '" + "CANCELED" + "'," +
-                                    "  ACTIVE = " + "0" + " WHERE PAYMENT_NO ='" + txt_pay_no.Text + "'";
-                                string Query = "UPDATE [T_PAYMENT_ITEM] SET   ACTIVE = " + "0" + " WHERE PAYMENT_NO ='" + txt_pay_no.Text + "'";
-                                string PAY_Query = "UPDATE [T_PAID_ITEM] SET   ACTIVE = " + "0" + " WHERE PAYMENT_NO ='" + txt_pay_no.Text + "'";
+                                    "  ACTIVE = " + "0" + "  WHERE PAYMENT_NO ='" + txt_pay_no.Text + "'";
+                                string Query = "UPDATE [T_PAYMENT_ITEM] SET   ACTIVE = " + "0" + "  WHERE PAYMENT_NO ='" + txt_pay_no.Text + "'";
+                                string PAY_Query = "UPDATE [T_PAID_ITEM] SET   ACTIVE = " + "0" + "  WHERE PAYMENT_NO ='" + txt_pay_no.Text + "'";
                                 try
                                 {
 
@@ -622,6 +627,29 @@ namespace IMS
 
                                     //foreach (DataGridViewRow row in dgvitemform.Rows)
                                     StringBuilder sb = new StringBuilder();
+                                    for (int i = 0; i < dtg_paymain.Rows.Count; i++)
+                                    {
+                                       
+                                        for (int j = 0; j < dtg_pay_bank.Rows.Count; j++)
+                                        {
+                                           
+                                            if (dtg_paymain.Rows[i].Cells["INVOICE_NO"].Value.Equals(dtg_pay_bank.Rows[j].Cells["INVOICENO"].Value))
+                                            {
+                                                dtg_paymain.Rows[i].Cells["BALANCE"].Value = Convert.ToDouble(dtg_paymain.Rows[i].Cells["BALANCE"].Value.ToString()) + Convert.ToDouble(dtg_pay_bank.Rows[j].Cells["AMOUNT"].Value) + Convert.ToDouble(dtg_paymain.Rows[i].Cells["CREDIT_NOTE"].Value.ToString());
+                                                dtg_paymain.Rows[i].Cells["PAID"].Value = Convert.ToDouble(dtg_paymain.Rows[i].Cells["PAID"].Value.ToString()) - Convert.ToDouble(dtg_pay_bank.Rows[j].Cells["AMOUNT"].Value);
+                                                //total
+                                                String SalesQuery = @"UPDATE [T_INVOICE] SET
+                                          " +
+                                                            "PAID= '" + dtg_paymain.Rows[i].Cells["PAID"].Value + "'," +
+
+                                                               "BALANCE = '" + dtg_paymain.Rows[i].Cells["BALANCE"].Value + "'" +
+                                                                "  WHERE INVOICE_NO ='" + dtg_paymain.Rows[i].Cells["INVOICE_NO"].Value + "'";
+
+                                                sb.Append(SalesQuery);
+
+                                            }
+                                        }
+                                    }
                                     sb.Append(StrQuery);
                                     sb.Append(Query);
                                     sb.Append(PAY_Query);
@@ -720,7 +748,7 @@ namespace IMS
                 txt_pay_no.Text = frm_payment_list.value1;
                 //txtcustomer.Text = frm_payment_list.value2;
                 this.Text = mode;
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 // String str = "Select * from T_QUOTATION_ITEM";
                 string MAIN_QUERY = "SELECT PAYMENT_DATE,PAID,BALANCE,AMOUNT,PAYMENT,RECEIVED_BY,M_CUSTOMER.CUSTOMER_NAME,T_PAYMENT_MAIN.COMPANY_ID,T_PAYMENT_MAIN.CUSTOMER_ID FROM T_PAYMENT_MAIN " +
                      "INNER JOIN M_CUSTOMER ON M_CUSTOMER.CUSTOMER_ID = T_PAYMENT_MAIN.CUSTOMER_ID " +
@@ -803,13 +831,13 @@ namespace IMS
                     }
                 }
 
-                for (int i = 0; i < 1; i++)
-                {
-                    if (dtg_credit.Rows[i].Cells[7].Value == null)
+                //for (int i = 0; i < 1; i++)
+                //{
+                    if (dtg_credit.Rows.Count == 0)
                     {
                         lblcreditcheck.Text = "1";
                     }
-                }
+                //}
                 //}
                 //catch (Exception ex)
                 //{
@@ -827,7 +855,7 @@ namespace IMS
                 txt_pay_no.Text = frm_payment_list.value1;
                 //txtcustomer.Text = frm_payment_list.value2;
                 this.Text = mode;
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                
                 // String str = "Select * from T_QUOTATION_ITEM";
                 string MAIN_QUERY = "SELECT PAYMENT_DATE,PAID,BALANCE,AMOUNT,PAYMENT,RECEIVED_BY,M_CUSTOMER.CUSTOMER_NAME,T_PAYMENT_MAIN.COMPANY_ID,T_PAYMENT_MAIN.CUSTOMER_ID FROM T_PAYMENT_MAIN " +
@@ -919,12 +947,12 @@ namespace IMS
                 txt_pay_no.Text = frm_payment_list.value1;
                 //txtcustomer.Text = frm_payment_list.value2;
                 this.Text = mode;
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+               
                 // String str = "Select * from T_QUOTATION_ITEM";
                 string MAIN_QUERY = "SELECT PAYMENT_DATE,PAID,BALANCE,AMOUNT,PAYMENT,RECEIVED_BY,M_CUSTOMER.CUSTOMER_NAME,T_PAYMENT_MAIN.COMPANY_ID,T_PAYMENT_MAIN.CUSTOMER_ID FROM T_PAYMENT_MAIN " +
                      "INNER JOIN M_CUSTOMER ON M_CUSTOMER.CUSTOMER_ID = T_PAYMENT_MAIN.CUSTOMER_ID " +
                      "WHERE PAYMENT_NO = '" + txt_pay_no.Text + "'";
-                String SQLQuery = "SELECT M_PAY.PAY_MODE,REF_NO,REF_DATE,M_BANK.BANK,AMOUNT,T_PAID_ITEM.PAY_MODE AS [PAY_MODE_ID],T_PAID_ITEM.BANK AS [BANK_ID] FROM T_PAID_ITEM " +
+                String SQLQuery = "SELECT M_PAY.PAY_MODE,REF_NO,REF_DATE,M_BANK.BANK,AMOUNT,T_PAID_ITEM.PAY_MODE AS [PAY_MODE_ID],T_PAID_ITEM.BANK AS [BANK_ID],INVOICE_NO FROM T_PAID_ITEM " +
                      "INNER JOIN M_PAY ON M_PAY.PAY_MODE_ID = T_PAID_ITEM.PAY_MODE " +
                      "INNER JOIN  M_BANK ON M_BANK.BANK_ID = T_PAID_ITEM.BANK " +
                      "WHERE PAYMENT_NO = '" + txt_pay_no.Text + "'";
@@ -1108,11 +1136,14 @@ namespace IMS
                                                 if (sum7 >= 0)
                                                 {
                                                     viewRow.Cells["balance"].Value = sum7.ToString();
-                                                }
-                                                else
+                                                pay_row.Cells["CREDIT_NOTE"].Value = txt_credit.Text;
+                                                //
+                                            }
+                                            else
                                                 {
                                                     MessageBox.Show("PAYMENT CROSSING LIMIT");
-                                                }
+                                                paid_value = null;
+                                            }
                                                 amount_add();
                                                 break;
 
@@ -1127,58 +1158,58 @@ namespace IMS
                                         }
                                     }
                                 }
-                                else if (rate_txt.Text != "0" && mode == "EDIT PAYMENT")
-                                {
-                                    foreach (DataGridViewRow viewRow in dtg_paymain.Rows)
-                                    {
-                                        //string index = dtg_paymain.CurrentCell["select"].Value.ToString();
-                                        int rowIndex = e.RowIndex + 1;
-                                        DataGridViewRow select_row = dtg_pay_bank.Rows[rowIndex];
-                                        int payindex = dtg_paymain.CurrentCell.RowIndex;
-                                        DataGridViewRow pay_row = dtg_paymain.Rows[payindex];
-                                        //int value_change = Convert.ToInt32(viewRow.Cells["SELECT"].RowIndex);
-                                        //if (viewRow.Cells["SELECT"].Value != null)
-                                        //{
+                                //else if (rate_txt.Text != "0" )
+                                //{
+                                //    foreach (DataGridViewRow viewRow in dtg_paymain.Rows)
+                                //    {
+                                //        //string index = dtg_paymain.CurrentCell["select"].Value.ToString();
+                                //        int rowIndex = e.RowIndex + 1;
+                                //        DataGridViewRow select_row = dtg_pay_bank.Rows[rowIndex];
+                                //        int payindex = dtg_paymain.CurrentCell.RowIndex;
+                                //        DataGridViewRow pay_row = dtg_paymain.Rows[payindex];
+                                //        //int value_change = Convert.ToInt32(viewRow.Cells["SELECT"].RowIndex);
+                                //        //if (viewRow.Cells["SELECT"].Value != null)
+                                //        //{
 
-                                        //    if (row.Cells["amount"].Value != null)
-                                        //    {
-                                        //bool clk = Convert.ToBoolean(viewRow.Cells["SELECT"].EditedFormattedValue);
-                                        if (select_row.Cells["amount"].Value != null)
-                                        {
-                                            if (clk == true)
-                                            {
-                                                object Value1 = select_row.Cells["amount"].Value;
-                                                paid_value = Value1;
+                                //        //    if (row.Cells["amount"].Value != null)
+                                //        //    {
+                                //        //bool clk = Convert.ToBoolean(viewRow.Cells["SELECT"].EditedFormattedValue);
+                                //        if (select_row.Cells["amount"].Value != null)
+                                //        {
+                                //            if (clk == true)
+                                //            {
+                                //                object Value1 = select_row.Cells["amount"].Value;
+                                //                paid_value = Value1;
 
 
 
-                                                decimal total_pay = Convert.ToDecimal(Convert.ToDouble(pay_row.Cells["paid"].Value.ToString()) + Convert.ToDouble(paid_value.ToString()));
-                                                viewRow.Cells["paid"].Value = total_pay.ToString();
-                                                decimal sum2 = decimal.Parse(viewRow.Cells["paid"].Value.ToString());
-                                                decimal sum7 = decimal.Parse(viewRow.Cells["total"].Value.ToString());
-                                                sum7 -= sum2;
-                                                if (sum7 >= 0)
-                                                {
-                                                    viewRow.Cells["balance"].Value = sum7.ToString();
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("PAYMENT CROSSING LIMIT");
-                                                }
-                                                amount_add();
-                                                break;
+                                //                decimal total_pay = Convert.ToDecimal(Convert.ToDouble(pay_row.Cells["paid"].Value.ToString()) + Convert.ToDouble(paid_value.ToString()));
+                                //                viewRow.Cells["paid"].Value = total_pay.ToString();
+                                //                decimal sum2 = decimal.Parse(viewRow.Cells["paid"].Value.ToString());
+                                //                decimal sum7 = decimal.Parse(viewRow.Cells["total"].Value.ToString());
+                                //                sum7 -= sum2;
+                                //                if (sum7 >= 0)
+                                //                {
+                                //                    viewRow.Cells["balance"].Value = sum7.ToString();
+                                //                }
+                                //                else
+                                //                {
+                                //                    MessageBox.Show("PAYMENT CROSSING LIMIT");
+                                //                }
+                                //                amount_add();
+                                //                break;
 
-                                            }
-                                            else
-                                            {
-                                                viewRow.Cells["paid"].Value = 0;
-                                            }
-                                            //    }
-                                            //}
+                                //            }
+                                //            else
+                                //            {
+                                //                viewRow.Cells["paid"].Value = 0;
+                                //            }
+                                //            //    }
+                                //            //}
 
-                                        }
-                                    }
-                                }
+                                //        }
+                                //    }
+                                //}
                                 else
                                 {
                                     foreach (DataGridViewRow viewRow in dtg_paymain.Rows)
@@ -1188,6 +1219,7 @@ namespace IMS
                                        
                                         int payindex = dtg_paymain.CurrentCell.RowIndex;
                                         DataGridViewRow pay_row = dtg_paymain.Rows[payindex];
+                                    int bankindex = dtg_pay_bank.CurrentCell.RowIndex;
                                     //int value_change = Convert.ToInt32(viewRow.Cells["SELECT"].RowIndex);
                                     //if (viewRow.Cells["SELECT"].Value != null)
                                     //{
@@ -1196,30 +1228,43 @@ namespace IMS
                                     //    {
                                     //bool clk = Convert.ToBoolean(viewRow.Cells["SELECT"].EditedFormattedValue);
                                     //()
-                                        foreach (DataGridViewRow _row in dtg_pay_bank.Rows) {
+                                    foreach (DataGridViewRow _row in dtg_pay_bank.Rows) 
+                                    {
                                        
                                         if (_row.Cells["amount"].Value != null)
                                         {
-                                            DataGridViewRow select_row = dtg_pay_bank.Rows[rowIndex];
-
+                                            DataGridViewRow select_row = dtg_pay_bank.Rows[bankindex];
+                                            //DataGridViewRow selectrow = dtg_paymain.SelectedRows[e.RowIndex];
                                             if (clk == true)
                                             {
                                                 object Value1 = select_row.Cells["amount"].Value;
                                                 paid_value = Value1;
+                                                if (pay_row.Cells["CREDIT_NOTE"].Value == null)
+                                                {
+                                                    pay_row.Cells["CREDIT_NOTE"].Value = "0";
+                                                }
 
-
-
-                                                pay_row.Cells["paid"].Value = paid_value.ToString();
+                                                if (rate_txt.Text != "0")
+                                                {
+                                                    decimal total_pay = Convert.ToDecimal(Convert.ToDouble(pay_row.Cells["paid"].Value.ToString()) + Convert.ToDouble(paid_value.ToString()));
+                                                    viewRow.Cells["paid"].Value = total_pay.ToString();
+                                                }
+                                                else
+                                                {
+                                                    pay_row.Cells["paid"].Value = paid_value.ToString();
+                                                }
                                                 decimal sum2 = decimal.Parse(viewRow.Cells["paid"].Value.ToString());
                                                 decimal sum7 = decimal.Parse(viewRow.Cells["total"].Value.ToString());
                                                 sum7 -= sum2;
                                                 if (sum7 >= 0)
                                                 {
                                                     viewRow.Cells["balance"].Value = sum7.ToString();
+                                                    select_row.Cells["INVOICENO"].Value = pay_row.Cells["INVOICE_NO"].Value.ToString();
                                                 }
                                                 else
                                                 {
                                                     MessageBox.Show("PAYMENT CROSSING LIMIT");
+                                                    paid_value = null;
                                                 }
                                                 amount_add();
                                                 break;
@@ -1283,13 +1328,14 @@ namespace IMS
                             dtg_paymain.Rows[i].Cells["PAYMENT"].Value = 0;
                         }
                     }
-                    rate_txt.Text = "";
+                    
                 //}
                 //else
                 //{
                 //    MessageBox.Show("PAYMENT CROSSING LIMIT");
                 //}
             }
+            rate_txt.Text = "";
         }
 
         private void clk_select_all_CheckedChanged(object sender, EventArgs e)
@@ -1595,7 +1641,7 @@ namespace IMS
         {
 
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void dtg_pay_bank_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewColumn column in dtg_pay_bank.Columns)
@@ -1736,10 +1782,10 @@ namespace IMS
             {
                 if (mode == "ADD")
                 {
-                    String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                   
                     //String str = "Select * from T_QUOTATION_ITEM";
 
-                    String sqlquery = "SELECT INVOICE_NO,INVOICE_DATE,NET_AMOUNT  FROM T_INVOICE_APPROVAL WHERE CUSTOMER_ID = '" + txtcustomer.Tag + "' AND APPROVAL_CHECK =" + "1" + " AND COMPANY_ID =" + lbl_comp.Tag + "";
+                    String sqlquery = "SELECT INVOICE_NO,INVOICE_DATE,NET_AMOUNT,PAID,BALANCE  FROM T_INVOICE WHERE CUSTOMER_ID = '" + txtcustomer.Tag + "' AND APPROVAL_CHECK =" + "1" + " AND COMPANY_ID =" + lbl_comp.Tag + "";
                     SqlDataAdapter da = new SqlDataAdapter(sqlquery, ConnString);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "INVOICE");
@@ -1747,8 +1793,12 @@ namespace IMS
 
                     for (int i = 0; i < dtg_paymain.Rows.Count; i++)
                     {
-                        paid_value = "0";
-                        dtg_paymain.Rows[i].Cells["paid"].Value = paid_value;
+                        if (dtg_paymain.Rows[i].Cells["paid"].Value == DBNull.Value)
+                        {
+                            paid_value = "0";
+                            dtg_paymain.Rows[i].Cells["paid"].Value = paid_value;
+                        }
+                        
                         decimal sum2 = decimal.Parse(dtg_paymain.Rows[i].Cells["paid"].Value.ToString());
                         decimal sum3 = decimal.Parse(dtg_paymain.Rows[i].Cells["total"].Value.ToString());
                         sum3 -= sum2;
@@ -2030,12 +2080,14 @@ namespace IMS
                         if (dtg_credit.Rows[i].Cells["ITEM"].Value != null)
                         {
                             //row.Cells["paid"].Value = 0;
-                          
-                                rate_txt.Text= dtg_credit.Rows[i].Cells["RATE"].Value .ToString();
+                            if (dtg_credit.Rows[i].Cells["RATE"].Value != null)
+                            {
+
+                                rate_txt.Text = dtg_credit.Rows[i].Cells["RATE"].Value.ToString();
 
                                 double Sgst = Convert.ToDouble(sgst);
-                            double Cgst = Convert.ToDouble(cgst);
-                            double Igst = Convert.ToDouble(igst);
+                                double Cgst = Convert.ToDouble(cgst);
+                                double Igst = Convert.ToDouble(igst);
                                 if (rate_txt.Text != "")
                                 {
                                     decimal sum2 = decimal.Parse(dtg_credit.Rows[i].Cells["QUANTITY"].Value.ToString());
@@ -2066,7 +2118,7 @@ namespace IMS
 
                                     //}
                                 }
-                            
+                            }
 
                         }
                     }
@@ -2260,13 +2312,18 @@ namespace IMS
             //    dtg_paymain.ClearSelection();
             //}
         }
-        private int editableColumnIndex = 5;
+        //private int editableColumnIndex = 5;
         private void dtg_paymain_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             //if (e.ColumnIndex != editableColumnIndex)
             //{
             //    e.Cancel = true;
             //}
+        }
+
+        private void txt_datetime_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

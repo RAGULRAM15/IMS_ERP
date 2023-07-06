@@ -22,7 +22,7 @@ namespace IMS
         public string value1 { get; set; }
         public int company { get; set; }
         public string mode { get; set; }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
 
         private void Frm_Invoice_print_Load(object sender, EventArgs e)
         {
@@ -52,8 +52,8 @@ namespace IMS
                 string sqlQuery = "SELECT * FROM M_CUSTOMER_VIEW" +
                     " WHERE CUSTOMER_NAME = '" + customer + "'";
                 SqlDataAdapter da = new SqlDataAdapter(SQLQuery, ConnString);
-                QUOTATIONDataSet6 ds = new QUOTATIONDataSet6();
-                da.Fill(ds, QUOTATIONDataSet6.T_INVOICE_ITEM_REPORT.TableName);
+                IMSDataSet1 ds = new IMSDataSet1();
+                da.Fill(ds, IMSDataSet1.T_INVOICE_ITEM_REPORT.TableName);
                 SqlDataAdapter da1 = null;
                 da1 = new SqlDataAdapter(sqlquery, ConnString);
                 QUOTATIONDataSet7 ds1 = new QUOTATIONDataSet7();

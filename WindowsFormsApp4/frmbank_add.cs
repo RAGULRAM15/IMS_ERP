@@ -43,7 +43,7 @@ namespace IMS
             if (txt1.Text != "")
             {
 
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "INSERT INTO [M_BANK](BANK,ACCOUNT_NO,ACTIVE) VALUES('" + txt1.Text + "'," + txt2.Text + "," + "1" + ")";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();
@@ -60,7 +60,7 @@ namespace IMS
             else if (txt3.Text != "")
             {
 
-                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+                String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
                 string qurey = "UPDATE [M_BANK] BANK='" + txt1.Text + "',ACCOUNT_NO =" + txt2.Text + " WHERE BANK = "+txt3.Text+"";
                 SqlConnection CONN = new SqlConnection(ConnString);
                 CONN.Open();

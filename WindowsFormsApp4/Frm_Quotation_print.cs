@@ -24,7 +24,7 @@ namespace IMS
         public string value1 { get; set; }
         public int company { get; set; }
         public string mode { get; set; }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void Frm_Quotation_print_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'QUOTATIONDataSet1.M_COMPANY_VIEW' table. You can move, or remove it, as needed.

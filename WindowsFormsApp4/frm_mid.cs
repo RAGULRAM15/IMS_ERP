@@ -357,7 +357,7 @@ namespace IMS
         {
 
         }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         public void loaddata()
         {
             String SQLQUERY = "SELECT [IMAGE] FROM M_IMAGE WHERE [USER]='" + User_name + "'";
@@ -389,5 +389,16 @@ namespace IMS
             }
         }
 
+        private void lbl_comp_tag_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pAYMENTPENDINGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_payment_pending _Payment_Pending = new frm_payment_pending();
+            _Payment_Pending.MdiParent = this;
+            _Payment_Pending.Show();
+        }
     }
 }

@@ -86,10 +86,13 @@ namespace IMS
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.size_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SALES_ORDER_ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SALES_ORDER_QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BACKUP_QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SALES_ORDER_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SALES_ORDER_BALANCE_QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SALES_ORDER_BALANCE_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_left = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txt_discount = new System.Windows.Forms.TextBox();
@@ -511,10 +514,13 @@ namespace IMS
             this.delete,
             this.item_id,
             this.size_id,
+            this.SALES_ORDER_ITEM_ID,
             this.SALES_ORDER_QUANTITY,
+            this.BACKUP_QUANTITY,
             this.SALES_ORDER_TOTAL,
             this.SALES_ORDER_BALANCE_QUANTITY,
-            this.SALES_ORDER_BALANCE_TOTAL});
+            this.SALES_ORDER_BALANCE_TOTAL,
+            this.QUANTITY});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -572,7 +578,7 @@ namespace IMS
             // 
             // quantity_item
             // 
-            this.quantity_item.DataPropertyName = "quantity";
+            this.quantity_item.DataPropertyName = "BALANCE_QUANTITY";
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
             this.quantity_item.DefaultCellStyle = dataGridViewCellStyle6;
             this.quantity_item.HeaderText = "QUANTITY";
@@ -622,12 +628,25 @@ namespace IMS
             this.size_id.Name = "size_id";
             this.size_id.Visible = false;
             // 
+            // SALES_ORDER_ITEM_ID
+            // 
+            this.SALES_ORDER_ITEM_ID.DataPropertyName = "SALES_ORDER_ITEM_ID";
+            this.SALES_ORDER_ITEM_ID.HeaderText = "SALES_ORDER_ITEM_ID";
+            this.SALES_ORDER_ITEM_ID.Name = "SALES_ORDER_ITEM_ID";
+            this.SALES_ORDER_ITEM_ID.Visible = false;
+            // 
             // SALES_ORDER_QUANTITY
             // 
             this.SALES_ORDER_QUANTITY.DataPropertyName = "QUANTITY";
             this.SALES_ORDER_QUANTITY.HeaderText = "SALES_ORDER_QUANTITY";
             this.SALES_ORDER_QUANTITY.Name = "SALES_ORDER_QUANTITY";
             this.SALES_ORDER_QUANTITY.Visible = false;
+            // 
+            // BACKUP_QUANTITY
+            // 
+            this.BACKUP_QUANTITY.DataPropertyName = "BACKUP_QUANTITY";
+            this.BACKUP_QUANTITY.HeaderText = "BACKUP_QUANTITY";
+            this.BACKUP_QUANTITY.Name = "BACKUP_QUANTITY";
             // 
             // SALES_ORDER_TOTAL
             // 
@@ -647,6 +666,13 @@ namespace IMS
             this.SALES_ORDER_BALANCE_TOTAL.HeaderText = "SALES_ORDER_BALANCE_TOTAL";
             this.SALES_ORDER_BALANCE_TOTAL.Name = "SALES_ORDER_BALANCE_TOTAL";
             this.SALES_ORDER_BALANCE_TOTAL.Visible = false;
+            // 
+            // QUANTITY
+            // 
+            this.QUANTITY.DataPropertyName = "QUANTITY";
+            this.QUANTITY.HeaderText = "QUANTITY";
+            this.QUANTITY.Name = "QUANTITY";
+            this.QUANTITY.Visible = false;
             // 
             // pnl_left
             // 
@@ -1180,9 +1206,12 @@ namespace IMS
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn item_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn size_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SALES_ORDER_ITEM_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SALES_ORDER_QUANTITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BACKUP_QUANTITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn SALES_ORDER_TOTAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn SALES_ORDER_BALANCE_QUANTITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn SALES_ORDER_BALANCE_TOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
     }
 }

@@ -20,7 +20,7 @@ namespace IMS
             InitializeComponent();
         }
         public static string user { get; set; }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void Frm_arrengment_Load(object sender, EventArgs e)
         {
             user = frm_mid.User_name;

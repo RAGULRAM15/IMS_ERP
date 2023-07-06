@@ -36,7 +36,7 @@ namespace IMS
         public static string CUSTOMER { get; set; }
         public static string user_name { get; set; }
         public static int count_qut { get; set; }
-        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+        String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
         private void frm_qut_Load(object sender, EventArgs e)
         {
             camp_id = frm_mid.comp_id;
@@ -200,7 +200,7 @@ namespace IMS
             //value1 = edit_row.Cells[0].Value.ToString();
             //txtquotation.Text = value1;
 
-            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=QUOTATION;Integrated Security=True";
+            //String ConnString = @"Data Source=DESKTOP-4DTMDPH;Initial Catalog=IMS;Integrated Security=True";
             //// String str = "Select * from T_QUOTATION_ITEM";
             //String SQLQuery = "DELETE FROM T_QUOTATION_ITEM WHERE QUOTATION_ID = '" + txtquotation.Text + "'";
             //String sqlquery = "DELETE FROM T_QUOTATION WHERE QUOTATION_ID = '" + txtquotation.Text + "'";

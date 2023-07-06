@@ -30,14 +30,14 @@ namespace IMS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_payment_list));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.txt_name = new System.Windows.Forms.TextBox();
@@ -52,12 +52,10 @@ namespace IMS
             this.txt_fillter = new System.Windows.Forms.TextBox();
             this.txt_refresh = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_delete = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
             this.txt_add = new System.Windows.Forms.Button();
             this.btn_view = new System.Windows.Forms.Button();
             this.dtg_qut = new System.Windows.Forms.DataGridView();
@@ -70,6 +68,8 @@ namespace IMS
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.txtquotation = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_qut)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +145,7 @@ namespace IMS
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(419, 56);
+            this.label7.Location = new System.Drawing.Point(353, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 124;
@@ -157,7 +157,7 @@ namespace IMS
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(418, 3);
+            this.button1.Location = new System.Drawing.Point(352, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 50);
             this.button1.TabIndex = 123;
@@ -192,7 +192,7 @@ namespace IMS
             this.txt_refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txt_refresh.BackgroundImage")));
             this.txt_refresh.FlatAppearance.BorderSize = 0;
             this.txt_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_refresh.Location = new System.Drawing.Point(322, 3);
+            this.txt_refresh.Location = new System.Drawing.Point(257, 1);
             this.txt_refresh.Name = "txt_refresh";
             this.txt_refresh.Size = new System.Drawing.Size(49, 50);
             this.txt_refresh.TabIndex = 115;
@@ -203,27 +203,17 @@ namespace IMS
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(249, 56);
+            this.label5.Location = new System.Drawing.Point(182, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 120;
             this.label5.Text = "VIEW";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(90, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 119;
-            this.label4.Text = "EDIT";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(152, 56);
+            this.label3.Location = new System.Drawing.Point(85, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 118;
@@ -233,7 +223,7 @@ namespace IMS
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(319, 56);
+            this.label2.Location = new System.Drawing.Point(254, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 117;
@@ -254,24 +244,12 @@ namespace IMS
             this.txt_delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txt_delete.BackgroundImage")));
             this.txt_delete.FlatAppearance.BorderSize = 0;
             this.txt_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_delete.Location = new System.Drawing.Point(155, 3);
+            this.txt_delete.Location = new System.Drawing.Point(88, 1);
             this.txt_delete.Name = "txt_delete";
             this.txt_delete.Size = new System.Drawing.Size(45, 46);
             this.txt_delete.TabIndex = 114;
             this.txt_delete.UseVisualStyleBackColor = true;
             this.txt_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // btn_edit
-            // 
-            this.btn_edit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_edit.BackgroundImage")));
-            this.btn_edit.FlatAppearance.BorderSize = 0;
-            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_edit.Location = new System.Drawing.Point(80, 1);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(46, 48);
-            this.btn_edit.TabIndex = 113;
-            this.btn_edit.UseVisualStyleBackColor = true;
-            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // txt_add
             // 
@@ -292,7 +270,7 @@ namespace IMS
             this.btn_view.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_view.BackgroundImage")));
             this.btn_view.FlatAppearance.BorderSize = 0;
             this.btn_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_view.Location = new System.Drawing.Point(240, 3);
+            this.btn_view.Location = new System.Drawing.Point(173, 0);
             this.btn_view.Name = "btn_view";
             this.btn_view.Size = new System.Drawing.Size(48, 49);
             this.btn_view.TabIndex = 111;
@@ -307,14 +285,14 @@ namespace IMS
             this.dtg_qut.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(184)))), ((int)(((byte)(194)))));
             this.dtg_qut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtg_qut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_qut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_qut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dtg_qut.ColumnHeadersHeight = 27;
             this.dtg_qut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PAYMENT_ID,
@@ -324,28 +302,28 @@ namespace IMS
             this.RECEIVED,
             this.status});
             this.dtg_qut.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtg_qut.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtg_qut.DefaultCellStyle = dataGridViewCellStyle15;
             this.dtg_qut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtg_qut.EnableHeadersVisualStyles = false;
             this.dtg_qut.Location = new System.Drawing.Point(0, 97);
             this.dtg_qut.Name = "dtg_qut";
             this.dtg_qut.ReadOnly = true;
             this.dtg_qut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_qut.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_qut.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dtg_qut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_qut.ShowCellErrors = false;
             this.dtg_qut.ShowCellToolTips = false;
@@ -360,10 +338,10 @@ namespace IMS
             // 
             this.PAYMENT_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PAYMENT_ID.DataPropertyName = "PAYMENT_ID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PAYMENT_ID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PAYMENT_ID.DefaultCellStyle = dataGridViewCellStyle10;
             this.PAYMENT_ID.HeaderText = "PAYMENT ID";
             this.PAYMENT_ID.Name = "PAYMENT_ID";
             this.PAYMENT_ID.ReadOnly = true;
@@ -373,10 +351,10 @@ namespace IMS
             // 
             this.PAYMENT_NO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PAYMENT_NO.DataPropertyName = "PAYMENT_NO";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PAYMENT_NO.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PAYMENT_NO.DefaultCellStyle = dataGridViewCellStyle11;
             this.PAYMENT_NO.FillWeight = 83.03933F;
             this.PAYMENT_NO.HeaderText = "PAYMENT NO";
             this.PAYMENT_NO.Name = "PAYMENT_NO";
@@ -386,10 +364,10 @@ namespace IMS
             // 
             this.PAYMENT_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PAYMENT_DATE.DataPropertyName = "PAYMENT_DATE";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PAYMENT_DATE.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PAYMENT_DATE.DefaultCellStyle = dataGridViewCellStyle12;
             this.PAYMENT_DATE.FillWeight = 80.86465F;
             this.PAYMENT_DATE.HeaderText = "PAYMENT DATE";
             this.PAYMENT_DATE.Name = "PAYMENT_DATE";
@@ -399,10 +377,10 @@ namespace IMS
             // 
             this.customer_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.customer_name.DataPropertyName = "CUSTOMER_NAME";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.customer_name.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.customer_name.DefaultCellStyle = dataGridViewCellStyle13;
             this.customer_name.FillWeight = 177.665F;
             this.customer_name.HeaderText = "CUSTOMER NAME";
             this.customer_name.Name = "customer_name";
@@ -412,10 +390,10 @@ namespace IMS
             // 
             this.RECEIVED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.RECEIVED.DataPropertyName = "RECEIVED_BY";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RECEIVED.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RECEIVED.DefaultCellStyle = dataGridViewCellStyle14;
             this.RECEIVED.FillWeight = 79.46688F;
             this.RECEIVED.HeaderText = "RECEIVED BY ";
             this.RECEIVED.Name = "RECEIVED";
@@ -448,12 +426,37 @@ namespace IMS
             this.txtquotation.TabIndex = 110;
             this.txtquotation.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(443, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 132;
+            this.label4.Text = "EDIT";
+            this.label4.Visible = false;
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_edit.BackgroundImage")));
+            this.btn_edit.FlatAppearance.BorderSize = 0;
+            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_edit.Location = new System.Drawing.Point(433, 6);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(46, 48);
+            this.btn_edit.TabIndex = 131;
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Visible = false;
+            // 
             // frm_payment_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(184)))), ((int)(((byte)(194)))));
             this.ClientSize = new System.Drawing.Size(1164, 524);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btn_load);
@@ -466,12 +469,10 @@ namespace IMS
             this.Controls.Add(this.txt_fillter);
             this.Controls.Add(this.txt_refresh);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_delete);
-            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.txt_add);
             this.Controls.Add(this.btn_view);
             this.Controls.Add(this.dtg_qut);
@@ -502,12 +503,10 @@ namespace IMS
         private System.Windows.Forms.TextBox txt_fillter;
         private System.Windows.Forms.Button txt_refresh;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button txt_delete;
-        private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button txt_add;
         private System.Windows.Forms.Button btn_view;
         private System.Windows.Forms.DataGridView dtg_qut;
@@ -520,5 +519,7 @@ namespace IMS
         private System.Windows.Forms.DataGridViewTextBoxColumn customer_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn RECEIVED;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_edit;
     }
 }
