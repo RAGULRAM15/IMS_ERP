@@ -91,6 +91,7 @@ namespace IMS
             this.txt_company.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_company.Location = new System.Drawing.Point(316, 30);
             this.txt_company.Name = "txt_company";
+            this.txt_company.ReadOnly = true;
             this.txt_company.Size = new System.Drawing.Size(228, 25);
             this.txt_company.TabIndex = 116;
             // 

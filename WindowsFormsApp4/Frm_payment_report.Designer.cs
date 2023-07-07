@@ -31,11 +31,7 @@ namespace IMS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_payment_report));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_to = new System.Windows.Forms.DateTimePicker();
             this.txt_from = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -44,17 +40,6 @@ namespace IMS
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.dtg_pay_report = new System.Windows.Forms.DataGridView();
-            this.INVOICE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAYMENT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INVOICE_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAYMENT_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAYMENT_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INVOICE_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTOMER_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NET_AMOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PAID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CREDIT_NOTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BALANCE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -150,26 +135,14 @@ namespace IMS
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtg_pay_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtg_pay_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_pay_report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.INVOICE_ID,
-            this.PAYMENT_ID,
-            this.INVOICE_NO,
-            this.PAYMENT_NO,
-            this.PAYMENT_DATE,
-            this.INVOICE_DATE,
-            this.CUSTOMER_NAME,
-            this.NET_AMOUNT,
-            this.PAID,
-            this.CREDIT_NOTE,
-            this.BALANCE});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtg_pay_report.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtg_pay_report.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtg_pay_report.Location = new System.Drawing.Point(-1, 143);
             this.dtg_pay_report.Name = "dtg_pay_report";
             this.dtg_pay_report.ReadOnly = true;
@@ -178,93 +151,6 @@ namespace IMS
             this.dtg_pay_report.TabIndex = 115;
             this.dtg_pay_report.Visible = false;
             this.dtg_pay_report.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtg_pay_report_DataBindingComplete);
-            // 
-            // INVOICE_ID
-            // 
-            this.INVOICE_ID.DataPropertyName = "INVOICE_ID";
-            this.INVOICE_ID.HeaderText = "INVOICE_ID";
-            this.INVOICE_ID.Name = "INVOICE_ID";
-            this.INVOICE_ID.ReadOnly = true;
-            this.INVOICE_ID.Visible = false;
-            // 
-            // PAYMENT_ID
-            // 
-            this.PAYMENT_ID.DataPropertyName = "PAYMENT_ID";
-            this.PAYMENT_ID.HeaderText = "PAYMENT_ID";
-            this.PAYMENT_ID.Name = "PAYMENT_ID";
-            this.PAYMENT_ID.ReadOnly = true;
-            this.PAYMENT_ID.Visible = false;
-            // 
-            // INVOICE_NO
-            // 
-            this.INVOICE_NO.DataPropertyName = "INVOICE_NO";
-            this.INVOICE_NO.HeaderText = "INVOICE_NO";
-            this.INVOICE_NO.Name = "INVOICE_NO";
-            this.INVOICE_NO.ReadOnly = true;
-            // 
-            // PAYMENT_NO
-            // 
-            this.PAYMENT_NO.DataPropertyName = "PAYMENT_NO";
-            this.PAYMENT_NO.HeaderText = "PAYMENT NO";
-            this.PAYMENT_NO.Name = "PAYMENT_NO";
-            this.PAYMENT_NO.ReadOnly = true;
-            // 
-            // PAYMENT_DATE
-            // 
-            this.PAYMENT_DATE.DataPropertyName = "PAYMENT_DATE";
-            this.PAYMENT_DATE.HeaderText = "PAYMENT DATE";
-            this.PAYMENT_DATE.Name = "PAYMENT_DATE";
-            this.PAYMENT_DATE.ReadOnly = true;
-            // 
-            // INVOICE_DATE
-            // 
-            this.INVOICE_DATE.DataPropertyName = "INVOICE_DATE";
-            this.INVOICE_DATE.HeaderText = "INVOICE_DATE";
-            this.INVOICE_DATE.Name = "INVOICE_DATE";
-            this.INVOICE_DATE.ReadOnly = true;
-            // 
-            // CUSTOMER_NAME
-            // 
-            this.CUSTOMER_NAME.DataPropertyName = "CUSTOMER_NAME";
-            this.CUSTOMER_NAME.HeaderText = "CUSTOMER NAME";
-            this.CUSTOMER_NAME.Name = "CUSTOMER_NAME";
-            this.CUSTOMER_NAME.ReadOnly = true;
-            // 
-            // NET_AMOUNT
-            // 
-            this.NET_AMOUNT.DataPropertyName = "NET_AMOUNT";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.NET_AMOUNT.DefaultCellStyle = dataGridViewCellStyle2;
-            this.NET_AMOUNT.HeaderText = "NET AMOUNT";
-            this.NET_AMOUNT.Name = "NET_AMOUNT";
-            this.NET_AMOUNT.ReadOnly = true;
-            // 
-            // PAID
-            // 
-            this.PAID.DataPropertyName = "PAID";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.PAID.DefaultCellStyle = dataGridViewCellStyle3;
-            this.PAID.HeaderText = "PAID";
-            this.PAID.Name = "PAID";
-            this.PAID.ReadOnly = true;
-            // 
-            // CREDIT_NOTE
-            // 
-            this.CREDIT_NOTE.DataPropertyName = "CREDIT_NOTE";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CREDIT_NOTE.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CREDIT_NOTE.HeaderText = "CREDIT NOTE";
-            this.CREDIT_NOTE.Name = "CREDIT_NOTE";
-            this.CREDIT_NOTE.ReadOnly = true;
-            // 
-            // BALANCE
-            // 
-            this.BALANCE.DataPropertyName = "BALANCE";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.BALANCE.DefaultCellStyle = dataGridViewCellStyle5;
-            this.BALANCE.HeaderText = "BALANCE";
-            this.BALANCE.Name = "BALANCE";
-            this.BALANCE.ReadOnly = true;
             // 
             // txt_total
             // 
@@ -505,17 +391,6 @@ namespace IMS
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INVOICE_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENT_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INVOICE_NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENT_NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENT_DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn INVOICE_DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NET_AMOUNT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PAID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CREDIT_NOTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BALANCE;
         private System.Windows.Forms.TextBox txt_paid;
         private System.Windows.Forms.TextBox txt_balance;
     }

@@ -123,5 +123,61 @@ namespace IMS
                 MessageBox.Show("ICON CANNOT BE DELETE");
             }
         }
+        public string image { get; set; }
+        private void btn_upload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files |*.jpg;*.jpeg;*.png;*.gif;*.bmp|All File(*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                image = openFileDialog.FileName;
+                picBox.ImageLocation = image;
+
+
+
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (picBox.Image != null)
+            {
+
+
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+
+
+
+                    // Query = @"INSERT INTO [M_USER_MANAGEMENT]   PASSWORD,USER_NAME,[USER],IMAGE_PATH VALUES '" + txt_confirmpassword.Text + "','" + txt_username.Text.Trim() +"','"+txt_oldpassword.Text+ "', @Image ";
+                    // Query = @"INSERT INTO [M_USER_MANAGEMENT] (PASSWORD, USER_NAME, [USER] ,ACTIVE) VALUES (@Password, @UserName, @User,1)";
+
+
+                    conn.Open();
+                    SqlCommand comm = new SqlCommand();
+
+
+
+                    Image image = picBox.Image;
+                    byte[] imageBytes;
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        imageBytes = ms.ToArray();
+                    }
+                    comm.Connection = conn;
+                    String Query1 = @"INSERT INTO [M_IMAGE] ([USER], IMAGE ,ACTIVE) VALUES ( '" + txt_oldpassword.Text + "' , @IMAGE ,1)";
+                    comm.Parameters.AddWithValue("@IMAGE", imageBytes);
+                    comm.CommandText = Query1;
+                    comm.ExecuteNonQuery();
+                    MessageBox.Show("PROFILE SUCCESSFULLY GENERATED");
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("PICTURE IS NOT APPLICABLE");
+            }
+        }
     }
 }

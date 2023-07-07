@@ -136,7 +136,7 @@ namespace IMS
                 if (txt_customer.Text == "")
                 {
                     frmf2 popup = new frmf2();
-                    string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, CUSTOMER_TITLE FROM M_CUSTOMER WHERE ACTIVE = 1";
+                    string _query = "SELECT CUSTOMER_ID AS [ID], CUSTOMER_NAME, C.CITY FROM M_CUSTOMER CU INNER JOIN M_CITY C ON C.CITY_ID = CU.CITY_ID WHERE CU.ACTIVE = 1";
                     popup.ShowF2(_query, "CUSTOMER_NAME", ((TextBox)sender).Text, "CUSTOMER_NAME", sender);
                 }
 
@@ -155,26 +155,21 @@ namespace IMS
         private void btn_gridview_Click(object sender, EventArgs e)
 
         {
-        dtg_pay_report.Columns["PAYMENT_NO"].Visible = true;
-                dtg_pay_report.Columns["PAYMENT_DATE"].Visible = true;
-                dtg_pay_report.Columns["CREDIT_NOTE"].Visible = true;
-            dtg_pay_report.Columns["INVOICE_NO"].Visible = true;
-            dtg_pay_report.Columns["INVOICE_DATE"].Visible = true;
-
+        
             if (rbtn_inv.Checked == true)
             {
                 dtg_pay_report.Visible = true;
                 txt_total.Visible = true;
                 txt_balance.Visible = true;
                 txt_paid.Visible = true;
-                
-                dtg_pay_report.Columns["PAYMENT_NO"].Visible = false;
-                dtg_pay_report.Columns["PAYMENT_DATE"].Visible = false;
-                dtg_pay_report.Columns["CREDIT_NOTE"].Visible = false;
+                //dtg_pay_report.Columns["PAYMENT_NO"].Visible = false;
+                //dtg_pay_report.Columns["PAYMENT_DATE"].Visible = false;
+                //dtg_pay_report.Columns["CREDIT_NOTE"].Visible = false;
+
                 if (txt_customer.Text != "")
                 {
                     
-                    String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,NET_AMOUNT,PAID,BALANCE FROM T_INVOICE" +
+                    String str = "SELECT  INVOICE_NO AS [INVOICE NO],INVOICE_DATE AS [INVOICE DATE],CUSTOMER_NAME AS [CUSTOMER NAME],NET_AMOUNT AS [AMOUNT],PAID,BALANCE FROM T_INVOICE" +
                         "   INNER JOIN [M_CUSTOMER] ON [T_INVOICE].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                         " WHERE T_INVOICE.CUSTOMER_ID=" + txt_customer.Tag + " AND T_INVOICE.COMPANY_ID =" + txt_company.Tag + "";
 
@@ -193,16 +188,17 @@ namespace IMS
                         DateTime startDate = txt_from.Value.Date;
                         DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
                         DataView dv = DT.Tables[0].DefaultView;
-                        dv.RowFilter = "INVOICE_DATE >= '" + startDate + "' AND INVOICE_DATE <= '" + endDate + "'";
+                        dv.RowFilter = "[INVOICE DATE] >= '" + startDate + "' AND [INVOICE DATE] <= '" + endDate + "'";
                         dtg_pay_report.DataSource = dv;
                     }
+                   
                 }
                 else
                 {
                     if (txt_customer.Text == "")
                     {
                        
-                        String str = "SELECT INVOICE_ID , INVOICE_NO,INVOICE_DATE,CUSTOMER_NAME,NET_AMOUNT,PAID,BALANCE FROM T_INVOICE" +
+                        String str = "SELECT INVOICE_NO AS [INVOICE NO],INVOICE_DATE AS [INVOICE DATE],CUSTOMER_NAME AS [CUSTOMER NAME],NET_AMOUNT AS [AMOUNT],PAID,BALANCE FROM T_INVOICE" +
                             "   INNER JOIN [M_CUSTOMER] ON [T_INVOICE].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                             " WHERE COMPANY_ID=" + txt_company.Tag + " AND T_INVOICE.COMPANY_ID =" + txt_company.Tag + "";
 
@@ -220,12 +216,25 @@ namespace IMS
                             DateTime startDate = txt_from.Value.Date;
                             DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
                             DataView dv = DT.Tables[0].DefaultView;
-                            dv.RowFilter = "INVOICE_DATE >= '" + startDate + "' AND INVOICE_DATE <= '" + endDate + "'";
+                            dv.RowFilter = "[INVOICE DATE] >= '" + startDate + "' AND [INVOICE DATE] <= '" + endDate + "'";
                             dtg_pay_report.DataSource = dv;
                             conn.Close();
                         }
                     }
                 }
+                dtg_pay_report.Columns["AMOUNT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dtg_pay_report.Columns["BALANCE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dtg_pay_report.Columns["PAID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                foreach (DataGridViewRow row in dtg_pay_report.Rows)
+                {
+                    row.Cells["AMOUNT"].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    row.Cells["BALANCE"].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    row.Cells["PAID"].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    //row.Cells[6].Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                }
+
             }
             if (rbtn_pay.Checked == true)
             {
@@ -234,15 +243,13 @@ namespace IMS
                 txt_balance.Visible = true;
                 txt_paid.Visible = true;
                
-                dtg_pay_report.Columns["INVOICE_NO"].Visible = false;
-                dtg_pay_report.Columns["INVOICE_DATE"].Visible = false;
-                //dtg_pay_report.Columns["CREDIT_NOTE"].Visible = false;
+              // ///dtg_pay_report.Columns["CREDIT_NOTE"].Visible = false;
 
                
                 if (txt_customer.Text != "")
                 {
 
-                    String str = "SELECT  PAYMENT_ID , PAYMENT_NO, PAYMENT_DATE,CUSTOMER_NAME,AMOUNT AS [NET_AMOUNT],PAID,BALANCE FROM T_PAYMENT_MAIN" +
+                    String str = "SELECT   PAYMENT_NO AS [PAYMENT NO], PAYMENT_DATE AS [PAYMENT DATE],CUSTOMER_NAME AS [CUSTOMER NAME],AMOUNT ,PAID,CREDIT_NOTE AS [CREDIT NOTE] ,BALANCE FROM T_PAYMENT_MAIN" +
                         "   INNER JOIN [M_CUSTOMER] ON [T_PAYMENT_MAIN].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                         " WHERE T_PAYMENT_MAIN.CUSTOMER_ID=" + txt_customer.Tag + " AND T_PAYMENT_MAIN.COMPANY_ID =" + txt_company.Tag + "";
 
@@ -261,7 +268,7 @@ namespace IMS
                         DateTime startDate = txt_from.Value.Date;
                         DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
                         DataView dv = DT.Tables[0].DefaultView;
-                        dv.RowFilter = "PAYMENT_DATE >= '" + startDate + "' AND PAYMENT_DATE <= '" + endDate + "'";
+                        dv.RowFilter = "[PAYMENT DATE] >= '" + startDate + "' AND [PAYMENT DATE] <= '" + endDate + "'";
                         dtg_pay_report.DataSource = dv;
                     }
                 }
@@ -270,7 +277,7 @@ namespace IMS
                     if (txt_customer.Text == "")
                     {
 
-                        String str = "SELECT PAYMENT_ID , PAYMENT_NO,PAYMENT_DATE,CUSTOMER_NAME,AMOUNT AS [NET_AMOUNT],PAID,BALANCE FROM T_PAYMENT_MAIN" +
+                        String str = "SELECT  PAYMENT_NO AS [PAYMENT NO], PAYMENT_DATE AS [PAYMENT DATE],CUSTOMER_NAME,AMOUNT,PAID,CREDIT_NOTE AS [CREDIT NOTE] ,BALANCE FROM T_PAYMENT_MAIN" +
                             "   INNER JOIN [M_CUSTOMER] ON [T_PAYMENT_MAIN].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                             " WHERE T_PAYMENT_MAIN.COMPANY_ID =" + txt_company.Tag + "";
 
@@ -288,12 +295,25 @@ namespace IMS
                             DateTime startDate = txt_from.Value.Date;
                             DateTime endDate = txt_to.Value.Date.AddDays(1).AddSeconds(-1);
                             DataView dv = DT.Tables[0].DefaultView;
-                            dv.RowFilter = "PAYMENT_DATE >= '" + startDate + "' AND PAYMENT_DATE <= '" + endDate + "'";
+                            dv.RowFilter = "[PAYMENT DATE] >= '" + startDate + "' AND [PAYMENT DATE] <= '" + endDate + "'";
                             dtg_pay_report.DataSource = dv;
                             conn.Close();
                         }
                     }
                 }
+                dtg_pay_report.Columns["AMOUNT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dtg_pay_report.Columns["BALANCE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dtg_pay_report.Columns["PAID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dtg_pay_report.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                foreach(DataGridViewRow row in dtg_pay_report.Rows)
+                {
+                    row.Cells["AMOUNT"].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    row.Cells["BALANCE"].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    row.Cells["PAID"].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    row.Cells[6].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                }
+
             }
 
             TOTAL();
@@ -309,8 +329,9 @@ namespace IMS
 
             for (i = 0; i < dtg_pay_report.Rows.Count; i++)
             {
-                sum1 += Decimal.Parse(dtg_pay_report.Rows[i].Cells["NET_AMOUNT"].Value.ToString());
-                if (dtg_pay_report.Rows[i].Cells["BALANCE"].Value != DBNull.Value) {
+                sum1 += Decimal.Parse(dtg_pay_report.Rows[i].Cells["AMOUNT"].Value.ToString());
+                if (dtg_pay_report.Rows[i].Cells["BALANCE"].Value != DBNull.Value) 
+                {
                     sum2 += Decimal.Parse(dtg_pay_report.Rows[i].Cells["PAID"].Value.ToString());
                     sum3 += Decimal.Parse(dtg_pay_report.Rows[i].Cells["BALANCE"].Value.ToString());
                 }
@@ -334,6 +355,7 @@ namespace IMS
             txt_total.Visible = false;
             txt_paid.Visible = false;
             txt_balance.Visible = false;
+           
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -457,9 +479,13 @@ namespace IMS
                             for (int i = 0; i < dtg_pay_report.Rows.Count; i++)
                             {
                                 sum1 += Convert.ToDouble(dtg_pay_report.Rows[i].Cells["NET_AMOUNT"].Value.ToString());
-                                sum2 += Convert.ToDouble(dtg_pay_report.Rows[i].Cells["PAID"].Value.ToString());
-                                sum3 += Convert.ToDouble(dtg_pay_report.Rows[i].Cells["BALANCE"].Value.ToString());
+                                if (dtg_pay_report.Rows[i].Cells["BALANCE"].Value != DBNull.Value)
+                                {
 
+                                    sum2 += Convert.ToDouble(dtg_pay_report.Rows[i].Cells["PAID"].Value.ToString());
+                                    sum3 += Convert.ToDouble(dtg_pay_report.Rows[i].Cells["BALANCE"].Value.ToString());
+
+                                }
                             }
                             value = Convert.ToInt32(dtg_pay_report.Rows.Count.ToString());
                             e.Graphics.DrawString(value.ToString(), dtg_pay_report.Font = new Font(" Segoe UI Emoji", 10, FontStyle.Bold), Brushes.Black, dtg_pay_report.Columns[0].Width = 80, height + 44);
@@ -696,7 +722,7 @@ namespace IMS
                 if (txt_customer.Text != "")
                 {
 
-                    String str = "SELECT  PAYMENT_ID , PAYMENT_NO, PAYMENT_DATE,CUSTOMER_NAME,AMOUNT AS [NET_AMOUNT],PAID,BALANCE FROM T_PAYMENT_MAIN" +
+                    String str = "SELECT  PAYMENT_ID , PAYMENT_NO, PAYMENT_DATE,CUSTOMER_NAME,AMOUNT AS [NET_AMOUNT],PAID,CREDIT_NOTE,BALANCE FROM T_PAYMENT_MAIN" +
                         "   INNER JOIN [M_CUSTOMER] ON [T_PAYMENT_MAIN].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                         " WHERE T_PAYMENT_MAIN.CUSTOMER_ID=" + txt_customer.Tag + " AND T_PAYMENT_MAIN.COMPANY_ID =" + txt_company.Tag + "";
 
@@ -725,7 +751,7 @@ namespace IMS
                     if (txt_customer.Text == "")
                     {
 
-                        String str = "SELECT PAYMENT_ID , PAYMENT_NO,PAYMENT_DATE,CUSTOMER_NAME,AMOUNT AS [NET_AMOUNT],PAID,BALANCE FROM T_PAYMENT_MAIN" +
+                        String str = "SELECT PAYMENT_ID , PAYMENT_NO,PAYMENT_DATE,CUSTOMER_NAME,AMOUNT AS [NET_AMOUNT],PAID,CREDIT_NOTE,BALANCE FROM T_PAYMENT_MAIN" +
                             "   INNER JOIN [M_CUSTOMER] ON [T_PAYMENT_MAIN].CUSTOMER_ID = [M_CUSTOMER].CUSTOMER_ID" +
                             " WHERE T_PAYMENT_MAIN.COMPANY_ID =" + txt_company.Tag + "";
 

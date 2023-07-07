@@ -83,11 +83,12 @@ namespace IMS
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_year_tag = new System.Windows.Forms.Label();
             this.pic_Box = new System.Windows.Forms.PictureBox();
-            this.lbl_cname = new System.Windows.Forms.Label();
             this.lbl_comp_tag = new System.Windows.Forms.Label();
             this.pnltop = new System.Windows.Forms.Panel();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_cname = new System.Windows.Forms.Label();
             this.pnlleft.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -100,6 +101,7 @@ namespace IMS
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box)).BeginInit();
             this.pnltop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlleft
@@ -169,14 +171,14 @@ namespace IMS
             // qUOTATIONToolStripMenuItem
             // 
             this.qUOTATIONToolStripMenuItem.Name = "qUOTATIONToolStripMenuItem";
-            this.qUOTATIONToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.qUOTATIONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.qUOTATIONToolStripMenuItem.Text = "QUOTATION";
             this.qUOTATIONToolStripMenuItem.Click += new System.EventHandler(this.mnuquotation_Click);
             // 
             // sALESORDERToolStripMenuItem
             // 
             this.sALESORDERToolStripMenuItem.Name = "sALESORDERToolStripMenuItem";
-            this.sALESORDERToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.sALESORDERToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sALESORDERToolStripMenuItem.Text = "SALES ORDER";
             this.sALESORDERToolStripMenuItem.Click += new System.EventHandler(this.mnuORDERLIST_Click);
             // 
@@ -184,7 +186,7 @@ namespace IMS
             // 
             this.iNVOICEToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("iNVOICEToolStripMenuItem.Image")));
             this.iNVOICEToolStripMenuItem.Name = "iNVOICEToolStripMenuItem";
-            this.iNVOICEToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.iNVOICEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.iNVOICEToolStripMenuItem.Text = "INVOICE";
             this.iNVOICEToolStripMenuItem.Click += new System.EventHandler(this.mnuINVOICE_Click);
             // 
@@ -192,14 +194,14 @@ namespace IMS
             // 
             this.iNVOICEAPPROVALToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("iNVOICEAPPROVALToolStripMenuItem.Image")));
             this.iNVOICEAPPROVALToolStripMenuItem.Name = "iNVOICEAPPROVALToolStripMenuItem";
-            this.iNVOICEAPPROVALToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.iNVOICEAPPROVALToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.iNVOICEAPPROVALToolStripMenuItem.Text = "INVOICE APPROVAL";
             this.iNVOICEAPPROVALToolStripMenuItem.Click += new System.EventHandler(this.mnuapproval_Click);
             // 
             // pAYMENTToolStripMenuItem
             // 
             this.pAYMENTToolStripMenuItem.Name = "pAYMENTToolStripMenuItem";
-            this.pAYMENTToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.pAYMENTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pAYMENTToolStripMenuItem.Text = "PAYMENT";
             this.pAYMENTToolStripMenuItem.Click += new System.EventHandler(this.mnupayment_Click);
             // 
@@ -528,26 +530,27 @@ namespace IMS
             this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.890173F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 97.10983F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 665F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanel1.Controls.Add(this.lbl_cname, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtdate, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_fyear, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txttime, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_year_tag, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.pic_Box, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_cname, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_comp_tag, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_fyear, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_comp_tag, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_year_tag, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -570,10 +573,10 @@ namespace IMS
             this.txtdate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtdate.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdate.Location = new System.Drawing.Point(936, 44);
+            this.txtdate.Location = new System.Drawing.Point(957, 44);
             this.txtdate.Name = "txtdate";
             this.txtdate.ReadOnly = true;
-            this.txtdate.Size = new System.Drawing.Size(112, 23);
+            this.txtdate.Size = new System.Drawing.Size(120, 23);
             this.txtdate.TabIndex = 48;
             this.txtdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtdate.Visible = false;
@@ -583,7 +586,7 @@ namespace IMS
             this.lbl_fyear.AutoSize = true;
             this.lbl_fyear.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbl_fyear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fyear.Location = new System.Drawing.Point(930, 41);
+            this.lbl_fyear.Location = new System.Drawing.Point(923, 41);
             this.lbl_fyear.Name = "lbl_fyear";
             this.lbl_fyear.Size = new System.Drawing.Size(0, 34);
             this.lbl_fyear.TabIndex = 3;
@@ -603,17 +606,17 @@ namespace IMS
             this.txttime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txttime.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttime.Location = new System.Drawing.Point(936, 3);
+            this.txttime.Location = new System.Drawing.Point(957, 3);
             this.txttime.Name = "txttime";
             this.txttime.ReadOnly = true;
-            this.txttime.Size = new System.Drawing.Size(112, 23);
+            this.txttime.Size = new System.Drawing.Size(120, 23);
             this.txttime.TabIndex = 9;
             this.txttime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(91, 0);
+            this.label2.Location = new System.Drawing.Point(929, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 10;
@@ -621,7 +624,7 @@ namespace IMS
             // lbl_year_tag
             // 
             this.lbl_year_tag.AutoSize = true;
-            this.lbl_year_tag.Location = new System.Drawing.Point(509, 41);
+            this.lbl_year_tag.Location = new System.Drawing.Point(93, 41);
             this.lbl_year_tag.Name = "lbl_year_tag";
             this.lbl_year_tag.Size = new System.Drawing.Size(35, 13);
             this.lbl_year_tag.TabIndex = 50;
@@ -631,32 +634,20 @@ namespace IMS
             // pic_Box
             // 
             this.pic_Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_Box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic_Box.Location = new System.Drawing.Point(1054, 3);
+            this.pic_Box.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pic_Box.Location = new System.Drawing.Point(1084, 3);
             this.pic_Box.Name = "pic_Box";
             this.tableLayoutPanel1.SetRowSpan(this.pic_Box, 2);
-            this.pic_Box.Size = new System.Drawing.Size(130, 69);
+            this.pic_Box.Size = new System.Drawing.Size(100, 69);
             this.pic_Box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_Box.TabIndex = 52;
             this.pic_Box.TabStop = false;
             this.pic_Box.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // lbl_cname
-            // 
-            this.lbl_cname.AutoSize = true;
-            this.lbl_cname.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbl_cname.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cname.Location = new System.Drawing.Point(930, 0);
-            this.lbl_cname.Name = "lbl_cname";
-            this.lbl_cname.Size = new System.Drawing.Size(0, 41);
-            this.lbl_cname.TabIndex = 2;
-            this.lbl_cname.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_cname.Click += new System.EventHandler(this.lbl_cname_Click);
-            // 
             // lbl_comp_tag
             // 
             this.lbl_comp_tag.AutoSize = true;
-            this.lbl_comp_tag.Location = new System.Drawing.Point(509, 0);
+            this.lbl_comp_tag.Location = new System.Drawing.Point(93, 0);
             this.lbl_comp_tag.Name = "lbl_comp_tag";
             this.lbl_comp_tag.Size = new System.Drawing.Size(35, 13);
             this.lbl_comp_tag.TabIndex = 49;
@@ -681,6 +672,26 @@ namespace IMS
             // 
             this.timer1.Interval = 1000000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 69);
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbl_cname
+            // 
+            this.lbl_cname.AutoSize = true;
+            this.lbl_cname.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_cname.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cname.Location = new System.Drawing.Point(923, 0);
+            this.lbl_cname.Name = "lbl_cname";
+            this.lbl_cname.Size = new System.Drawing.Size(0, 41);
+            this.lbl_cname.TabIndex = 56;
+            this.lbl_cname.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frm_mid
             // 
@@ -716,6 +727,7 @@ namespace IMS
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box)).EndInit();
             this.pnltop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -724,7 +736,6 @@ namespace IMS
         private System.Windows.Forms.Panel pnlleft;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtdate;
-        private System.Windows.Forms.Label lbl_cname;
         private System.Windows.Forms.Label lbl_fyear;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -778,5 +789,7 @@ namespace IMS
         private System.Windows.Forms.ToolStripMenuItem eNTRYNAMEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sALESORDERToolStripMenuItem;
         private System.Windows.Forms.PictureBox pic_Box;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_cname;
     }
 }

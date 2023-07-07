@@ -29,9 +29,11 @@ namespace IMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_arrengment));
             this.btn_forgot = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_login = new System.Windows.Forms.Panel();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.picBox = new System.Windows.Forms.PictureBox();
             this.btnlogin = new System.Windows.Forms.Button();
             this.btn_create_user = new System.Windows.Forms.Button();
@@ -42,7 +44,9 @@ namespace IMS
             this.label5 = new System.Windows.Forms.Label();
             this.txt_oldpassword = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_upload = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -77,6 +81,9 @@ namespace IMS
             // panel_login
             // 
             this.panel_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
+            this.panel_login.Controls.Add(this.label2);
+            this.panel_login.Controls.Add(this.btn_save);
+            this.panel_login.Controls.Add(this.btn_upload);
             this.panel_login.Controls.Add(this.btn_Delete);
             this.panel_login.Controls.Add(this.picBox);
             this.panel_login.Controls.Add(this.btnlogin);
@@ -96,6 +103,18 @@ namespace IMS
             this.panel_login.Size = new System.Drawing.Size(635, 240);
             this.panel_login.TabIndex = 77;
             // 
+            // btn_Delete
+            // 
+            this.btn_Delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Delete.BackgroundImage")));
+            this.btn_Delete.FlatAppearance.BorderSize = 0;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.Location = new System.Drawing.Point(555, 129);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(49, 49);
+            this.btn_Delete.TabIndex = 86;
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
             // picBox
             // 
             this.picBox.Location = new System.Drawing.Point(496, 23);
@@ -112,9 +131,9 @@ namespace IMS
             this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnlogin.Location = new System.Drawing.Point(128, 113);
+            this.btnlogin.Location = new System.Drawing.Point(158, 113);
             this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(216, 33);
+            this.btnlogin.Size = new System.Drawing.Size(150, 33);
             this.btnlogin.TabIndex = 84;
             this.btnlogin.Text = "LOG OUT";
             this.btnlogin.UseVisualStyleBackColor = false;
@@ -206,15 +225,45 @@ namespace IMS
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_Delete
+            // btn_upload
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(510, 141);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
-            this.btn_Delete.TabIndex = 86;
-            this.btn_Delete.Text = "Delete";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            this.btn_upload.FlatAppearance.BorderSize = 0;
+            this.btn_upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_upload.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_upload.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_upload.Image = ((System.Drawing.Image)(resources.GetObject("btn_upload.Image")));
+            this.btn_upload.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_upload.Location = new System.Drawing.Point(477, 129);
+            this.btn_upload.Name = "btn_upload";
+            this.btn_upload.Size = new System.Drawing.Size(49, 49);
+            this.btn_upload.TabIndex = 90;
+            this.btn_upload.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_upload.UseVisualStyleBackColor = true;
+            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Location = new System.Drawing.Point(524, 184);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(30, 30);
+            this.btn_save.TabIndex = 91;
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(232)))), ((int)(((byte)(237)))));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.Location = new System.Drawing.Point(520, 213);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 20);
+            this.label2.TabIndex = 92;
+            this.label2.Text = "Save";
             // 
             // Frm_arrengment
             // 
@@ -250,5 +299,8 @@ namespace IMS
         private System.Windows.Forms.Button btn_create_user;
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_upload;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Label label2;
     }
 }

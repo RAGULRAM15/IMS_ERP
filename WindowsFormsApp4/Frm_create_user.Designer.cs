@@ -29,7 +29,10 @@ namespace IMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_create_user));
             this.panel_login = new System.Windows.Forms.Panel();
+            this.btn_upload = new System.Windows.Forms.Button();
+            this.picBox = new System.Windows.Forms.PictureBox();
             this.lbl_check = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,13 +46,11 @@ namespace IMS
             this.txt_confirmpassword = new System.Windows.Forms.TextBox();
             this.btnlogin = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btn_upload = new System.Windows.Forms.Button();
-            this.picBox = new System.Windows.Forms.PictureBox();
             this.panel_login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_login
@@ -75,6 +76,28 @@ namespace IMS
             this.panel_login.Name = "panel_login";
             this.panel_login.Size = new System.Drawing.Size(682, 227);
             this.panel_login.TabIndex = 6;
+            // 
+            // btn_upload
+            // 
+            this.btn_upload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_upload.BackgroundImage")));
+            this.btn_upload.FlatAppearance.BorderSize = 0;
+            this.btn_upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_upload.Location = new System.Drawing.Point(543, 126);
+            this.btn_upload.Name = "btn_upload";
+            this.btn_upload.Size = new System.Drawing.Size(49, 47);
+            this.btn_upload.TabIndex = 89;
+            this.btn_upload.UseVisualStyleBackColor = true;
+            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
+            // 
+            // picBox
+            // 
+            this.picBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picBox.Location = new System.Drawing.Point(516, 20);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(100, 100);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBox.TabIndex = 88;
+            this.picBox.TabStop = false;
             // 
             // lbl_check
             // 
@@ -217,25 +240,6 @@ namespace IMS
             this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             // 
-            // btn_upload
-            // 
-            this.btn_upload.Location = new System.Drawing.Point(548, 112);
-            this.btn_upload.Name = "btn_upload";
-            this.btn_upload.Size = new System.Drawing.Size(49, 23);
-            this.btn_upload.TabIndex = 89;
-            this.btn_upload.Text = "Upload";
-            this.btn_upload.UseVisualStyleBackColor = true;
-            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
-            // 
-            // picBox
-            // 
-            this.picBox.Location = new System.Drawing.Point(516, 20);
-            this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(100, 73);
-            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picBox.TabIndex = 88;
-            this.picBox.TabStop = false;
-            // 
             // Frm_create_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,10 +253,10 @@ namespace IMS
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_create_user_KeyDown);
             this.panel_login.ResumeLayout(false);
             this.panel_login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
 
         }
